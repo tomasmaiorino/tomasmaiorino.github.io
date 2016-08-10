@@ -25,14 +25,14 @@ $(function() {
                 url: "http://localhost:3000/api/v1/sendEmail",
                 type: "POST",
                 crossDomain: true,
-                contentType: 'application/json',
-                data: {
+                dataType: "json",
+                data: JSON.stringify({
                     sender_name: name,
                     sender_email: email,
                     message: message,
                     subject: 'Contato',
                     token: '112211'
-                },
+                }),
                 cache: false,
                 success: function() {
                     // Enable button & show success message

@@ -26,13 +26,13 @@ $(function() {
                 type: "POST",
                 crossDomain: true,
                 dataType: "json",
-                data: JSON.stringify({
+                data: {
                     sender_name: name,
                     sender_email: email,
                     message: message,
                     subject: 'Contato',
                     token: '112211'
-                }),
+                },
                 cache: false,
                 success: function() {
                     // Enable button & show success message

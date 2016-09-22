@@ -22,7 +22,7 @@ $(function() {
             }
 
             $.ajax({
-                url: "http://localhost:3000/api/v1/sendEmail",
+                url: "http://boiling-stream-89308.herokuapp.com/api/v1/sendEmail",
                 type: "POST",
                 crossDomain: true,
                 dataType: "json",
@@ -30,8 +30,8 @@ $(function() {
                     sender_name: name,
                     sender_email: email,
                     message: message,
-                    subject: 'Contato',
-                    token: '112211'
+                    subject: 'Contact',
+                    token: '4bcwqzoi4gng4'
                 },
                 cache: false,
                 success: function() {
@@ -41,7 +41,7 @@ $(function() {
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success')
-                        .append("<strong>Mensagem enviado com sucesso. </strong>");
+                        .append("<strong>Message sent. </strong>");
                     $('#success > .alert-success')
                         .append('</div>');
 
@@ -53,7 +53,7 @@ $(function() {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Desculpe " + firstName + ", parece que o servidor não esta respondendo. Porfavor, tente novamente mais tarde!");
+                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", we've some problems :( .Please try again later");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");

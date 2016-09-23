@@ -228,7 +228,7 @@
   height: 1px;
 }
 
- .box {
+    .box {
       /*background-color: red;*/
     }
 
@@ -240,18 +240,26 @@
       width: 50%;
     }
 
+    .line-middle {
+     width: 25%; 
+    }
+
+    .line-middle-2 {
+     width: 45%; 
+    }
+
     .box-middle-2 {
       width: 70%;
     }
 
-    .box .linee,
-    .box .circlee,
+    .box .line,
+    .box .div-circle,
     .box .specs {
       display: inline-block;
       vertical-align: middle;
     }
 
-    .box .linee {
+    .box .line {
       width: 0;
       height: 2px;
       width: 0;
@@ -281,12 +289,12 @@
           display: inline-block;
           background: #D00A0B;
         }
-    .box .circlee {
+    .box .div-circle {
       width: 10%;
       text-align: center;
     }
 
-    .box .circlee span {
+    .box .div-circle span {
       width: 40px;
       height: 40px;
       display: inline-block;
@@ -301,10 +309,10 @@
     .box-middle-2 .specs {
       width: 15%;
     }
-    .box .linee span {
+    .box .line span {
     }
 
-    .box.active .linee {
+    .box.active .line {
       width: 55%;
     }
 
@@ -402,6 +410,36 @@
       margin-top: 20px;
       margin-bottom: 10px;
     }
+
+    .jobs-line {
+      background: #fff;
+    }
+    @media (min-width: 480px) {
+      .line1 {
+        background: #fff;
+        width: '55%';
+      }
+    }
+    @media (min-width: 480px) {
+      .line1 {
+        width: '55%';
+        color: #5A2D82;
+        }
+      .line-middle {
+        width: '25%'
+        color: #5A2D82;
+      }
+      .line-middle-2 {
+        width: '45%'
+        color: #5A2D82;
+      }
+      .line1 {
+        background: #fff;
+      }
+      .n_logo{
+        width: 50%;
+      }
+    }
 </style>
 </head>
 
@@ -449,9 +487,9 @@
                 </div>
                 <div class="col-lg-8">
                   <div class="row" align="left">
-                     <h2 style="color: black; text-transform: capitalize;">Tomas Maiorino</h2>
+                     <h2 style="color: black; text-transform: capitalize;">&nbsp;Tomas Maiorino</h2>
                   </div>
-                  <div class="row" align="left" style="color: black"><p>Programming and developing new and better problem solvers.</p></div>
+                  <div class="row" align="left" style="color: black"><p>&nbsp;Programming and developing new and better problem solvers.</p></div>
                 </div>
             </div>
         </div>
@@ -473,17 +511,112 @@
               <div class="col-md-10 n_text_title_color span-worker-time"><span> 12/16/2015 - Current</span>
               </div>
             </div>
+            
             <div class="row">
               <div class="col-md-4 portfolio-item" align="center">
-                <img src="img/portfolio/netshoes.png" class="img-responsive" alt="">
+                <img src="img/portfolio/netshoes.png" class="img-responsive n_logo" alt="">
               </div>
+            <div class="col-md-6 portfolio-item">
+                <div class="row">
+                  <div class="box box-full first_div">
+                    <div class="line line1 jobs-line">
+                      <span></span>
+                    </div>
+                    <div class="div-circle">
+                      <div class="circle bola circle_div pointer">
+                        <a  onclick="showProjects('.n_main_project_div', [1,2,3], 'n_destak_color_1', '.n_main_projects_title')"
+                          class="n_projects"><h2 style="font-size: 10px">ATG</h2></a>
+                      </div>
+                    </div>
+                    <div class="specs li_content" id="content_1" style="display: none">
+                      <ul class="list">
+                        <li class="pointer n_project_1">BCC</li>
+                        <li class="pointer n_project_2">Endeca Cartridges</li>
+                        <li class="pointer n_project_3">Integrations</li>
+                      </ul>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="box box-full first_div">
+                      <div class="line line-middle jobs-line">
+                        <span></span>
+                      </div>
+                      <div class="div-circle">
+                        <div class="circle bola circle_div pointer">
+                            <a  onclick="showProjects('.n_main_project_div', [1], 'n_destak_color_2', '.n_main_projects_title')">
+                              <h2 style="font-size: 10px">SPRING</h2></a>
+                        </div>
+                      </div>
+                      <div class="specs li_content" id="content_2" style="display: none">
+                        <ul class="list">
+                          <li class="pointer n_project_1">Micro Services</li>
+                          <li class="pointer n_project_2">String boot</li>
+                        </ul>
+                      </div>
+                  </div>
+              </div>
+                  <div class="row">
+                        <div class="box first_div">
+                          <div class="line line-middle-2 jobs-line">
+                            <span></span>
+                          </div>
+                          <div class="div-circle">
+                            <div class="circle bola circle_div">
+                                <a href="#section_4"><h2 style="font-size: 10px">DB</h2></a>
+                            </div>
+                          </div>
+                          <div class="specs li_content" id="content_3" style="display: none">
+                            <ul class="list">
+                              <li class="pointer n_project_1">Oracle</li>
+                              <li class="pointer n_project_2">Redis</li>
+                              <li class="pointer n_project_2">Mongo</li>
+                            </ul>
+                          </div>
+                      </div>
+                  </div>              
+            </div>
+            </div>
+            <div class="row n_text_title_color"><h4>Sumary</h4></div>
+              <div class="row sumary">
+                <div class="col-md-12">
+                  <p>Responsible for developing new features and maintenance for a brasilian ecommerce using Oracle ATG
+                    Commerce 11 also responsible for developing and maintenace microservices (Spring boot and rest services)
+                    that are consumed by the store. Analyzing and fixing problems in production environment. Managed Oracle
+                    Databases. Worked on the planning and implementation of approvals, holding meetings with users to define
+                    and gather system requirements.
+                  </p>
+                </div>
+              </div>
+            <hr>
+            <div class="row n_text_title_color n_main_projects_title"><h5 class="pointer" style="text-transform: capitalize;"
+               onclick="openMainProject('.n_main_project_div');">Main Projects <span class="glyphicon glyphicon-plus"></span></h5>
+            </div>
+            <div class="row transparent n_main_project_div">
+              <div class="col-md-12 main_projects">
+                  <ul>
+                    <li id="n_project_1"><p>Change the default ATG's recover password workflow to return a link to user change his password instead automaticly change the password.</p></li>
+                    <li id="n_project_2" style="display:none"><p>Send orders' information to an external service during payment's pipeline using JMS (JRabbit), also it was use BCC's segmentations to check which order should be sent.</p></li>
+                    <li id="n_project_3" style="display:none"><p>Update user's contact information in the confirmation page in order to help to find the user if some problem happens with his order.</p></li>
+                  </ul>
+              </div>
+            </div>
+            <hr>
+            <div class="row n_text_title_color"><h6 class="pointer">Another Technologies</h6></div>
+            <div class="row pointer col-md-12" id="n_div_tags"></div>
+            <!-- Netshoes -->
+            </div>
+
+                      
+            
+              <!--
               <div class="col-md-6 portfolio-item">
                   <div class="row">
                         <div class="box box-full first_div">
-                          <div class="linee linee1">
+                          <div class="line line1">
                             <span></span>
                           </div>
-                          <div class="circlee">
+                          <div class="div-circle">
                             <div class="circle bola circle_div pointer">
                                 <a  onclick="showProjects('.n_main_project_div', [1,2,3], 'n_destak_color_1', '.n_main_projects_title')"
                                 class="n_projects"><h2 style="font-size: 10px">ATG</h2></a>
@@ -500,10 +633,10 @@
                   </div>
                   <div class="row">
                         <div class="box box-middle first_div">
-                          <div class="linee linee1">
+                          <div class="line line1">
                             <span></span>
                           </div>
-                          <div class="circlee">
+                          <div class="div-circle">
                             <div class="circle bola circle_div pointer">
                                 <a  onclick="showProjects('.n_main_project_div', [1], 'n_destak_color_2', '.n_main_projects_title')">
                                   <h2 style="font-size: 10px">SPRING</h2></a>
@@ -519,10 +652,10 @@
                   </div>
                   <div class="row">
                         <div class="box box-middle-2 first_div">
-                          <div class="linee linee1">
+                          <div class="line line1">
                             <span></span>
                           </div>
-                          <div class="circlee">
+                          <div class="div-circle">
                             <div class="circle bola circle_div">
                                 <a href="#section_4"><h2 style="font-size: 10px">DB</h2></a>
                             </div>
@@ -565,105 +698,10 @@
           <div class="row n_text_title_color"><h6 class="pointer">Another Technologies</h6></div>
           <div class="row pointer" id="n_div_tags"></div>
           <!-- Netshoes -->
+
         </div>
-        <div class="container">
-          <!-- Vivara/Etna -->
-          <div class="row n_text_title_color">
-            <hr class="comp-primary hr-separator">
-            <div class="col-md-3 v_text_title_color"><h3><a href="https://www.vivara.com.br" class="v_color" target="_blank" >Vivara </a>/
-              <a href="https://www,etna.com.br" target="_blank" ><span class="e_color"> Etna</span></a></h3>
-            </div>
-            <div class="col-md-9 v_text_title_color span-worker-time"> 05/16/2014 - 12/16/2015</div>
-          </div>
-          <div class="row">
-              <div class="col-md-4 portfolio-item" align="center">
-                  <img src="img/portfolio/v_e.png" class="img-responsive" alt="">
-              </div>
-              <div class="col-md-6 portfolio-item">
-                  <div class="row">
-                    <div class="box box-middle-2 first_div">
-                      <div class="linee v_line linee1">
-                        <span></span>
-                      </div>
-                      <div class="circlee">
-                        <div class="circle v_circle bola v_circle_div pointer">
-                          <a onclick="showProjects('.n_main_project_div', [1,2,3], 'n_destak_color_1', '.n_main_projects_title')"
-                                class="n_projects"><h2 style="font-size: 10px">ATG</h2></a>
-                        </div>
-                      </div>
-                      <div class="specs li_content v_color" id="content_1" style="display: none">
-                        <ul class="list">
-                          <li class="pointer v_project_1">BCC</li>
-                          <li class="pointer v_project_2">Endeca Segments</li>
-                          <li class="pointer v_project_3">Integrations</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                        <div class="box box-full first_div">
-                          <div class="e_line linee1">
-                            <span></span>
-                          </div>
-                          <div class="circlee">
-                            <div class="circle e_circle bola e_circle_div pointer">
-                                <a  onclick="showProjects('.n_main_project_div', [1], 'n_destak_color_2', '.n_main_projects_title')">
-                                  <h2 style="font-size: 10px">SPRING</h2></a>
-                            </div>
-                          </div>
-                          <div class="specs li_content e_color" id="content_2" style="display: none">
-                            <ul class="list">
-                              <li class="pointer e_project_1">Micro Services</li>
-                              <li class="pointer e_project_2">String boot</li>
-                            </ul>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="row">
-                        <div class="box box-middle first_div">
-                          <div class="v_line linee1">
-                            <span></span>
-                          </div>
-                          <div class="circlee">
-                            <div class="circle v_circle bola v_circle_div pointer">
-                                <a href="#section_4"><h2 style="font-size: 10px">DB</h2></a>
-                            </div>
-                          </div>
-                          <div class="specs li_content v_color" id="content_3" style="display: none">
-                            <ul class="list">
-                              <li class="pointer v_project_1">Oracle</li>
-                              <li class="pointer v_project_2">Redis</li>
-                              <li class="pointer v_project_2">Mongo</li>
-                            </ul>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="row v_text_title_color"><h4>Sumary</h4></div>
-            <div class="row sumary v_text_title_color">
-                <div class="col-md-12">
-                    <p>Responsible for developing new features and maintenance for a brasilian ecommerce using Oracle ATG Commerce 11 also responsible for developing integrations services between ATG and client's ERP (webservices soap/rest). Analyzing and fixing problems in production environment. Managed Oracle Databases.
-                        Worked on the planning and implementation of approvals, holding meetings with users to define and gather system requirements.
-                    </p>
-                </div>
-            </div>
-            <hr>
-            <div class="row e_text_title_color e_main_projects_title"><h5 class="pointer" style="text-transform: capitalize;"
-               onclick="openMainProject('.v_main_project_div');">Main Projects <span class="glyphicon glyphicon-plus"></span></h5></div>
-            <div class="row transparent v_text_title_color v_main_project_div">
-                <div class="col-md-12 main_projects">
-                    <ul>
-                      <li id="n_project_1"><p>Company allowed some skus, previous registered, to be bought even if the stock level being equal to 0. Improvement on the order's integration between the client's ERP and the e-commerce (ATG 11). After that, the order's integration started to be controlled by the integration status id instead the order's last modified date, which decrease the amount of orders not integrated. </p></li>
-                      <li id="n_project_2" style="display:none"><p>Developed all the integrations between ecommerce (ATG 11) and client's ERP. It was cover the  It was developed using ATG 11, RQL's, BCC projects workflow and Soap Webservices.</p></li>
-                      <li id="n_project_3" style="display:none"><p>Update user's contact information in the confirmation page in order to help to contact the user if some problem happens with his order.
-                      <li id="n_project_4" style="display:none"><p>Use BCC's Content Group to choose which product data will be send to the external service.</p></li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <div class="row v_text_title_color"><h6 class="pointer">Another Technologies</h6></div>
-            <div class="row pointer" id="v_div_tags"></div>
+
+        
     </section>
 
     <!-- About Section -->
@@ -689,7 +727,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Contact Me</h2>
+                    <h2>Contact Me </h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -802,19 +840,21 @@
 
     <script type="text/javascript">
      function loadiont() {
-      $(".linee1").animate({width: '55%'}, "slow");
+      
+      $(".line1").animate({width: '55%'}, "slow");
+      $(".line-middle").animate({width: '25%'}, "slow");
+      $(".line-middle-2").animate({width: '45%'}, "slow");
+
+      var mq = window.matchMedia( "(max-width: 480px)");
+      if (mq.matches) {
+        $(".line1").attr('style', 'background: #FFF');
+        $('.jobs-line').attr('style', 'background: #FFF');
+      }
+      
       $('.circle_div').addClass('circle_change');
       $('.v_circle_div').addClass('v_circle_change');
       $('.e_circle_div').addClass('e_circle_change');
       $('.li_content').show('slow');
-     }
-
-     function showDiv(id, nextFunction) {
-      if (nextFunction != undefined) {
-        $(id).show('slow', nextFunction);
-      } else {
-        $(id).show('slow');
-      }
      }
 
      function scrollTo(idDiv) {
@@ -822,11 +862,7 @@
      			scrollTop : $(idDiv).offset().top}, 'slow');
      	}
 
-     function show(call, id) {
-      $(id).show( "slow", call);
-     }
-
-     function showProjects(mainDiv, projects, destakClass, divScrool) {
+    function showProjects(mainDiv, projects, destakClass, divScrool) {
        scrollTo(divScrool) ;
        openMainProject(mainDiv, true);
        $(mainDiv).find('li').each(function(index){

@@ -241,11 +241,11 @@
     }
 
     .line-middle {
-     width: 25%; 
+     width: 25%;
     }
 
     .line-middle-2 {
-     width: 45%; 
+     width: 45%;
     }
 
     .box-middle-2 {
@@ -440,6 +440,36 @@
         width: 50%;
       }
     }
+
+    .vv_text_title_color {
+      color: #2B5734;
+    }
+    .vv_color {
+      color: #2B5734;
+    }
+
+    .vv_div_sub_tags {
+    }
+
+    .v_background_tag {
+    }
+
+    .previous_jobs {
+      margin-top: 160px;
+    }
+    .m-color {
+      color: #BA1626;
+    }
+
+    .m_text_title_color {
+      color: #BA1626;
+    }
+    .s-color {
+      color: #FFDD00;
+    }
+    .previous_jobs_content {
+      display: none;
+    }
 </style>
 </head>
 
@@ -511,7 +541,7 @@
               <div class="col-md-10 n_text_title_color span-worker-time"><span> 12/16/2015 - Current</span>
               </div>
             </div>
-            
+
             <div class="row">
               <div class="col-md-4 portfolio-item" align="center">
                 <img src="img/portfolio/netshoes.png" class="img-responsive n_logo" alt="">
@@ -574,7 +604,7 @@
                             </ul>
                           </div>
                       </div>
-                  </div>              
+                  </div>
             </div>
             </div>
             <div class="row n_text_title_color"><h4>Sumary</h4></div>
@@ -595,9 +625,10 @@
             <div class="row transparent n_main_project_div">
               <div class="col-md-12 main_projects">
                   <ul>
-                    <li id="n_project_1"><p>Change the default ATG's recover password workflow to return a link to user change his password instead automaticly change the password.</p></li>
-                    <li id="n_project_2" style="display:none"><p>Send orders' information to an external service during payment's pipeline using JMS (JRabbit), also it was use BCC's segmentations to check which order should be sent.</p></li>
-                    <li id="n_project_3" style="display:none"><p>Update user's contact information in the confirmation page in order to help to find the user if some problem happens with his order.</p></li>
+                    <li id="n_project_1"><p>Change the default ATG's recover password workflow to return a link to user change his password instead automaticly change the password.</p>
+                    <li id="n_project_2" style="display:none"><p>Send orders' information to an external service during payment's pipeline using JMS (JRabbit), also it was used BCC's segmentations to check which order should be sent.</p>
+                    <li id="n_project_3" style="display:none"><p>Update user's contact information in the confirmation page in order to help to find the user if some problem happens with his order.</p>
+                    <li id="n_project_4" style="display:none"><p>Developtment of micro services which would be called by the ATG in order to check if the user was pre-approve for a new credit card.</p>
                   </ul>
               </div>
             </div>
@@ -605,10 +636,6 @@
             <div class="row n_text_title_color"><h6 class="pointer">Another Technologies</h6></div>
             <div class="row pointer col-md-12" id="n_div_tags"></div>
             <!-- Netshoes -->
-            </div>
-
-                      
-            
               <!--
               <div class="col-md-6 portfolio-item">
                   <div class="row">
@@ -688,20 +715,54 @@
           <div class="row transparent n_main_project_div">
             <div class="col-md-12 main_projects">
                 <ul>
-                  <li id="n_project_1"><p>Change the default ATG's recover password workflow to return a link to user change his password instead automaticly change the password.</p></li>
-                  <li id="n_project_2" style="display:none"><p>Send orders' information to an external service during payment's pipeline using JMS (JRabbit), also it was use BCC's segmentations to check which order should be sent.</p></li>
-                  <li id="n_project_3" style="display:none"><p>Update user's contact information in the confirmation page in order to help to find the user if some problem happens with his order.</p></li>
+                  <li id="v_project_1"><p>Developed all the integrations between ecommerce (ATG 11) and client's ERP, which includes catalog, order and inventory.</p></li>
+                  <li id="v_project_2"><p>Help to developt the api used for the integrations which deal with botn ATG's versioned and unversioned repository.</p></li>
+                  <li id="v_project_3"><p>Company allowed some skus, previous registered, to be bought even with the stock level being equal to 0.</p></li>
+                  <li id="v_project_4"><p>Improvments in the integrations between the store and the payment gateway.</p></li>
                 </ul>
             </div>
           </div>
           <hr>
           <div class="row n_text_title_color"><h6 class="pointer">Another Technologies</h6></div>
           <div class="row pointer" id="n_div_tags"></div>
-          <!-- Netshoes -->
+          <!-- Vivara -->
+          <!--
+          <div class="row">
+          <div class="bs-example" data-example-id="contextual-panels"> <div class="panel panel-primary"> <div class="panel-heading"> <h3 class="panel-title">Panel title</h3> </div> <div class="panel-body"> Panel content </div> </div> <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title">Panel title</h3> </div> <div class="panel-body"> Panel content </div> </div> <div class="panel panel-info"> <div class="panel-heading"> <h3 class="panel-title">Panel title</h3> </div> <div class="panel-body"> Panel content </div> </div> <div class="panel panel-warning"> <div class="panel-heading"> <h3 class="panel-title">Panel title</h3> </div> <div class="panel-body"> Panel content </div> </div> <div class="panel panel-danger"> <div class="panel-heading"> <h3 class="panel-title">Panel title</h3> </div> <div class="panel-body"> Panel content </div> </div> </div>
 
+            </div>
+          -->
+          <!-- Previous works-->
+          <div class="row previous_jobs" onclick="openPrevioesJobs();"><h4 class="pointer" style="text-transform: capitalize;">Previous Jobs <span class="glyphicon glyphicon-plus"></span></h4></div>
+          <hr class="previous_jobs_content" style="display: none">
+          <!-- vv -->
+          <div class="row vv_text_title_color previous_jobs_content" style="display:none;"><h3 class="pointer" style="text-transform: capitalize;">Via Varejo</h3></div>
+          <div class="row previous_jobs_content" style="display:none;">
+            <div class="col-md-12">
+                <ul>
+                  <li id="vv_project_1"><p>Maintaince internal sites.</p></li>
+                  <li id="vv_project_2"><p>Generate discount coupons number for external clients.</p></li>
+                </ul>
+            </div>
+          </div>
+          <div class="row vv_text_title_color previous_jobs_content" style="display:none;"><h6 class="pointer">Another Technologies</h6></div>
+          <div class="row pointer previous_jobs_content" id="vv_div_sub_tags" style="display:none;"></div>
+          <hr class="previous_jobs_content" style="display: none">
+          <!-- /vv -->
+          <!-- m -->
+          <div class="row m_text_title_color previous_jobs_content" style="display:none;"><h3 class="pointer" style="text-transform: capitalize;">Magno</h3></div>
+          <div class="row previous_jobs_content" style="display:none;">
+            <div class="col-md-12">
+                <ul>
+                  <li id="m_project_1"><p>Help to development Efacil (Brazilian's Retail Company) ecommerce using IBM WebSphere Commerce.</p></li>
+                </ul>
+            </div>
+          </div>
+          <div class="row m_text_title_color previous_jobs_content" style="display:none;"><h6 class="pointer">Another Technologies</h6></div>
+          <div class="row pointer previous_jobs_content" id="m_div_sub_tags" style="display:none;"></div>
+          <hr class="previous_jobs_content" style="display: none">
+          <!-- /m -->
         </div>
-
-        
     </section>
 
     <!-- About Section -->
@@ -840,7 +901,7 @@
 
     <script type="text/javascript">
      function loadiont() {
-      
+
       $(".line1").animate({width: '55%'}, "slow");
       $(".line-middle").animate({width: '25%'}, "slow");
       $(".line-middle-2").animate({width: '45%'}, "slow");
@@ -850,7 +911,7 @@
         $(".line1").attr('style', 'background: #FFF');
         $('.jobs-line').attr('style', 'background: #FFF');
       }
-      
+
       $('.circle_div').addClass('circle_change');
       $('.v_circle_div').addClass('v_circle_change');
       $('.e_circle_div').addClass('e_circle_change');
@@ -885,8 +946,28 @@
           }));
           console.log('appending ' + value);
        });
-   }
+     }
 
+     function createTechSubTags(divToAppend, cssClass, tags) {
+       $.each(tags, function( index, value ) {
+         $(divToAppend).append(
+           $('<span/>', {
+            'class': ' ' + cssClass,
+            'html': '&nbsp;' + value + ','
+          }));
+          //console.log('appending ' + value);
+       });
+     }
+
+     function loadVVSubTags(){
+       var tags = ["Java 7", "J2EE", "REST","JUnit","Mockito","Ant","SVN","Webpshere","DB2","JDBS", "JSF 2", "PrimeFaces"];
+       var divCss = 'vv_color';
+       createTechSubTags('#vv_div_sub_tags', divCss, tags);
+
+       tags = ["Java 7", "J2EE", "Weblogic Commerce","Webpshere","javascript","JSP","Scriplet","Jstl","SVN"];
+       divCss = 'm-color';
+       createTechSubTags('#m_div_sub_tags', divCss, tags);
+     }
      function loadNTags() {
        var tags = ["REST","JUnit","Mockito","Ant","Maven","Weblogic","Jstl","SOAP", "GIT", "LINUX"];
        var divCss = 'n_background_tag';
@@ -895,11 +976,14 @@
        divCss = 'v_background_tag';
        tags = ["SOAP","SOAP UI","Ant","Weblogic", "SVN"]
        createTechTags('#v_div_tags', divCss, tags);
+
        tags = ["Jstl","Scriplet", "Oracle Queries", "OBIEE Reports"];
        divCss = 'e_background_tag';
        createTechTags('#v_div_tags', divCss, tags);
      }
+
      loadNTags();
+     loadVVSubTags();
       $(window).load(function(){
           $('#linha').addClass('line_animation');
           //$('#circle').addClass('circle_change');

@@ -59,6 +59,18 @@ function resetColors(elem) {
   });
 }
 
+  function openPrevioesJobs(){
+    if(!$('.previous_jobs_content').is(':visible')) {
+      $('.previous_jobs_content').each(function(){
+        $('.previous_jobs_content').show('slow');
+      });
+    } else {
+      $('.previous_jobs_content').each(function(){
+        $('.previous_jobs_content').hide('slow');
+      });
+    }
+  }
+
 function openMainProject(divToRemoveTranparent, show) {
   resetColors($(divToRemoveTranparent).find('li'));
   if (show != undefined && show === true) {

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Tomas Maiorino</title>
 
     <!-- Bootstrap Core CSS -->
@@ -62,8 +62,8 @@
   position: relative;
   z-index: 2;
   background-color: #fff;
-  border: 2px solid ##5A2D82;
-  color: ##5A2D82;
+/*  border: 2px solid ##5A2D82;
+  color: ##5A2D82;*/
   line-height: 50px;
   overflow: hidden;
 }
@@ -154,6 +154,7 @@
 
 .v_circle_change {
     color: #fff;
+    border: 2px solid #1d2087;
 }
 
 .v_circle_change h2{
@@ -165,6 +166,11 @@
 }
 .v_circle:hover h2 {
   color: #fff;
+}
+
+.v_circle a {
+  text-decoration: none;
+  color: #333333;
 }
 /*E CIRCLE*/
 .e_circle {
@@ -553,7 +559,7 @@
                       <span></span>
                     </div>
                     <div class="div-circle">
-                      <div class="circle bola circle_div pointer">
+                      <div class="circle circle_div pointer">
                         <a  onclick="showProjects('.n_main_project_div', [1,2,3], 'n_destak_color_1', '.n_main_projects_title')"
                           class="n_projects"><h2 style="font-size: 10px">ATG</h2></a>
                       </div>
@@ -573,7 +579,7 @@
                         <span></span>
                       </div>
                       <div class="div-circle">
-                        <div class="circle bola circle_div pointer">
+                        <div class="circle circle_div pointer">
                             <a  onclick="showProjects('.n_main_project_div', [1], 'n_destak_color_2', '.n_main_projects_title')">
                               <h2 style="font-size: 10px">SPRING</h2></a>
                         </div>
@@ -592,7 +598,7 @@
                             <span></span>
                           </div>
                           <div class="div-circle">
-                            <div class="circle bola circle_div">
+                            <div class="circle circle_div">
                                 <a href="#section_4"><h2 style="font-size: 10px">DB</h2></a>
                             </div>
                           </div>
@@ -650,13 +656,12 @@
              <div class="col-md-6 portfolio-item">
                  <div class="row">
                    <div class="box box-full first_div">
-                     <div class="line line-middle jobs-line">
+                     <div class="v_line line-middle jobs-line">
                        <span></span>
                      </div>
                      <div class="div-circle">
-                       <div class="circle bola e_circle_div pointer">
-                         <a onclick="showProjects('.n_main_project_div', [1,2,3], 'n_destak_color_1', '.n_main_projects_title')"
-                               class="n_projects"><h2 style="font-size: 10px">ATG</h2></a>
+                       <div class="circle v_circle_div pointer">
+                         <a onclick="" class="v_projects"><h2 style="font-size: 10px">ATG</h2></a>
                        </div>
                      </div>
                      <div class="specs li_content v_color" id="content_1" style="display: none">
@@ -669,31 +674,31 @@
                    </div>
                  </div>
                  <div class="row">
-                         <div class="box box-full first_div">
-                             <div class="line line1 jobs-line">
-                           <span></span>
-                         </div>
-                         <div class="div-circle">
-                           <div class="circle bola e_circle_div pointer">
-                               <a  onclick="showProjects('.n_main_project_div', [1], 'n_destak_color_2', '.n_main_projects_title')">
-                                 <h2 style="font-size: 10px">SPRING</h2></a>
-                           </div>
-                         </div>
-                         <div class="specs li_content e_color" id="content_2" style="display: none">
-                           <ul class="list">
-                             <li class="pointer e_project_1">Micro Services</li>
-                             <li class="pointer e_project_2">String boot</li>
-                           </ul>
-                         </div>
+                   <div class="box box-full first_div">
+                     <div class="e_line line1 jobs-line">
+                       <span></span>
                      </div>
+                     <div class="div-circle">
+                         <div class="circle  e_circle_div pointer">
+                             <a  onclick="showProjects('.n_main_project_div', [1], 'n_destak_color_2', '.n_main_projects_title')">
+                               <h2 style="font-size: 10px">SPRING</h2></a>
+                         </div>
+                       </div>
+                       <div class="specs li_content e_color" id="content_2" style="display: none">
+                         <ul class="list">
+                           <li class="pointer e_project_1">Micro Services</li>
+                           <li class="pointer e_project_2">String boot</li>
+                         </ul>
+                       </div>
+                   </div>
                  </div>
                  <div class="row">
-                       <div class="box box-middle first_div">
+                       <div class="box box-full first_div">
                              <div class="v_line line-middle jobs-line">
                                <span></span>
                              </div>
                              <div class="div-circle">
-                               <div class="circle bola e_circle_div pointer">
+                               <div class="circle v_circle_div pointer">
                                <a href="#section_4"><h2 style="font-size: 10px">DB</h2></a>
                            </div>
                          </div>
@@ -734,24 +739,165 @@
            <div class="row pointer" id="v_div_tags"></div>
           <!-- Vivara -->
 
+          <!-- Tech Specs -->
           <div class="row" style="margin-top:60px">
+          <div class="col-md-6" align="center">
+            <div class="bs-example" data-example-id="contextual-panels">
+              <div class="panel panel-primary"> <div class="panel-heading"> <h3 class="panel-title">BACKEND</h3></div>
+              <div class="panel-body">
+                <div class="row">
+                <div class="col-md-3">Java
+                </div>
+                <div class="col-md-9">
+                  <input class="rating" data-max="5" data-min="1" id="" name="your_awesome_parameter" type="number" data-empty-value="0" value="5"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">J2EE</div>
+                <div class="col-md-9">
+                  <input class="rating" data-max="5" data-min="1" id="" name="" type="number" data-empty-value="0" value="5"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">JSP</div>
+                <div class="col-md-9">
+                  <input class="rating" data-max="5" data-min="1" id="" name="" type="number" data-empty-value="0" value="5"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">REST</div>
+                <div class="col-md-9">
+                  <input class="rating" data-max="5" data-min="1" id="" name="" type="number" data-empty-value="0" value="4"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">SOAP Webservices</div>
+                <div class="col-md-9">
+                  <input class="rating" data-max="5" data-min="1" id="" name="" type="number" data-empty-value="0" value="4"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+         <div class="col-md-6" align="center">
+              <div class="bs-example" data-example-id="contextual-panels">
+                <div class="panel panel-primary"> <div class="panel-heading"> <h3 class="panel-title">APPLICATIONS SERVERS</h3></div>
+                <div class="panel-body">
+                  <div class="row">
+                  <div class="col-md-2">Weblogic
+                  </div>
+                  <div class="col-md-8">
+                    <input class="rating" data-max="5" data-min="1" id="some_id" name="your_awesome_parameter" type="number" data-empty-value="0" value="3"/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">Tomcat</div>
+                  <div class="col-md-8">
+                    <input class="rating" data-max="5" data-min="1" id="some_id" name="your_awesome_parameter" type="number" data-empty-value="0" value="3"/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">Websphere</div>
+                  <div class="col-md-8">
+                    <input class="rating" data-max="5" data-min="1" id="some_id" name="your_awesome_parameter" type="number" data-empty-value="0" value="3"/>
+                  </div>
+                </div>                
+              </div>
+            </div>
+          </div>
+          </div>
+      </div>
+
+       <div class="row" style="margin-top:20px">
+            <div class="col-md-6" align="center">
+              <div class="bs-example" data-example-id="contextual-panels">
+                <div class="panel panel-primary"> <div class="panel-heading"> <h3 class="panel-title">Java Frameworks</h3></div>
+                <div class="panel-body">
+                  <div class="row">
+                  <div class="col-md-3">Spring
+                  </div>
+                  <div class="col-md-9">
+                    <input class="rating" data-max="5" data-min="1" id="some_id" name="your_awesome_parameter" type="number" data-empty-value="0" value="3"/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">PlayFramework 1.x</div>
+                  <div class="col-md-9">
+                    <input class="rating" data-max="5" data-min="1" id="some_id" name="your_awesome_parameter" type="number" data-empty-value="0" value="4"/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">JSF 1.2</div>
+                  <div class="col-md-9">
+                    <input class="rating" data-max="5" data-min="1" id="some_id" name="your_awesome_parameter" type="number" data-empty-value="0" value="3"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="col-md-6" align="center">
+            <div class="bs-example" data-example-id="contextual-panels">
+              <div class="panel panel-primary"> <div class="panel-heading"> <h3 class="panel-title">frontend</h3></div>
+              <div class="panel-body">
+                <div class="row">
+                <div class="col-md-3">Javascript
+                </div>
+                <div class="col-md-9">
+                  <input class="rating" data-max="5" data-min="1" id="" name="your_awesome_parameter" type="number" data-empty-value="0" value="4"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">JQuery</div>
+                <div class="col-md-9">
+                  <input class="rating" data-max="5" data-min="1" id="" name="" type="number" data-empty-value="0" value="5"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">css</div>
+                <div class="col-md-9">
+                  <input class="rating" data-max="5" data-min="1" id="" name="" type="number" data-empty-value="0" value="3"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">Html</div>
+                <div class="col-md-9">
+                  <input class="rating" data-max="5" data-min="1" id="" name="" type="number" data-empty-value="0" value="4"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <!--
           <div class="bs-example" data-example-id="contextual-panels">
             <div class="panel panel-primary"> <div class="panel-heading"> <h3 class="panel-title">BACKEND</h3></div>
             <div class="panel-body">
-              <div class="col-md-6 main_projects">Java'
+              <div class="row">
+              <div class="col-md-2">Java
               </div>
-              <div class="col-md-6 main_projects">
+              <div class="col-md-8">
                 <input class="rating" data-max="5" data-min="1" id="some_id" name="your_awesome_parameter" type="number" data-empty-value="0" value="5"/>
               </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2">JSP</div>
+              <div class="col-md-8">
+                <input class="rating" data-max="5" data-min="1" id="some_id" name="your_awesome_parameter" type="number" data-empty-value="0" value="5"/>
               </div>
-            </div> </div> <div class="panel panel-success">
+
+            </div>
+          </div>
+          </div> <div class="panel panel-success">
               <div class="panel-heading"> <h3 class="panel-title">Panel title</h3> </div>
                <div class="panel-body"> Panel content </div> </div>
                <div class="panel panel-info"> <div class="panel-heading"> <h3 class="panel-title">Panel title</h3> </div>
                 <div class="panel-body"> Panel content </div> </div> <div class="panel panel-warning"> <div class="panel-heading"> <h3 class="panel-title">Panel title</h3> </div> <div class="panel-body"> Panel content </div> </div> <div class="panel panel-danger"> <div class="panel-heading">
                   <h3 class="panel-title">Panel title</h3> </div> <div class="panel-body"> Panel content </div> </div> </div>
             </div>
-
+-->
           <!-- Previous works-->
           <div class="row previous_jobs" onclick="openPrevioesJobs();"><h4 class="pointer" style="text-transform: capitalize;">Previous Jobs <span class="glyphicon glyphicon-plus"></span></h4></div>
           <hr class="previous_jobs_content" style="display: none">
@@ -878,8 +1024,8 @@
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>About Freelancer</h3>
-                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                        <h3> </h3>
+                        <p> </p>
                     </div>
                 </div>
             </div>

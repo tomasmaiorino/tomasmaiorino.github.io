@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-  $('.contact-scroll').bind('click', function(event) {
+  $('.body-scroll .contact-scroll').bind('click', function(event) {
     var $anchor = $(this);
     $('html, body').stop().animate({
         scrollTop: ($($anchor.attr('href')).offset().top - 50)

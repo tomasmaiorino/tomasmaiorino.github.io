@@ -42,7 +42,6 @@ $(function() {
                         .append("<strong>Message sent. </strong>");
                     $('#success > .alert-success')
                         .append('</div>');
-
                     //clear all fields
                     $('#contactForm').trigger("reset");
                 },
@@ -55,6 +54,7 @@ $(function() {
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
+                    $("#btnSubmit").attr("disabled", false);
                 },
             })
         },

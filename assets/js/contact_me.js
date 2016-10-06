@@ -45,12 +45,17 @@ $(function() {
                     //clear all fields
                     $('#contactForm').trigger("reset");
                 },
-                error: function() {
+                error: function(data) {
                     // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", we've some problems :( .Please try again later");
+                    var errorMessage = getErrorMessage(data);
+                    if (errorMessage != "") {
+                        $('#success > .alert-danger').append("<strong>"+ errorMessage + ".");
+                    } else {
+                      $('#success > .alert-danger').append("<strong>Desculpe " + firstName + ", parece que o servidor não esta respondendo. Porfavor, tente novamente mais tarde!");
+                    }
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
@@ -67,6 +72,15 @@ $(function() {
         e.preventDefault();
         $(this).tab("show");
     });
+
+    function getErrorMessage(data) {
+      var message = '';
+      if (data != undefined && data.responseText != undefined) {
+        var parsed_data = JSON.parse(data.responseText);
+        message = parsed_data.message[0];
+      }
+      return message;
+    }
 });
 
 // When clicking on Full hide fail/success boxes

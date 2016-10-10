@@ -561,3 +561,10 @@ iframe {
 .scroll-top .btn:focus {
   outline: none;
 }
+.pointer {
+  cursor: pointer;
+}
+.tag-opacity {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}

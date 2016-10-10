@@ -25,47 +25,52 @@ jQuery(document).ready(function($) {
         });
     });
 
+    function highlight(tags, highlight) {
+      $.each(tags, function (index, value) {
+        if (highlight) {
+          $('#'+value).addClass('tag-opacity');
+        } else {
+          $('#'+value).removeClass('tag-opacity');
+        }
+      });
+    }
+
     /* Bootstrap Tooltip for Skillset */
     $('.level-label').tooltip();
 
+    var job1 = ['BCC','ANT','GIT','ORACLE','WEBLOGIC','JSTL','ATG-11']
 
-    /* jQuery RSS - https://github.com/sdepold/jquery-rss */
+    var job2 = ['BCC','ANT','GIT','ORACLE','WEBLOGIC','ATG-11']
 
-    $("#rss-feeds").rss(
+    var jobs = ['job1', 'job2'];
 
-        //Change this to your own rss feeds
-        "http://feeds.feedburner.com/TechCrunch/startups",
-
-        {
-        // how many entries do you want?
-        // default: 4
-        // valid values: any integer
-        limit: 3,
-
-        // the effect, which is used to let the entries appear
-        // default: 'show'
-        // valid values: 'show', 'slide', 'slideFast', 'slideSynced', 'slideFastSynced'
-        effect: 'slideFastSynced',
-
-        // outer template for the html transformation
-        // default: "<ul>{entries}</ul>"
-        // valid values: any string
-        layoutTemplate: "<div class='item'>{entries}</div>",
-
-        // inner template for each entry
-        // default: '<li><a href="{url}">[{author}@{date}] {title}</a><br/>{shortBodyPlain}</li>'
-        // valid values: any string
-        entryTemplate: '<h3 class="title"><a href="{url}" target="_blank">{title}</a></h3><div><p>{shortBodyPlain}</p><a class="more-link" href="{url}" target="_blank"><i class="fa fa-external-link"></i>Read more</a></div>'
-
-        }
-    );
-
-    /* Github Calendar - https://github.com/IonicaBizau/github-calendar */
-    GitHubCalendar("#github-graph", "IonicaBizau");
-
-
-    /* Github Activity Feed - https://github.com/caseyscarborough/github-activity */
-    GitHubActivity.feed({ username: "caseyscarborough", selector: "#ghfeed" });
-
-
+    function loadHighlight () {
+      $.each(jobs, function (index, value) {
+        $('.'+value).mouseover(function(){
+          highlight(value, true);
+        });
+        $('.'+value).mouseout(function(){
+          highlight(value, false);
+        });
+      });
+    }
+    //loadHighlight();
+    //jobs1
+    /*
+    $('.job1').mouseover(function(){
+      highlight(job1Techs, true);
+    });
+    $('.job1').mouseout(function(){
+      highlight(job1Techs, false);
+    });
+    */
+    //jobs2
+    /*
+    $('.job2').mouseover(function(){
+      highlight(job2, true);
+    });
+    $('.job2').mouseout(function(){
+      highlight(job2, false);
+    });
+    */
 });

@@ -42,35 +42,28 @@ jQuery(document).ready(function($) {
 
     var job2 = ['BCC','ANT','GIT','ORACLE','WEBLOGIC','ATG-11']
 
-    var jobs = ['job1', 'job2'];
+    var job3 = ['BCC','SVN','ORACLE','WEBLOGIC','ATG-11','SOAP']
+
+    var jobs = new Array(); // or just {}
+    jobs['job1'] = job1;
+    jobs['job2'] = job2;
+    jobs['job3'] = job3;
+
+    function bindJob(item, jobs) {
+       $( '.'+item).bind( "mouseover", function() {
+          highlight(jobs, true);
+        });
+
+        $( '.'+item).bind( "mouseout", function() {
+          highlight(jobs, false);
+        });
+    }
 
     function loadHighlight () {
-      $.each(jobs, function (index, value) {
-        $('.'+value).mouseover(function(){
-          highlight(value, true);
-        });
-        $('.'+value).mouseout(function(){
-          highlight(value, false);
-        });
-      });
+      for (var key in jobs) {
+        bindJob(key, jobs[key]);
+      }
     }
-    //loadHighlight();
-    //jobs1
-    /*
-    $('.job1').mouseover(function(){
-      highlight(job1Techs, true);
-    });
-    $('.job1').mouseout(function(){
-      highlight(job1Techs, false);
-    });
-    */
-    //jobs2
-    /*
-    $('.job2').mouseover(function(){
-      highlight(job2, true);
-    });
-    $('.job2').mouseout(function(){
-      highlight(job2, false);
-    });
-    */
+
+    loadHighlight();
 });

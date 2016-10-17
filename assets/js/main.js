@@ -48,12 +48,15 @@ jQuery(document).ready(function($) {
 
     var job5 = ['BCC','SVN','ORACLE','WEBLOGIC','ATG-11','SOAP', 'REST', 'JSTL']
 
+    var job6 = ['MONGO-DB','REDIS','ORACLE','WEBLOGIC','ATG-11','JMS', 'REST', 'GIT', 'ANT', 'BCC']
+
     var jobs = new Array();
     jobs['job1'] = job1;
     jobs['job2'] = job2;
     jobs['job3'] = job3;
     jobs['job4'] = job4;
     jobs['job5'] = job5;
+    jobs['job6'] = job6;
 
     function bindJob(item, jobs) {
        $( '.'+item).bind( "mouseover", function() {

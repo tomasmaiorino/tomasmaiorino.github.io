@@ -73,3 +73,17 @@ jQuery(document).ready(function($) {
 
     loadHighlight();
 });
+
+function showMoreJobs(){
+  var text_hide = 'Hide anothers jobs';
+  var text = 'Show anothers jobs';
+  $('.hide-jobs').each(function(){
+    if($(this).is(":visible")) {
+      $(this).hide('slow');
+    } else {
+      $(this).show('slow');
+      text = text_hide;
+    }
+  });
+  $('#showMoreJobs').html(text);
+}

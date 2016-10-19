@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
 
     var job5 = ['BCC','SVN','ORACLE','WEBLOGIC','ATG-11','SOAP', 'REST', 'JSTL']
 
-    var job6 = ['MONGO-DB','REDIS','ORACLE','WEBLOGIC','ATG-11','JMS', 'REST', 'GIT', 'ANT', 'BCC']
+    var job6 = ['MONGO-DB','ORACLE','WEBLOGIC','ATG-11','JMS', 'REST', 'GIT', 'ANT', 'BCC']
 
     var jobs = new Array();
     jobs['job1'] = job1;

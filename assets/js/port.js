@@ -2,6 +2,10 @@ var app = angular.module("Portfolio", []);
 var EXTERNAL_SERVICE_HOST = "http://localhost:3000/";
 var SKILL_URL = "/api/v1/company/skill/";
 var DEFAULT_COLOR = "#5cb85c";
+var OWN_PROJECT_COLOR = "#3AAA64";
+
+var fieldsToChangeColor = ['email-link', 'level-bar-inner', 'tech-defaulf-content', 'label-theme', 'more-link', 'fa fa-star'];
+
 app.factory("SkillService", function() {
   return {
     companySkills: function() {
@@ -54,6 +58,23 @@ function get_by_name(name) {
     $('.loading-text').attr("style", "color:" + color);
   }
 
+
+  function showProjectLoad(show) {
+    if (show) {
+      $('.project-load').show('slow');
+    } else {
+      $('.project-load').hide('slow');
+    }
+    hideDefaultProjects(show);
+  }
+
+  function hideDefaultProjects(hide) {
+    if (hide) {
+      $('.projects-content').hide('slow');
+    } else {
+      $('.projects-content').show('slow');
+    }
+  }
 
     function showSkillLoad(show) {
       if (show) {

@@ -1,12 +1,44 @@
+//var fieldsToChangeColor = ['email-link', 'level-bar-inner', 'tech-defaulf-content', 'label-theme', 'more-link', 'fa fa-star'];
 var app = angular.module("Portfolio", []);
+
+app.factory("SkillService", function() {
+  return {
+    companySkills: function() {
+      companyToken = getCompanyToken();
+
+      var skillUrl = EXTERNAL_SERVICE_HOST + SKILL_URL + companyToken;
+      console.log("Calling skill url: " + skillUrl);
+      $http.get(skillUrl);
+      success(function(data, status, headers, config) {
+        return data.skills;
+      }).
+      error(function(data, status, headers, config) {
+        hideDefaultSkill(false);
+        showSkillLoad(false);
+        return ""
+      });
+      return users;
+    }
+  };
+});
+
+app.controller("SkillCtrl", function($scope, SkillService) {
+  $scope.skills = SkillService.companySkills();
+});
+
+//#00a1e4
+
+
 var EXTERNAL_SERVICE_HOST = "http://localhost:3000/";
 var SKILL_URL = "/api/v1/company/skill/";
+var PROJECTS_URL = "/api/v1/company/token/";
+var TECH_TAGS_URL = "/api/v1/company/tech/";
 var DEFAULT_COLOR = "#5cb85c";
 var OWN_PROJECT_COLOR = "#3AAA64";
 
 var fieldsToChangeColor = [{
   clazz: "email-link-link",
-  attr: "color:",
+  attr: "color:"
 }, {
   clazz: "tech-defaulf-content",
   attr: "color:"
@@ -36,33 +68,7 @@ var fieldsToChangeColor = [{
 var skillLoadClass = [{
   clazz: "level-bar-inner",
   attr: "background-color:"
-}]
-//var fieldsToChangeColor = ['email-link', 'level-bar-inner', 'tech-defaulf-content', 'label-theme', 'more-link', 'fa fa-star'];
-app.factory("SkillService", function() {
-  return {
-    companySkills: function() {
-      companyToken = getCompanyToken();
-      hideDefaultSkill(true);
-      showSkillLoad(true);
-      var skillUrl = EXTERNAL_SERVICE_HOST + SKILL_URL + companyToken;
-      console.log("Calling skill url: " + skillUrl);
-      $http.get(skillUrl);
-      success(function(data, status, headers, config) {
-        return data.skills;
-      }).
-      error(function(data, status, headers, config) {
-        hideDefaultSkill(false);
-        showSkillLoad(false);
-        return ""
-      });
-      return users;
-    }
-  };
-});
-
-app.controller("SkillCtrl", function($scope, SkillService) {
-  $scope.skills = SkillService.companySkills();
-});
+}];
 
 
 function animateAttributeColor(item, pColor) {
@@ -102,22 +108,22 @@ function animateBackGround(item, pColor) {
 function loadColorsFields(pColor) {
   console.log(pColor);
   fieldsToChangeColor.map(function(item, index) {
-    animateAttributeColor(item, pColor)
+    animateAttributeColor(item, pColor);
   });
+}
 
 
-function get_by_name(name) {
-  var url = window.location.search
-  params = url.split("&")
-  if (params != undefined && params.length > 2) {
+function getQueryParamByName(name) {
+  var param = window.location.search
+  //params = url.split("&")
+  if (param != undefined && param.length > 0) {
     // remove ? from first result
-    params[0] = params[0].replace("?", "")
-    for (i = 0; i < params.length; i++) {
-      var param_value = window.location.search.split("&")[i]
-      if (name == param_value.substring(0, param_value.indexOf('='))) {
-        return param_value.substring(0, param_value.indexOf('=') + 1)
+    param = param.replace("?", "")
+    //for (i = 0; i < param.length; i++) {
+      if (name == param.substring(0, param.indexOf('='))) {
+        return param.substring(param.indexOf('=') + 1)
       }
-    }
+    //}
   }
   return "";
 }
@@ -125,6 +131,40 @@ function get_by_name(name) {
 var COMPANY_TOKEN_PARAM_KEY = "c";
 var LOAD_NAME_PARAM_KEY = "l";
 var loadsIds = ['projectLoad', 'skillLoad', 'techLoad'];
+var companyToken = '';
+
+function processProjects(color) {
+  setLoadColor(color);
+  showProjectLoad(true);
+  loadColorsFields(color);
+}
+
+function processTechTag(color) {
+  setLoadColor(color);
+  hideDefaultTech(true);
+  showTechLoad(true);
+  loadColorsFields(color);
+}
+
+function processSkill(color) {
+  setLoadColor(color);
+  hideDefaultSkill(true);
+  showSkillLoad(true);
+  loadColorsFields(color);
+}
+
+function fullRestore() {
+  setLoadColor(DEFAULT_COLOR);
+  //skills
+  showSkillLoad(false);
+  hideDefaultSkill(false);
+  //tech tags
+  showTechLoad(false);
+  hideDefaultTech(false);
+  //projects
+  showProjectLoad(false);
+  loadColorsFields(DEFAULT_COLOR);
+}
 
 function setLoadColor(color) {
   console.log('chaging color to ' + color);
@@ -182,16 +222,16 @@ function hideDefaultTech(hide) {
 }
 
 function getColorFromCompany() {
-  company_token = getCompanyToken();
-  color = company_token.substring(company_token.length - 6);
-  setLoadColor(color);
-  hiddeDefaultFields();
+  if (companyToken != '') {
+    color = companyToken.substring(companyToken.length - 6);
+    setLoadColor(color);
+  }
 }
 
 function getCompanyToken() {
-  return get_by_name(COMPANY_TOKEN_PARAM_KEY);
+  return getQueryParamByName(COMPANY_TOKEN_PARAM_KEY);
 }
 
 function get_load_name() {
-  return get_by_name(LOAD_NAME_PARAM_KEY);
+  return getQueryParamByName(LOAD_NAME_PARAM_KEY);
 }

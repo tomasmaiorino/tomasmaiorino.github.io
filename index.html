@@ -68,7 +68,7 @@
                <section class="latest section">
                     <div class="section-inner">
                         <h2 class="heading">Latest Projects</h2>
-                        <div class="content project-load" style="display:none">
+                        <div class="content project-load" style="display:none" align="center">
                           <div style="width: 100px; display:none" class="project-load">
                             <div class="loading-container">
                                 <div class="loading"></div>
@@ -269,12 +269,14 @@
                         <h2 class="heading">Skills</h2>
                         <div class="content">
                             <p class="intro">
-                              <div style="width: 100px; display: none" class="skill-load">
+                              <div style="display: none" class="skill-load" align="center">
+                              <div style="width: 100px;">
                                 <div class="loading-container">
                                     <div class="loading"></div>
                                     <div class="loading-text">skill</div>
                                 </div>
                               </div>
+                            </div>
                             <div class="skillset">
                                 <div class="item">
                                     <h3 class="level-title">Java &amp; J2EE<span class="level-label" data-toggle="tooltip"
@@ -330,12 +332,14 @@
                     <div class="section-inner">
                         <h2 class="heading">Another Technologies</h2>
                         <div class="content">
-                          <div style="width: 100px; display:none" class="tech-load">
-                            <div class="loading-container">
-                                <div class="loading"></div>
-                                <div class="loading-text">Another Technologies</div>
+                          <div style="display:none" class="tech-load" align="center">
+                            <div style="width: 100px;">
+                              <div class="loading-container">
+                                  <div class="loading"></div>
+                                  <div class="loading-text">Another Technologies</div>
+                              </div>
                             </div>
-                          </div>
+                        </div>
                             <div class="item tech-defaulf-content" style="color: #66cb8c;">
                               <span class="label label-success" id="BCC">BCC</span>
                               <span class="label label-success" id="ATG-11">ATG 11</span>
@@ -430,5 +434,8 @@
     <script type="text/javascript" src="assets/js/contact_me.js"></script>
     <script type="text/javascript" src="assets/js/angular.min.js"></script>
     <script type="text/javascript" src="assets/js/port.js"></script>
+    <script>
+      companyToken = getCompanyToken();
+    </script>
 </body>
 </html>

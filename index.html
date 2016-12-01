@@ -22,8 +22,9 @@
     <link rel="stylesheet" href="assets/plugins/github-calendar/dist/github-calendar.css"/>
     <!-- github acitivity css -->
     <link rel="stylesheet" href="assets/plugins/github-activity/src/github-activity.css">
+    <!--
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-
+    -->
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
     <link id="load-style" rel="stylesheet" href="assets/css/load.css">
@@ -34,7 +35,7 @@
     <![endif]-->
 
 </head>
-<body id="page-top" class="body-scroll" ng-app="port">
+<body id="page-top" class="body-scroll" ng-app="Portfolio">
     <!-- ******HEADER****** -->
     <header class="header">
         <div class="container">
@@ -330,7 +331,10 @@
 
 
                                 <!--
-                                <p><a class="more-link" href="#"><i class="fa fa-external-link"></i> More on Coderwall</a></p>
+                                <p><a class="more-link" href="#"><i class=
+
+
+                                "fa fa-external-link"></i> More on Coderwall</a></p>
                                 -->
                             </div>
                         </div><!--//content-->
@@ -429,11 +433,15 @@
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
     <!-- github calendar plugin -->
+    <!--
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.0.2/es6-promise.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/0.10.1/fetch.min.js"></script>
     <script type="text/javascript" src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script>
+    -->
     <!-- github activity plugin -->
+    <!--
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+    -->
     <script type="text/javascript" src="assets/plugins/github-activity/src/github-activity.js"></script>
     <!-- custom js -->
     <script type="text/javascript" src="assets/js/jquery.easing.min.js"></script>
@@ -445,7 +453,7 @@
     <script type="text/javascript" src="assets/js/angular-resource.js"></script>
     <script type="text/javascript" src="assets/js/port.js"></script>
     <script>
-      companyToken = getCompanyToken();
+      initConfig();
     </script>
 </body>
 </html>

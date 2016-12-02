@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 });
 
     /*======= Skillset *=======*/
-
+    /*
     $('.level-bar-inner').css('width', '0');
 
     $(window).on('load', function() {
@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
 
         });
     });
-
+    */
     function highlight(tags, highlight) {
       $.each(tags, function (index, value) {
         if (highlight) {
@@ -180,10 +180,11 @@ function loadColorsFields(pColor) {
   if(pColor.indexOf('#') == -1) {
     pColor = '#' + pColor
   }
-  if (!hexaReg.test(pColor.replace('#',''))) {
-    console.log('invalid color ' + pColor);
-    return;
-  }
+  var temp = pColor.replace('#','');
+  //if (!hexaReg.test(temp)) {
+    //console.log('invalid color ' + temp);
+    //return;
+//  }
   console.log(pColor);
   fieldsToChangeColor.map(function(item, index) {
     animateAttributeColor(item, pColor);
@@ -242,8 +243,9 @@ function setLoadColor(pColor) {
   if(pColor.indexOf('#') == -1) {
     pColor = '#' + pColor
   }
-  if (!hexaReg.test(pColor.replace('#',''))) {
-    console.log('invalid color ' + pColor);
+  var temp = pColor.replace('#','');
+  if (!hexaReg.test(temp)) {
+    console.log('invalid color ' + temp);
   } else {
     console.log('chaging color to ' + pColor);
     $('.loading').attr("style", "border-color: transparent " + pColor + " transparent #FFF");
@@ -276,11 +278,20 @@ function showSkillLoad(show) {
   }
 }
 
+function hideSkillSet(hide) {
+  if (hide) {
+    $('.companySkillsSet').hide('slow');
+  } else {
+    $('.companySkillsSet').show('slow');
+  }
+
+}
+
 function hideDefaultSkill(hide) {
   if (hide) {
-    $('.skillset').hide('slow');
+    $('.defaultSkillset').hide();
   } else {
-    $('.skillset').show('slow');
+    $('.defaultSkillset').show('slow');
   }
 }
 
@@ -316,8 +327,20 @@ function get_load_name() {
 }
 function initConfig() {
   companyToken = getCompanyToken();
-  console.log('setting load color.')
+  console.debug('setting load color.')
   setLoadColor(getColorFromCompany());
-  console.log('load coloer fields.')
+  console.debug('load coloer fields.')
   loadColorsFields(getColorFromCompany());
+}
+function updateSkill(pColor){
+  console.log('ops ' + $('.company-skill-item .level-bar-inner').length);
+  $('.company-skill-item .level-bar-inner').each(function() {
+
+      var itemWidth = $(this).data('level');
+
+      $(this).animate({
+          width: itemWidth
+      }, 800);
+
+  });
 }

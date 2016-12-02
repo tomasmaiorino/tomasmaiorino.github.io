@@ -242,7 +242,7 @@ function setLoadColor(pColor) {
   if(pColor.indexOf('#') == -1) {
     pColor = '#' + pColor
   }
-  if (!hexaReg.test(color.replace('#',''))) {
+  if (!hexaReg.test(pColor.replace('#',''))) {
     console.log('invalid color ' + pColor);
   } else {
     console.log('chaging color to ' + pColor);

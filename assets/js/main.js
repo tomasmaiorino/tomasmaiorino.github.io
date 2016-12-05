@@ -105,6 +105,8 @@ var LOAD_NAME_PARAM_KEY = "l";
 var loadsIds = ['projectLoad', 'skillLoad', 'techLoad'];
 var companyToken = '';
 var hexaReg = /[a-fA-F0-9]{6}/g
+var skillLoaded = false;
+var techLoaded = false;
 //#00a1e4
 
 var fieldsToChangeColor = [{
@@ -332,15 +334,43 @@ function initConfig() {
   console.debug('load coloer fields.')
   loadColorsFields(getColorFromCompany());
 }
-function updateSkill(pColor){
-  console.log('ops ' + $('.company-skill-item .level-bar-inner').length);
-  $('.company-skill-item .level-bar-inner').each(function() {
 
-      var itemWidth = $(this).data('level');
+function finalizeSkill() {
+  console.log('finalizing skills');
+  var itensQtd = 0;
+  while (itensQtd == 0) {
+    console.log('waiting ' + itensQtd);
+    setTimeout(1000, function() {
+      $('.company-skill-item').find('.level-bar-inner').each(function() {
+          var itemWidth = $(this).data('level');
+          $(this).animate({
+              width: itemWidth
+          }, 800);
+      });
+      itensQtd = $('.company-skill-item').find('.level-bar-inner').length;
+    });
+  }
+}
 
-      $(this).animate({
-          width: itemWidth
-      }, 800);
+function finalize(){
+  if (skillLoaded && techLoaded ) {
+    finalizeSkill();
+  }
+}
 
+function treatError(response, msg) {
+  console.log(msg + ' ' + response.status);
+  if (-1 == response.status) {
+  } else {
+  }
+}
+
+function configJobHilight() {
+  $(".job-item").each(function(){
+    var pTech = $(this).data('tech');
+    var pId = $(this).attr('id');
+    jobs = new Array();
+    jobs[pid] = pTech;
+    loadHighlight();
   });
 }

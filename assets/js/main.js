@@ -336,20 +336,18 @@ function initConfig() {
 }
 
 function finalizeSkill() {
-  console.log('finalizing skills');
   var itensQtd = 0;
-  while (itensQtd == 0) {
-    console.log('waiting ' + itensQtd);
-    setTimeout(1000, function() {
-      $('.company-skill-item').find('.level-bar-inner').each(function() {
-          var itemWidth = $(this).data('level');
-          $(this).animate({
-              width: itemWidth
-          }, 800);
-      });
-      itensQtd = $('.company-skill-item').find('.level-bar-inner').length;
-    });
-  }
+  setTimeout(function() {
+    while (itensQtd == 0) {
+        $('.company-skill-item').find('.level-bar-inner').each(function() {
+            var itemWidth = $(this).data('level');
+            $(this).animate({
+                width: itemWidth
+            }, 800);
+        });
+        itensQtd = $('.company-skill-item').find('.level-bar-inner').length;
+      }
+  }, 1000);
 }
 
 function finalize(){

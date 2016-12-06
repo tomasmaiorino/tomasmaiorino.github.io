@@ -351,11 +351,11 @@
                               </div>
                             </div>
                         </div>
-                            <div class="item tech-defaulf-content" style="color: #66cb8c;">
-                              <span ng-repeat="tech in tech_tags.tech_tags" ng-show="tech_tags != null" class="label label-success" id="{{tech | techIdFilter}}">{{tech}}</span>
-                              <!--
-                              <span class="label label-success" id="BCC">BCC</span>
-                              <span class="label label-success" id="ATG-11">ATG 11</span>
+                            <div class="item tech-defaulf-content" style="color: #66cb8c;" ng-show="tech_tags != null" >
+                              <span ng-repeat="tech in tech_tags.tech_tags"
+                              class="tech-item label label-success" id="{{tech | techIdFilter}}">{{tech}}</span>
+<!--
+
                               <span class="label label-success" id="ANT">ANT</span>
                               <span class="label label-success" id="GIT">GIT</span>
                               <span class="label label-success" id="REST">REST</span>
@@ -371,7 +371,7 @@
                               <span class="label label-success" id="MONGO-DB">MONGO DB</span>
                               <span class="label label-success" id="SVN">SVN</span>
                               <span class="label label-success" id="JMS">JMS</span>
-                            -->
+    -->
                             </div><!--//item-->
                         </div><!--//content-->
                     </div><!--//section-inner-->

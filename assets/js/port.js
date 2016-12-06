@@ -22,11 +22,12 @@ app.factory('skillService', ['$resource', function($resource) {
  app.controller('SkillCtrl', ['$scope', 'skillService', function($scope, skillService) {
   showSkillLoad(true);
   $scope.skills = skillService(companyToken);
-  showSkillLoad(false);
-  hideSkillSet(false);
-  //updateSkill(getColorFromCompany());
-  skillLoaded = true;
-  finalize();
+  if (!!$scope.skills) {
+    showSkillLoad(false);
+    hideSkillSet(false);
+    skillLoaded = true;
+    finalize();
+  }
  }]);
 
  app.factory('techService', ['$resource', function($resource) {
@@ -49,10 +50,12 @@ app.factory('skillService', ['$resource', function($resource) {
   app.controller('TechCtrl', ['$scope', 'techService', function($scope, techService) {
    showTechLoad(true);
    $scope.tech_tags = techService(companyToken);
-   showTechLoad(false);
-   hideDefaultTech(false);
-   techLoaded = true;
-   finalize();
+   if (!!$scope.tech_tags) {
+     showTechLoad(false);
+     hideDefaultTech(false);
+     techLoaded = true;
+     finalize();
+   }
   }]);
 
   app.filter('techIdFilter', function () {

@@ -107,6 +107,7 @@ var companyToken = '';
 var hexaReg = /[a-fA-F0-9]{6}/g
 var skillLoaded = false;
 var techLoaded = false;
+var statusCode = -1;
 //#00a1e4
 
 var fieldsToChangeColor = [{
@@ -341,8 +342,10 @@ function finalizeSkill() {
     while (itensQtd == 0) {
         $('.company-skill-item').find('.level-bar-inner').each(function() {
             var itemWidth = $(this).data('level');
+            var color = getColorFromCompany();
             $(this).animate({
-                width: itemWidth
+                width: itemWidth,
+                backgroundColor: '#' + color
             }, 800);
         });
         itensQtd = $('.company-skill-item').find('.level-bar-inner').length;
@@ -350,9 +353,35 @@ function finalizeSkill() {
   }, 1000);
 }
 
+function finalizeTimeout(clazz, task, timeout) {
+  var itensQtd = 0;
+  setTimeout(function() {
+    while (itensQtd == 0) {
+        $(clazz).each(function() {
+            console.log('applying function');
+            eval(task);
+        });
+        itensQtd = $(clazz).length;
+      }
+  }, timeout);
+}
+
+function finalizeTech() {
+  finalizeTimeout('.tech-item', function (){
+    $('.tech-item').each(function() {
+        var color = getColorFromCompany();
+        $(this).animate({
+            backgroundColor: '#' + color
+        }, 800);
+    });
+  }, 1000);
+}
+
+
 function finalize(){
   if (skillLoaded && techLoaded ) {
     finalizeSkill();
+    finalizeTech();
   }
 }
 

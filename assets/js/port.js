@@ -63,3 +63,32 @@ app.factory('skillService', ['$resource', function($resource) {
       return item.replace(/ /g, '-');
     };
   });
+
+  app.factory('companyService', ['$resource', function($resource) {
+    console.log("COMPANY_URL: " + COMPANY_URL);
+    var Skill = $resource(COMPANY_URL, {option:'token', param: '@companyToken'},{
+      query: { method: "GET", isArray: false }
+    });
+     return function(cmp) {
+       // does the external call
+       console.log("Calling company service for company token: " + cmp);
+       return Skill.get({param: cmp},
+         function success(response){
+          // console.log(response);
+         }, function error (response){
+           if(404 == response.status) {
+
+           }
+         });
+     };
+   }]);
+
+   app.controller('CompanyCtrl', ['$scope', 'companyService', function($scope, companyService) {
+    showProjectLoad(true);
+    $scope.company = skillService(companyToken);
+    if (!!$scope.company) {
+      showProjectLoad(false);
+      companyLoaded = true;
+      finalize();
+    }
+   }]);

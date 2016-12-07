@@ -77,6 +77,7 @@ jQuery(document).ready(function($) {
     loadHighlight();
 });
 
+
 function showMoreJobs(){
   var text_hide = 'Hide anothers jobs';
   var text = 'Show anothers jobs';
@@ -107,6 +108,7 @@ var companyToken = '';
 var hexaReg = /[a-fA-F0-9]{6}/g
 var skillLoaded = false;
 var techLoaded = false;
+var companyLoaded = false;
 var statusCode = -1;
 //#00a1e4
 
@@ -337,46 +339,40 @@ function initConfig() {
 }
 
 function finalizeSkill() {
-  var itensQtd = 0;
-  setTimeout(function() {
-    while (itensQtd == 0) {
-        $('.company-skill-item').find('.level-bar-inner').each(function() {
-            var itemWidth = $(this).data('level');
-            var color = getColorFromCompany();
-            $(this).animate({
-                width: itemWidth,
-                backgroundColor: '#' + color
-            }, 800);
-        });
-        itensQtd = $('.company-skill-item').find('.level-bar-inner').length;
-      }
-  }, 1000);
-}
-
-function finalizeTimeout(clazz, task, timeout) {
-  var itensQtd = 0;
-  setTimeout(function() {
-    while (itensQtd == 0) {
-        $(clazz).each(function() {
-            console.log('applying function');
-            eval(task);
-        });
-        itensQtd = $(clazz).length;
-      }
-  }, timeout);
+  var id = setInterval(doesSkillTask, 1000);
+  function doesSkillTask() {
+    var itensQtd = $('.company-skill-item').find('.level-bar-inner').length;
+    if (itensQtd > 0) {
+      console.log('changing skill');
+      $('.company-skill-item').find('.level-bar-inner').each(function() {
+          var itemWidth = $(this).data('level');
+          var color = getColorFromCompany();
+          $(this).animate({
+              width: itemWidth,
+              backgroundColor: '#' + color
+          }, 800);
+      });
+      clearInterval(id);
+    }
+  }
 }
 
 function finalizeTech() {
-  finalizeTimeout('.tech-item', function (){
-    $('.tech-item').each(function() {
-        var color = getColorFromCompany();
-        $(this).animate({
-            backgroundColor: '#' + color
-        }, 800);
-    });
-  }, 1000);
+  var id = setInterval(doesTechTask, 1000);
+  function doesTechTask() {
+    var itensQtd = $('.tech-item').length;
+    if (itensQtd > 0) {
+      console.log('changing tech item');
+      $('.tech-item').each(function() {
+          var color = getColorFromCompany();
+          $(this).animate({
+              backgroundColor: '#' + color
+          }, 800);
+      });
+      clearInterval(id);
+    }
+  }
 }
-
 
 function finalize(){
   if (skillLoaded && techLoaded ) {

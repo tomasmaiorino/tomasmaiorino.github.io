@@ -351,13 +351,16 @@
                               </div>
                             </div>
                         </div>
-                            <div class="item tech-defaulf-content" style="color: #66cb8c;" ng-show="tech_tags != null" >
+                            <div class="item tech-defaulf-content" style="color: #66cb8c;">
+
                               <span ng-repeat="tech in tech_tags.tech_tags"
                               class="tech-item label label-success" id="{{tech | techIdFilter}}">{{tech}}</span>
-<!--
 
+
+                              <!--
                               <span class="label label-success" id="ANT">ANT</span>
                               <span class="label label-success" id="GIT">GIT</span>
+
                               <span class="label label-success" id="REST">REST</span>
                               <span class="label label-success" id="SOAP">SOAP</span>
                               <span class="label label-success" id="SPRING-BOOT">SPRING BOOT</span>

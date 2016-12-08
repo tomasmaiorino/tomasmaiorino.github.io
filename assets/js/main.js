@@ -25,58 +25,40 @@ jQuery(document).ready(function($) {
         });
     });
     */
-    function highlight(tags, highlight) {
-      $.each(tags, function (index, value) {
-        if (highlight) {
-          $('#'+value).addClass('tag-opacity');
-        } else {
-          $('#'+value).removeClass('tag-opacity');
-        }
-      });
-    }
 
     /* Bootstrap Tooltip for Skillset */
     $('.level-label').tooltip();
 
-    var job1 = ['BCC','ANT','GIT','ORACLE','WEBLOGIC','JSTL','ATG-11']
-
-    var job2 = ['BCC','ANT','GIT','ORACLE','WEBLOGIC','ATG-11']
-
-    var job3 = ['BCC','SVN','ORACLE','WEBLOGIC','ATG-11','SOAP']
-
-    var job4 = job3;
-
-    var job5 = ['BCC','SVN','ORACLE','WEBLOGIC','ATG-11','SOAP', 'REST', 'JSTL']
-
-    var job6 = ['MONGO-DB','ORACLE','WEBLOGIC','ATG-11','JMS', 'REST', 'GIT', 'ANT', 'BCC']
-
-    var jobs = new Array();
-    jobs['job1'] = job1;
-    jobs['job2'] = job2;
-    jobs['job3'] = job3;
-    jobs['job4'] = job4;
-    jobs['job5'] = job5;
-    jobs['job6'] = job6;
-
-    function bindJob(item, jobs) {
-       $( '.'+item).bind( "mouseover", function() {
-          highlight(jobs, true);
-        });
-
-        $( '.'+item).bind( "mouseout", function() {
-          highlight(jobs, false);
-        });
-    }
-
-    function loadHighlight () {
-      for (var key in jobs) {
-        bindJob(key, jobs[key]);
-      }
-    }
-
-    loadHighlight();
 });
 
+var jobs = new Array();
+
+function highlight(tags, highlight) {
+  $.each(tags, function (index, value) {
+    if (highlight) {
+      $('#'+value).addClass('tag-opacity');
+    } else {
+      $('#'+value).removeClass('tag-opacity');
+    }
+  });
+}
+
+function bindJob(item, jobs) {
+  console.log('binding ' + jobs);
+   $( '.'+item).bind( "mouseover", function() {
+      highlight(jobs, true);
+    });
+
+    $( '.'+item).bind( "mouseout", function() {
+      highlight(jobs, false);
+    });
+}
+
+function loadHighlight () {
+  for (var key in jobs) {
+    bindJob(key, jobs[key]);
+  }
+}
 
 function showMoreJobs(){
   var text_hide = 'Hide anothers jobs';
@@ -109,6 +91,7 @@ var hexaReg = /[a-fA-F0-9]{6}/g
 var skillLoaded = false;
 var techLoaded = false;
 var companyLoaded = false;
+var projectsLoaded = false;
 var statusCode = -1;
 //#00a1e4
 
@@ -374,26 +357,44 @@ function finalizeTech() {
   }
 }
 
-function finalize(){
-  if (skillLoaded && techLoaded ) {
-    finalizeSkill();
-    finalizeTech();
+function finalizeProject() {
+  console.log('Finishing project');
+  var id = setInterval(doesProjectTask, 1000);
+  function doesProjectTask() {
+    var itensQtd = $('.job-item').length;
+    if (itensQtd > 0) {
+      console.log('configing job highlight');
+      jobs = new Array();
+      $(".job-item").each(function(){
+        var pTech = $(this).data('tech');
+        var pId = $(this).attr('id');
+        console.log('jobs pid ' + pId + ' ' + pTech);
+        jobs[pId] = pTech;
+        console.log('jobs ' + jobs[pId]);
+        loadHighlight();
+      });
+      clearInterval(id);
+    }
   }
 }
 
-function treatError(response, msg) {
+function finalize(){
+  if (skillLoaded && techLoaded && projectsLoaded) {
+    finalizeSkill();
+    finalizeTech();
+    finalizeProject();
+  }
+}
+
+function treatError(response, msg, funcs) {
   console.log(msg + ' ' + response.status);
   if (-1 == response.status) {
   } else {
   }
-}
-
-function configJobHilight() {
-  $(".job-item").each(function(){
-    var pTech = $(this).data('tech');
-    var pId = $(this).attr('id');
-    jobs = new Array();
-    jobs[pid] = pTech;
-    loadHighlight();
-  });
-}
+  if (funcs != undefined) {
+    console.log('calling funcs');
+    for (i in funcs) {
+      eval(i);
+    }
+  }
+ }

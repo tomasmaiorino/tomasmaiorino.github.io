@@ -13,17 +13,15 @@ app.factory('skillService', ['$resource', function($resource) {
         // console.log(response);
        }, function error (response){
          if(404 == response.status) {
-
+           showSkillLoad(false);
          }
        });
    };
  }]);
 
  app.controller('SkillCtrl', ['$scope', 'skillService', function($scope, skillService) {
-  showSkillLoad(true);
   $scope.skills = skillService(companyToken);
   if (!!$scope.skills) {
-    showSkillLoad(false);
     hideSkillSet(false);
     skillLoaded = true;
     finalize();
@@ -38,20 +36,22 @@ app.factory('skillService', ['$resource', function($resource) {
     return function(cmp) {
       // does the external call
       console.log("Calling techService service for company token: " + cmp);
-      return Skill.get({param: cmp},
+      return Skill.get({param: '000'},
         function success(response){
          // console.log(response);
         }, function error (response){
-          treatError(response, 'tech');
+          showTechLoad(false);
+          var funcs = []
+          funcs.push(function (){alert('ok')});
+          funcs.push(function (){alert('ok again')});
+          treatError(response, 'tech', funcs);
         });
     };
   }]);
 
   app.controller('TechCtrl', ['$scope', 'techService', function($scope, techService) {
-   showTechLoad(true);
    $scope.tech_tags = techService(companyToken);
    if (!!$scope.tech_tags) {
-     showTechLoad(false);
      hideDefaultTech(false);
      techLoaded = true;
      finalize();
@@ -61,6 +61,16 @@ app.factory('skillService', ['$resource', function($resource) {
   app.filter('techIdFilter', function () {
     return function (item) {
       return item.replace(/ /g, '-');
+    };
+  });
+
+  app.filter('techTagFilter', function () {
+    return function (item) {
+      var out = [];
+      angular.forEach(item, function(value, key) {
+         out.push(value.name);
+      });
+      return out;
     };
   });
 
@@ -85,10 +95,10 @@ app.factory('skillService', ['$resource', function($resource) {
 
    app.controller('CompanyCtrl', ['$scope', 'companyService', function($scope, companyService) {
     showProjectLoad(true);
-    $scope.company = skillService(companyToken);
+    $scope.company = companyService(companyToken);
     if (!!$scope.company) {
       showProjectLoad(false);
-      companyLoaded = true;
+      projectsLoaded = true;
       finalize();
     }
    }]);

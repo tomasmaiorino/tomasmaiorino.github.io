@@ -66,7 +66,7 @@
                     </div><!--//section-inner-->
                 </section><!--//section-->
 
-               <section class="latest section">
+               <section class="latest section" ng-controller="CompanyCtrl">
                     <div class="section-inner">
                         <h2 class="heading">Latest Projects</h2>
                         <div class="content project-load" style="display:none" align="center">
@@ -78,99 +78,46 @@
                           </div>
                         </div>
                           <div class="content projects-content">
-                            <div class="item featured text-center job1">
-                                <h3 class="title">Netshoes - Recover Password</h3>
+                            <div class="item featured text-center job1 job-item"
+                                ng-repeat="project in company.projects | filter: { future_project: 'true' }"
+                                data-tech="{{project.tech_tags | techTagFilter}}" id="job1">
+                                <h3 class="title">{{project.name}}</h3>
                                 <p class="summary"></p>
                                 <div class="featured-image" align="center">
-                                    <a href="http://www.netshoes.com.br" target="_blank">
-                                    <img class="img-responsive project-image" src="assets/images/projects/netshoes.png" alt="recover password" />
+                                    <a href="{{project.link_img}}" target="_blank">
+                                    <img class="img-responsive project-image" src="{{project.img}}" alt="{{project.name}}" />
                                     </a>
                                     <div class="ribbon">
                                         <div class="text">New</div>
                                         </div>
-                                    </div>
-
+                                </div>
                                 <div class="desc text-left">
-                                    <p>Change the <a data-toggle="tooltip" title="Oracle Commerce Platform" href="http://www.oracle.com/us/products/applications/atg/web-commerce/index.html" target="_blank" >ATG's</a> recover password workflow.</p>
-                                    <p>Through this new approach the user will receive a link to update his password directly in the website rather than receive a new password and have it changed by the platform.</p>
+                                    <p>{{project.summary}}</p>
+                                    <p>{{project.description}}</p>
                                 </div><!--//desc-->
                                 <!--
                                 <a class="btn btn-cta-secondary" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank"><i class="fa fa-thumbs-o-up"></i> Back my project</a>
                                 -->
                             </div><!--//item-->
                             <hr class="divider" />
-                            <div class="item row job2 pointer">
+                            <div class="item row job{{$index + 2}} pointer job-item"
+                                  ng-style="$index + 2 == 5 ? {'display':'none'} : {''}"
+                                  ng-class="$index + 2 == 5 ? {'hide-jobs'} : {''}"
+                                  ng-repeat="project in company.projects | filter: { future_project: 'false' }"
+                                  data-tech="{{project.tech_tags | techTagFilter}}"  id="job{{$index + 2}}">
                               <div align="center">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.netshoes.com.br" target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/netshoes.png" alt="profile update" />
+                                <a class="col-md-4 col-sm-4 col-xs-12" href="{{project.link_img}}" target="_blank">
+                                <img class="img-responsive project-image" src="{{project.img}}" alt="{{project.name}}" />
                                 </a>
                               </div>
                                 <div class="desc col-md-8 col-sm-8 col-xs-12 pointer">
-                                    <h3 class="title">Netshoes - Profile Update</h3>
-                                    <p>Update user's contact information in the confirmation page in order to help to find the user if some problem happens with his order.</p>
+                                    <h3 class="title">{{project.name}}</h3>
+                                    <p>{{project.summary}}</p>
+                                    <p>{{project.description}}</p>
                                 </div><!--//desc-->
                             </div><!--//item-->
 
-                            <div class="item row job6 pointer">
-                              <div align="center">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.netshoes.com.br" target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/netshoes.png" alt="Order Integration" />
-                                </a>
-                              </div>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12 pointer">
-                                    <h3 class="title">Netshoes - Order Integration</h3>
-                                    <p>Send some order's informations to a JSM Queue which would be consumed and saved in a Mongo DB by a Spring Boot Service.</p>
-                                </div><!--//desc-->
-                            </div><!--//item-->
-
-                            <div class="item row job3 pointer hide-jobs" style="display:none">
-                              <div align="center">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.etna.com.br/" target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/etna.png" alt="Etna Integration" />
-                                </a>
-                              </div>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                    <h3 class="title">Etna - Integrations</h3>
-                                    <p>Help to develop all integrations between the ecommerce (ATG) and client's ERP. Also work in the construction of the api which is used for all integrations both versioned and unversioned of the ATG assets.</p>
-                                    <!--
-                                    <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
-                                  -->
-                                </div><!--//desc-->
-                            </div><!--//item-->
-
-                            <div class="item row job4 pointer hide-jobs" style="display:none">
-                              <div align="center">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.etna.com.br/" target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/etna.png" alt="Etna Integration" />
-                                </a>
-                              </div>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                    <h3 class="title">Etna - Ordering furniture</h3>
-                                    <p>Company allowed some skus, previous registered, to be bought even if the stock level being equal to 0. </p>
-                                    <p>Improvement on the order's integration between the client's ERP and the e-commerce (ATG 11). After that, the order's integration started to be controlled by the integration status id instead the order's last modified date, which decrease the amount of orders not integrated.</p>
-                                    <!--
-                                    <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
-                                  -->
-                                </div><!--//desc-->
-                            </div><!--//item-->
-
-                            <div class="item row job5 pointer hide-jobs" style="display:none">
-                              <div align="center">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.etna.com.br" target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/etna.png" alt="project name" />
-                                </a>
-                              </div>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                    <h3 class="title">Etna - General activities</h3>
-                                    <p>Helped to identify and fix some problems in production environment.</p>
-                                    <p>Improve the integration between the Ecommerce (ATG) and the payment gateway through RQLs improvement and integration tasks separation.</p>
-                                    <p>Create some reports using OBIEE and custom queries for Oracle Database.</p>
-                                    <!--
-                                    <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-startups-tempo/" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
-                                  -->
-                                </div><!--//desc-->
-                            </div><!--//item-->
-                            <div class="item row job5 pointer">
+                            <div class="item row job5 pointer" ng-show="company.projects.length > 5">
                               <div align="center">
                                 <p><a class="more-link" onclick="showMoreJobs();" id="showMoreJobs">Show anothers jobs</a></p>
                               </div>
@@ -270,7 +217,7 @@
                         <h2 class="heading">Skills</h2>
                         <div class="content">
                             <p class="intro">
-                            <div style="display: none" class="skill-load" align="center">
+                            <div class="skill-load" align="center" ng-show="skills.skills == null">
                               <div style="width: 100px;">
                                 <div class="loading-container">
                                   <div class="loading"></div>
@@ -343,7 +290,7 @@
                     <div class="section-inner">
                         <h2 class="heading">Another Technologies</h2>
                         <div class="content">
-                          <div style="display:none" class="tech-load" align="center">
+                          <div class="tech-load" align="center" ng-show="tech_tags.tech_tags == null">
                             <div style="width: 100px;">
                               <div class="loading-container">
                                   <div class="loading"></div>
@@ -352,7 +299,6 @@
                             </div>
                         </div>
                             <div class="item tech-defaulf-content" style="color: #66cb8c;">
-
                               <span ng-repeat="tech in tech_tags.tech_tags"
                               class="tech-item label label-success" id="{{tech | techIdFilter}}">{{tech}}</span>
 

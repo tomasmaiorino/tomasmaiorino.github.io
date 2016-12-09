@@ -247,7 +247,6 @@ function showProjectLoad(show) {
   } else {
     $('.project-load').hide('slow');
   }
-  hideDefaultProjects(show);
 }
 
 function hideDefaultProjects(hide) {
@@ -393,8 +392,9 @@ function treatError(response, msg, funcs) {
   }
   if (funcs != undefined) {
     console.log('calling funcs');
-    for (i in funcs) {
-      eval(i);
-    }
+    $.each(funcs, function(value){
+      console.log('eval');
+      eval(value);
+    });
   }
  }

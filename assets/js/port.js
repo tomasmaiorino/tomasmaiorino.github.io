@@ -36,7 +36,7 @@ app.factory('skillService', ['$resource', function($resource) {
     return function(cmp) {
       // does the external call
       console.log("Calling techService service for company token: " + cmp);
-      return Skill.get({param: '000'},
+      return Skill.get({param: cmp},
         function success(response){
          // console.log(response);
         }, function error (response){
@@ -93,11 +93,11 @@ app.factory('skillService', ['$resource', function($resource) {
      };
    }]);
 
-   app.controller('CompanyCtrl', ['$scope', 'companyService', function($scope, companyService) {
+   app.controller('ProjectsCtrl', ['$scope', 'companyService', function($scope, companyService) {
     showProjectLoad(true);
     $scope.company = companyService(companyToken);
     if (!!$scope.company) {
-      showProjectLoad(false);
+      //hideDefaultProjects(false);
       projectsLoaded = true;
       finalize();
     }

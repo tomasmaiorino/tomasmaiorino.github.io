@@ -69,8 +69,9 @@
                <section class="latest section" ng-controller="CompanyCtrl">
                     <div class="section-inner">
                         <h2 class="heading">Latest Projects</h2>
-                        <div class="content project-load" style="display:none" align="center">
-                          <div style="width: 100px; display:none" class="project-load">
+                        <div class="content project-load" align="center"
+                          ng-show="company.projects == null">
+                          <div style="width: 100px;" class="project-load">
                             <div class="loading-container">
                                 <div class="loading"></div>
                                 <div class="loading-text">Projects</div>
@@ -80,7 +81,8 @@
                           <div class="content projects-content">
                             <div class="item featured text-center job1 job-item"
                                 ng-repeat="project in company.projects | filter: { future_project: 'true' }"
-                                data-tech="{{project.tech_tags | techTagFilter}}" id="job1">
+                                data-tech="{{project.tech_tags | techTagFilter}}" id="job1"
+                                ng-show="company.projects != null">
                                 <h3 class="title">{{project.name}}</h3>
                                 <p class="summary"></p>
                                 <div class="featured-image" align="center">
@@ -104,7 +106,8 @@
                                   ng-style="$index + 2 == 5 ? {'display':'none'} : {''}"
                                   ng-class="$index + 2 == 5 ? {'hide-jobs'} : {''}"
                                   ng-repeat="project in company.projects | filter: { future_project: 'false' }"
-                                  data-tech="{{project.tech_tags | techTagFilter}}"  id="job{{$index + 2}}">
+                                  data-tech="{{project.tech_tags | techTagFilter}}"  id="job{{$index + 2}}"
+                                  ng-show="company.projects != null">
                               <div align="center">
                                 <a class="col-md-4 col-sm-4 col-xs-12" href="{{project.link_img}}" target="_blank">
                                 <img class="img-responsive project-image" src="{{project.img}}" alt="{{project.name}}" />

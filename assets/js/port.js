@@ -30,20 +30,20 @@ app.factory('skillService', ['$resource', function($resource) {
 
  app.factory('techService', ['$resource', function($resource) {
    console.log("TECH_URL: " + COMPANY_URL);
-   var Skill = $resource(COMPANY_URL, {option:'tech', param: '@companyToken'},{
+   var Tech = $resource(COMPANY_URL, {option:'tech', param: '@companyToken'},{
      query: { method: "GET", isArray: false }
    });
     return function(cmp) {
       // does the external call
       console.log("Calling techService service for company token: " + cmp);
-      return Skill.get({param: '000'},
+      return Tech.get({param: '000'},
         function success(response){
          // console.log(response);
         }, function error (response){
-          showTechLoad(false);
+          //showTechLoad(false);
           var funcs = []
-          funcs.push(function (){alert('ok')});
-          funcs.push(function (){alert('ok again')});
+          //funcs.push(function (){alert('ok')});
+          //funcs.push(function (){alert('ok again')});
           treatError(response, 'tech', funcs);
         });
     };
@@ -76,27 +76,26 @@ app.factory('skillService', ['$resource', function($resource) {
 
   app.factory('companyService', ['$resource', function($resource) {
     console.log("COMPANY_URL: " + COMPANY_URL);
-    var Skill = $resource(COMPANY_URL, {option:'token', param: '@companyToken'},{
+    var Company = $resource(COMPANY_URL, {option:'token', param: '@companyToken'},{
       query: { method: "GET", isArray: false }
     });
      return function(cmp) {
        // does the external call
        console.log("Calling company service for company token: " + cmp);
-       return Skill.get({param: cmp},
+       return Company.get({param: cmp},
          function success(response){
           // console.log(response);
          }, function error (response){
            if(404 == response.status) {
-
            }
+          treatError(response, 'company');
          });
      };
    }]);
 
    app.controller('CompanyCtrl', ['$scope', 'companyService', function($scope, companyService) {
-    showProjectLoad(true);
     $scope.company = companyService(companyToken);
-    if (!!$scope.company) {
+    if (!!$scope.company.projects) {
       showProjectLoad(false);
       projectsLoaded = true;
       finalize();

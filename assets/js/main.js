@@ -392,9 +392,8 @@ function treatError(response, msg, funcs) {
   } else {
   }
   if (funcs != undefined) {
-    console.log('calling funcs');
-    for (i in funcs) {
-      eval(i);
+    for (i = 0; i < funcs.length; i++) {
+      funcs[i]();
     }
   }
  }

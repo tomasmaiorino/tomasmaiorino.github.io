@@ -95,8 +95,8 @@ app.factory('skillService', ['$resource', function($resource) {
 
    app.controller('CompanyCtrl', ['$scope', 'companyService', function($scope, companyService) {
     $scope.company = companyService(companyToken);
-    if (!!$scope.company.projects) {
-      showProjectLoad(false);
+    if (!!$scope.company) {
+      //hideDefaultProjects(false);
       projectsLoaded = true;
       finalize();
     }

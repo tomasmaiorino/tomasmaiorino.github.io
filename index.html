@@ -57,16 +57,17 @@
     <div class="container sections-wrapper">
         <div class="row">
             <div class="primary col-md-8 col-sm-12 col-xs-12">
-                <section class="about section">
+                <section class="about section" ng-controller="ProjectsCtrl">
                     <div class="section-inner">
                         <h2 class="heading">About Me</h2>
                         <div class="content">
-                            <p>Involved in software development and projects since 2009, in various segments. Gathered business and system requirements using Scrum and Kanbam. Modeled and designed object-oriented systems, using various Project Standards. Seven years of experience in Java/JEE development, using various frameworks, including JSF, RichFaces, PrimeFaces, Spring Framework, EJB, Hibernate, JPA and Struts. Extensive understanding of the application servers IBM Websphere, Oracle Weblogic and Tomcat.</p>
+                            <p ng-if="!company.cover_letterp">Involved in software development and projects since 2009, in various segments. Gathered business and system requirements using Scrum and Kanbam. Modeled and designed object-oriented systems, using various Project Standards. Seven years of experience in Java/JEE development, using various frameworks, including JSF, RichFaces, PrimeFaces, Spring Framework, EJB, Hibernate, JPA and Struts. Extensive understanding of the application servers IBM Websphere, Oracle Weblogic and Tomcat.</p>
+                            <p ng-if="company.cover_letter">{{company.cover_letter}}</p>
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </section><!--//section-->
 
-               <section class="latest section" ng-controller="CompanyCtrl">
+               <section class="latest section" ng-controller="ProjectsCtrl">
                     <div class="section-inner">
                         <h2 class="heading">Latest Projects</h2>
                         <div class="content project-load" align="center"
@@ -90,12 +91,14 @@
                                     <img class="img-responsive project-image" src="{{project.img}}" alt="{{project.name}}" />
                                     </a>
                                     <div class="ribbon">
-                                        <div class="text">New</div>
-                                        </div>
+                                      <div class="text">New</div>
+                                    </div>
                                 </div>
                                 <div class="desc text-left">
-                                    <p>{{project.summary}}</p>
-                                    <p>{{project.description}}</p>
+                                  <p ng-show="project.summary != null">{{project.summary}}</p>
+                                  <p ng-show="project.description != null">{{project.description}}</p>
+                                  <p ng-show="project.improvements != null"><strong>improvements:</strong> {{project.improvements}}</p>
+                                  <p ng-show="project.time_spent != null"><strong>Time spent:</strong> {{project.time_spent}}</p>
                                 </div><!--//desc-->
                                 <!--
                                 <a class="btn btn-cta-secondary" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank"><i class="fa fa-thumbs-o-up"></i> Back my project</a>
@@ -103,8 +106,8 @@
                             </div><!--//item-->
                             <hr class="divider" />
                             <div class="item row job{{$index + 2}} pointer job-item"
-                                  ng-style="$index + 2 == 5 ? {'display':'none'} : {''}"
-                                  ng-class="$index + 2 == 5 ? {'hide-jobs'} : {''}"
+                                  ng-style="$index + 2 == 4 && {'display':'none'}"
+                                  ng-class="{'hide-jobs': $index + 2 == 4 }"
                                   ng-repeat="project in company.projects | filter: { future_project: 'false' }"
                                   data-tech="{{project.tech_tags | techTagFilter}}"  id="job{{$index + 2}}"
                                   ng-show="company.projects != null">
@@ -115,12 +118,14 @@
                               </div>
                                 <div class="desc col-md-8 col-sm-8 col-xs-12 pointer">
                                     <h3 class="title">{{project.name}}</h3>
-                                    <p>{{project.summary}}</p>
-                                    <p>{{project.description}}</p>
+                                    <p ng-show="project.summary != null">{{project.summary}}</p>
+                                    <p ng-show="project.description != null">{{project.description}}</p>
+                                    <p ng-show="project.improvements != null"><strong>improvements:</strong> {{project.improvements}}</p>
+                                    <p ng-show="project.time_spent != null"><strong>Time spent:</strong> {{project.time_spent}}</p>
                                 </div><!--//desc-->
                             </div><!--//item-->
 
-                            <div class="item row job5 pointer" ng-show="company.projects.length > 5">
+                            <div class="item row job5 pointer" ng-show="company.projects.length > 3">
                               <div align="center">
                                 <p><a class="more-link" onclick="showMoreJobs();" id="showMoreJobs">Show anothers jobs</a></p>
                               </div>

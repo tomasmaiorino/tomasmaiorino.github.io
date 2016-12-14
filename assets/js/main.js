@@ -391,16 +391,8 @@ function treatError(response, msg, funcs) {
   } else {
   }
   if (funcs != undefined) {
-<<<<<<< HEAD
     for (i = 0; i < funcs.length; i++) {
       funcs[i]();
     }
-=======
-    console.log('calling funcs');
-    $.each(funcs, function(value){
-      console.log('eval');
-      eval(value);
-    });
->>>>>>> 53f5dc83890700ce858d3a1f46f072155fb77098
   }
  }

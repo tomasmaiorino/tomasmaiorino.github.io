@@ -23,8 +23,8 @@ app.factory('skillService', ['$resource', function($resource) {
   $scope.skills = skillService(companyToken);
   if (!!$scope.skills) {
     hideSkillSet(false);
-    skillLoaded = true;
-    finalize();
+    skillLoaded = 'success';
+    finalizeSkill();
   }
  }]);
 
@@ -33,28 +33,30 @@ app.factory('skillService', ['$resource', function($resource) {
    var Tech = $resource(COMPANY_URL, {option:'tech', param: '@companyToken'},{
      query: { method: "GET", isArray: false }
    });
-    return function(cmp) {
+    return {
+      call: function(cmp) {
       // does the external call
       console.log("Calling techService service for company token: " + cmp);
-      return Tech.get({param: cmp},
+      return Tech.get({param: 'cmp'},
         function success(response){
          // console.log(response);
         }, function error (response){
-          //showTechLoad(false);
           var funcs = []
           //funcs.push(function (){alert('ok')});
           //funcs.push(function (){alert('ok again')});
+          techLoaded = 'error';
           treatError(response, 'tech', funcs);
         });
+      }
     };
   }]);
 
   app.controller('TechCtrl', ['$scope', 'techService', function($scope, techService) {
-   $scope.tech_tags = techService(companyToken);
+   $scope.tech_tags = techService.call(companyToken);
    if (!!$scope.tech_tags) {
      hideDefaultTech(false);
-     techLoaded = true;
-     finalize();
+     techLoaded = 'success';
+     finalizeTech();
    }
   }]);
 
@@ -86,8 +88,6 @@ app.factory('skillService', ['$resource', function($resource) {
          function success(response){
           // console.log(response);
          }, function error (response){
-           if(404 == response.status) {
-           }
           treatError(response, 'company');
          });
      };
@@ -97,7 +97,7 @@ app.factory('skillService', ['$resource', function($resource) {
     $scope.company = companyService(companyToken);
     if (!!$scope.company) {
       //hideDefaultProjects(false);
-      projectsLoaded = true;
-      finalize();
+      projectsLoaded = 'success';
+      finalizeProject();
     }
    }]);

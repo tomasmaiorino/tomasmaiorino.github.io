@@ -33,7 +33,6 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 <body id="page-top" class="body-scroll" ng-app="Portfolio">
     <!-- ******HEADER****** -->
@@ -234,7 +233,7 @@
                               </div>
                             </div>
                             <div class="skillset">
-                              <div ng-repeat="skill in skills.skills" class="item company-skill-item" ng-show="skills != null">
+                              <div ng-repeat="skill in skills.skills" class="item company-skill-item" ng-show="skills != null && skills.skills.length > 0">
                                 <h3 class="level-title">{{skill.name}}<span class="level-label" data-toggle="tooltip"
                                    data-placement="left" data-animation="false" title="">Pro</span>
                                 </h3>
@@ -298,7 +297,7 @@
                     <div class="section-inner">
                         <h2 class="heading">Another Technologies</h2>
                         <div class="content">
-                          <div class="tech-load" align="center" ng-show="tech_tags.tech_tags == null">
+                          <div class="tech-load" align="center" ng-show="tech_tags.tech_tags == null" ng-hide="techError == true">
                             <div style="width: 100px;">
                               <div class="loading-container">
                                   <div class="loading"></div>
@@ -306,30 +305,29 @@
                               </div>
                             </div>
                         </div>
-                            <div class="item tech-defaulf-content" style="color: #66cb8c;">
-                              <span ng-repeat="tech in tech_tags.tech_tags"
+                        <div class="item tech-defaulf-content" style="color: #66cb8c;" ng-show="tech_tags.tech_tags != null && tech_tags.tech_tags.length > 0">
+                            <div ng-repeat="tech in tech_tags.tech_tags" style="display:inline">
+                              <span
                               class="tech-item label label-success" id="{{tech | techIdFilter}}">{{tech}}</span>
-
-
-                              <!--
-                              <span class="label label-success" id="ANT">ANT</span>
-                              <span class="label label-success" id="GIT">GIT</span>
-
-                              <span class="label label-success" id="REST">REST</span>
-                              <span class="label label-success" id="SOAP">SOAP</span>
-                              <span class="label label-success" id="SPRING-BOOT">SPRING BOOT</span>
-                              <span class="label label-success" id="SPRING-WEB">SPRING WEB</span>
-                              <span class="label label-success" id="JSF 1.2">JSF 1.2</span>
-                              <span class="label label-success" id="JSTL">JSTL</span>
-                              <span class="label label-success" id="MYSQL">MYSQL</span>
-                              <span class="label label-success" id="ORACLE">ORACLE</span>
-                              <span class="label label-success" id="WEBLOGIC">WEBLOGIC</span>
-                              <span class="label label-success" id="REDIS">REDIS</span>
-                              <span class="label label-success" id="MONGO-DB">MONGO DB</span>
-                              <span class="label label-success" id="SVN">SVN</span>
-                              <span class="label label-success" id="JMS">JMS</span>
-    -->
-                            </div><!--//item-->
+                            </div>
+                        </div><!--//item-->
+                        <div class="item" style="color: #66cb8c;" ng-show="techError == true">{{techError}}
+                          <span class="tech-default label label-success" id="ANT">ANT</span>
+                          <span class="tech-default label label-success" id="GIT">GIT</span>
+                          <span class="tech-default label label-success" id="REST">REST</span>
+                          <span class="tech-default label label-success" id="SOAP">SOAP</span>
+                          <span class="tech-default label label-success" id="SPRING-BOOT">SPRING BOOT</span>
+                          <span class="tech-default label label-success" id="SPRING-WEB">SPRING WEB</span>
+                          <span class="tech-default label label-success" id="JSF 1.2">JSF 1.2</span>
+                          <span class="tech-default label label-success" id="JSTL">JSTL</span>
+                          <span class="tech-default label label-success" id="MYSQL">MYSQL</span>
+                          <span class="tech-default label label-success" id="ORACLE">ORACLE</span>
+                          <span class="tech-default label label-success" id="WEBLOGIC">WEBLOGIC</span>
+                          <span class="tech-default label label-success" id="REDIS">REDIS</span>
+                          <span class="tech-default label label-success" id="MONGO-DB">MONGO DB</span>
+                          <span class="tech-default label label-success" id="SVN">SVN</span>
+                          <span class="tech-default label label-success" id="JMS">JMS</span>
+                        </div>
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </aside><!--//section-->

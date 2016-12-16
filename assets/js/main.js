@@ -28,7 +28,6 @@ jQuery(document).ready(function($) {
 
     /* Bootstrap Tooltip for Skillset */
     $('.level-label').tooltip();
-
 });
 
 var jobs = new Array();
@@ -88,11 +87,13 @@ var LOAD_NAME_PARAM_KEY = "l";
 var loadsIds = ['projectLoad', 'skillLoad', 'techLoad'];
 var companyToken = '';
 var hexaReg = /[a-fA-F0-9]{6}/g
-var skillLoaded = false;
-var techLoaded = false;
-var companyLoaded = false;
-var projectsLoaded = false;
+var skillLoaded = '';
+var techLoaded = '';
+var companyLoaded = '';
+var projectsLoaded = '';
 var statusCode = -1;
+
+
 //#00a1e4
 
 var fieldsToChangeColor = [{
@@ -291,6 +292,7 @@ function showTechLoad(show) {
 }
 
 function hideDefaultTech(hide) {
+  console.debug('hideDefaultTech: ' + hide);
   if (hide) {
     $('.tech-defaulf-content').hide('slow');
   } else {
@@ -340,18 +342,20 @@ function finalizeSkill() {
 }
 
 function finalizeTech() {
-  var id = setInterval(doesTechTask, 1000);
-  function doesTechTask() {
-    var itensQtd = $('.tech-item').length;
-    if (itensQtd > 0) {
-      console.log('changing tech item');
-      $('.tech-item').each(function() {
-          var color = getColorFromCompany();
-          $(this).animate({
-              backgroundColor: '#' + color
-          }, 800);
-      });
-      clearInterval(id);
+  if (techLoaded == 'success') {
+    var id = setInterval(doesTechTask, 1000);
+    function doesTechTask() {
+      var itensQtd = $('.tech-item').length;
+      if (itensQtd > 0) {
+        console.log('changing tech item');
+        $('.tech-item').each(function() {
+            var color = getColorFromCompany();
+            $(this).animate({
+                backgroundColor: '#' + color
+            }, 800);
+        });
+        clearInterval(id);
+      }
     }
   }
 }
@@ -376,15 +380,21 @@ function finalizeProject() {
     }
   }
 }
-
+/*
 function finalize(){
-  if (skillLoaded && techLoaded && projectsLoaded) {
+  if (skillLoaded  == 'success' &&
+      techLoaded == 'success' &&
+      projectsLoaded == 'success') {
     finalizeSkill();
     finalizeTech();
     finalizeProject();
+  } else if (skillLoaded == 'error' || techLoaded == 'error' || projectsLoaded == 'error') {
+    hideDefaultTech(techLoad == 'success');
+    hideDefaultSkill(skillLoad == 'success');
+    hideDefaultProjects(projectLoaded == 'success');
   }
 }
-
+*/
 function treatError(response, msg, funcs) {
   console.log(msg + ' ' + response.status);
   if (-1 == response.status) {

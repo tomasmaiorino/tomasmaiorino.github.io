@@ -30,6 +30,10 @@ app.factory('skillService', ['$resource', function($resource) {
 
  app.factory('techService', ['$resource', function($resource) {
    console.log("TECH_URL: " + COMPANY_URL);
+   var techReturn = {
+     data: "",
+     status: 200
+   }
    var Tech = $resource(COMPANY_URL, {option:'tech', param: '@companyToken'},{
      query: { method: "GET", isArray: false }
    });
@@ -37,7 +41,7 @@ app.factory('skillService', ['$resource', function($resource) {
       call: function(cmp) {
       // does the external call
       console.log("Calling techService service for company token: " + cmp);
-      return Tech.get({param: 'cmp'},
+      techReturn.data = Tech.get({param: 'cmp'},
         function success(response){
          // console.log(response);
         }, function error (response){
@@ -46,19 +50,28 @@ app.factory('skillService', ['$resource', function($resource) {
           //funcs.push(function (){alert('ok again')});
           techLoaded = 'error';
           treatError(response, 'tech', funcs);
+          techReturn.status = response.status;
         });
+        return techReturn;
       }
     };
   }]);
 
   app.controller('TechCtrl', ['$scope', 'techService', function($scope, techService) {
-   $scope.tech_tags = techService.call(companyToken);
-   if (!!$scope.tech_tags) {
-     hideDefaultTech(false);
-     techLoaded = 'success';
-     finalizeTech();
+   var data = techService.call(companyToken);
+   console.log('data.status ' + data.status);
+   if (data.status == 200) {
+     $scope.tech_tags = data.data;
+     console.log('$scope.tech_tags.toJSON ' + $scope.tech_tags.toJSON);
+     if (!!$scope.tech_tags) {
+       hideDefaultTech(false);
+       techLoaded = 'success';
+       finalizeTech();
+     }
+   } else {
+     console.error(":(");
    }
-  }]);
+ }]);
 
   app.filter('techIdFilter', function () {
     return function (item) {

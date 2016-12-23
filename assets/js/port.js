@@ -31,6 +31,10 @@ app.factory('skillService', ['$resource', function($resource) {
 
  app.factory('techService', ['$resource', function($resource) {
    console.log("TECH_URL: " + COMPANY_URL);
+   var techReturn = {
+     data: "",
+     status: 200
+   }
    var Tech = $resource(COMPANY_URL, {option:'tech', param: '@companyToken'},{
      query: { method: "GET", isArray: false }
    });

@@ -95,6 +95,7 @@ var statusCode = -1;
 var DEBUG = false;
 var ERROR = false;
 var LOG = false;
+var validToken = false;
 
 //#00a1e4
 
@@ -307,6 +308,7 @@ function getColorFromCompany() {
     return companyToken.substring(companyToken.length - 6);
     //setLoadColor(color);
   }
+  return "";
 }
 
 function getCompanyToken() {
@@ -316,12 +318,23 @@ function getCompanyToken() {
 function get_load_name() {
   return getQueryParamByName(LOAD_NAME_PARAM_KEY);
 }
-function initConfig() {
+
+function hasValidToken() {
   companyToken = getCompanyToken();
-  debug('setting load color.')
-  setLoadColor(getColorFromCompany());
-  debug('load coloer fields.')
-  loadColorsFields(getColorFromCompany());
+  validToken = companyToken != '' && hexaReg.test(getColorFromCompany());
+  return validToken;
+}
+
+function initConfig() {
+  if (hasValidToken()) {
+    debug('setting load color.')
+    setLoadColor(getColorFromCompany());
+    debug('load coloer fields.')
+    loadColorsFields(getColorFromCompany());
+  }else {
+    finalizeSkill(true);
+    restoreDefaultColor();
+  }
 }
 
 function finalizeSkill(error) {
@@ -339,6 +352,11 @@ function finalizeSkill(error) {
       $(el).each(function() {
           var itemWidth = $(this).data('level');
           var color = getColorFromCompany();
+          if (color == '') {
+            color = DEFAULT_COLOR;
+          } else {
+            color = '#' + color;
+          }
           $(this).animate({
               width: itemWidth,
               backgroundColor: '#' + color

@@ -13,16 +13,20 @@ app.factory('skillService', ['$resource', function($resource) {
  }]);
 
  app.controller('SkillCtrl', ['$scope', 'skillService', function($scope, skillService) {
-  $scope.skills = skillService(companyToken);
-    $scope.skills.$promise.then(function (result) {
-      hideSkillSet(false);
-      skillLoaded = 'success';
-      finalizeSkill();
-    }, function(error) {
-      $scope.skillsError = true;
-      treatError(error, 'skill');
-      finalizeSkill(true);
-   });
+   if (validToken) {
+    $scope.skills = skillService(companyToken);
+      $scope.skills.$promise.then(function (result) {
+        hideSkillSet(false);
+        skillLoaded = 'success';
+        finalizeSkill();
+      }, function(error) {
+        $scope.skillsError = true;
+        treatError(error, 'skill');
+        finalizeSkill(true);
+     });
+  } else {
+    $scope.skillsError = true;
+  }
  }]);
 
  app.factory('techService', ['$resource', function($resource) {
@@ -40,15 +44,20 @@ app.factory('skillService', ['$resource', function($resource) {
   }]);
 
   app.controller('TechCtrl', ['$scope', 'techService', function($scope, techService) {
-   $scope.tech_tags = techService.call(companyToken);
-   $scope.tech_tags.$promise.then(function (result) {
-     hideDefaultTech(false);
-     techLoaded = 'success';
-     finalizeTech();
-   }, function(error) {
-     $scope.techError = true;
-     treatError(error, 'tech');
-  });
+    if (validToken) {
+       $scope.tech_tags = techService.call(companyToken);
+       $scope.tech_tags.$promise.then(function (result) {
+         hideDefaultTech(false);
+         techLoaded = 'success';
+         finalizeTech();
+       }, function(error) {
+         $scope.techError = true;
+         treatError(error, 'tech');
+      });
+    } else {
+      console.log('not valid tech');
+      $scope.techError = true;
+    }
   }]);
 
   app.filter('techIdFilter', function () {
@@ -80,12 +89,16 @@ app.factory('skillService', ['$resource', function($resource) {
    }]);
 
    app.controller('CompanyCtrl', ['$scope', 'companyService', function($scope, companyService) {
-    $scope.company = companyService(companyToken);
-    $scope.company.$promise.then(function (result) {
-      projectsLoaded = 'success';
-      finalizeProject();
-    }, function(error) {
-      $scope.companyError = true;
-      treatError(error, 'company');
-    });
+     if (validToken) {
+        $scope.company = companyService(companyToken);
+        $scope.company.$promise.then(function (result) {
+          projectsLoaded = 'success';
+          finalizeProject();
+        }, function(error) {
+          $scope.companyError = true;
+          treatError(error, 'company');
+        });
+      } else {
+        $scope.companyError = true;
+      }
    }]);

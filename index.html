@@ -1,389 +1,555 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
-<head>
-    <title>Portfolio - Tomas Maiorino</title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tomas Maiorino's Portifolio">
-    <meta name="author" content="Tomas Maiorino">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
 
-    <!-- github calendar css -->
-    <link rel="stylesheet" href="assets/plugins/github-calendar/dist/github-calendar.css"/>
-    <!-- github acitivity css -->
-    <link rel="stylesheet" href="assets/plugins/github-activity/src/github-activity.css">
-    <!--
+<head>
+  <title>Portfolio - Tomas Maiorino</title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tomas Maiorino's Portifolio">
+  <meta name="author" content="Tomas Maiorino">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+
+  <!-- github calendar css -->
+  <link rel="stylesheet" href="assets/plugins/github-calendar/dist/github-calendar.css" />
+  <!-- github acitivity css -->
+  <link rel="stylesheet" href="assets/plugins/github-activity/src/github-activity.css">
+  <!--
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
     -->
-    <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
-    <link id="load-style" rel="stylesheet" href="assets/css/load.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- Theme CSS -->
+  <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+  <link id="load-style" rel="stylesheet" href="assets/css/load.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body id="page-top" class="body-scroll" ng-app="Portfolio">
-    <!-- ******HEADER****** -->
-    <header class="header">
-        <div class="container">
-            <img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
-            <div class="profile-content pull-left">
-                <h1 class="name">Tomas Maiorino</h1>
-                <h2 class="desc">Backend Developer</h2>
-                <ul class="social list-inline">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/tomas-maiorino-67971b19" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                    <li class="last-item"><a href="https://github.com/tomasmaiorino" target="_blank"><i class="fa fa-github-alt"></i></a></li>
-                    <!--<li class="last-item"><a href="#"><i class="fa fa-hacker-news"></i></a></li> -->
-                </ul>
-            </div><!--//profile-->
-            <a class="btn btn-cta-primary pull-right contact-scroll" href="#contact"><i class="fa fa-paper-plane"></i> Contact Me</a>
-        </div><!--//container-->
-    </header><!--//header-->
+  <!-- ******HEADER****** -->
+  <header class="header">
+    <div class="container">
+      <img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
+      <div class="profile-content pull-left">
+        <h1 class="name">Tomas Maiorino</h1>
+        <h2 class="desc">Backend Developer</h2>
+        <ul class="social list-inline">
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/tomas-maiorino-67971b19" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+          <li class="last-item"><a href="https://github.com/tomasmaiorino" target="_blank"><i class="fa fa-github-alt"></i></a></li>
+          <!--<li class="last-item"><a href="#"><i class="fa fa-hacker-news"></i></a></li> -->
+        </ul>
+      </div>
+      <!--//profile-->
+      <a class="btn btn-cta-primary pull-right contact-scroll" href="#contact"><i class="fa fa-paper-plane"></i> Contact Me</a>
+    </div>
+    <!--//container-->
+  </header>
+  <!--//header-->
 
-    <div class="container sections-wrapper">
-        <div class="row">
-            <div class="primary col-md-8 col-sm-12 col-xs-12">
-                <section class="about section" ng-controller="CompanyCtrl">
-                    <div class="section-inner">
-                        <h2 class="heading">About Me</h2>
-                        <div class="content">
-                            <p ng-if="!company.cover_letterp">Involved in software development and projects since 2009, in various segments. Gathered business and system requirements using Scrum and Kanbam. Modeled and designed object-oriented systems, using various Project Standards. Seven years of experience in Java/JEE development, using various frameworks, including JSF, RichFaces, PrimeFaces, Spring Framework, EJB, Hibernate, JPA and Struts. Extensive understanding of the application servers IBM Websphere, Oracle Weblogic and Tomcat.</p>
-                            <p ng-if="company.cover_letter">{{company.cover_letter}}</p>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </section><!--//section-->
+  <div class="container sections-wrapper">
+    <div class="row">
+      <div class="primary col-md-8 col-sm-12 col-xs-12">
+        <section class="about section" ng-controller="CompanyCtrl">
+          <div class="section-inner">
+            <h2 class="heading">About Me</h2>
+            <div class="content">
+              <p ng-if="!company.cover_letterp">Involved in software development and projects since 2009, in various segments. Gathered business and system requirements using Scrum and Kanbam. Modeled and designed object-oriented systems, using various Project Standards. Seven years of
+                experience in Java/JEE development, using various frameworks, including JSF, RichFaces, PrimeFaces, Spring Framework, EJB, Hibernate, JPA and Struts. Extensive understanding of the application servers IBM Websphere, Oracle Weblogic and
+                Tomcat.</p>
+              <p ng-if="company.cover_letter">{{company.cover_letter}}</p>
+            </div>
+            <!--//content-->
+          </div>
+          <!--//section-inner-->
+        </section>
+        <!--//section-->
 
-               <section class="latest section" ng-controller="CompanyCtrl">
-                    <div class="section-inner">
-                        <h2 class="heading">Latest Projects</h2>
-                        <div class="content project-load" align="center"
-                          ng-show="company.projects == null">
-                          <div style="width: 100px;" class="project-load">
-                            <div class="loading-container">
-                                <div class="loading"></div>
-                                <div class="loading-text">Projects</div>
-                            </div>
-                          </div>
-                        </div>
-                          <div class="content projects-content">
-                            <div class="item featured text-center job1 job-item"
-                                ng-repeat="project in company.projects | filter: { future_project: 'true' }"
-                                data-tech="{{project.tech_tags | techTagFilter}}" id="job1"
-                                ng-show="company.projects != null">
-                                <h3 class="title">{{project.name}}</h3>
-                                <p class="summary"></p>
-                                <div class="featured-image" align="center">
-                                    <a href="{{project.link_img}}" target="_blank">
-                                    <img class="img-responsive project-image" src="{{project.img}}" alt="{{project.name}}" />
-                                    </a>
-                                    <div class="ribbon">
-                                      <div class="text">New</div>
-                                    </div>
-                                </div>
-                                <div class="desc text-left">
-                                  <p ng-show="project.summary != null">{{project.summary}}</p>
-                                  <p ng-show="project.description != null">{{project.description}}</p>
-                                  <p ng-show="project.improvements != null"><strong>improvements:</strong> {{project.improvements}}</p>
-                                  <p ng-show="project.time_spent != null"><strong>Time spent:</strong> {{project.time_spent}}</p>
-                                </div><!--//desc-->
-                                <!--
+        <section class="latest section" ng-controller="CompanyCtrl">
+          <div class="section-inner">
+            <h2 class="heading">Latest Projects</h2>
+            <div class="content project-load" align="center" ng-show="company.projects == null" ng-hide="companyError == true">
+              <div style="width: 100px;" class="project-load">
+                <div class="loading-container">
+                  <div class="loading"></div>
+                  <div class="loading-text">Projects</div>
+                </div>
+              </div>
+            </div>
+            <div class="content projects-content">
+              <div class="item featured text-center job1 job-item" ng-repeat="project in company.projects | filter: { future_project: 'true' }" data-tech="{{project.tech_tags | techTagFilter}}" id="job1" ng-show="company.projects != null">
+                <h3 class="title">{{project.name}}</h3>
+                <p class="summary"></p>
+                <div class="featured-image" align="center">
+                  <a href="{{project.link_img}}" target="_blank">
+                    <img class="img-responsive project-image" src="{{project.img}}" alt="{{project.name}}" />
+                  </a>
+                  <div class="ribbon">
+                    <div class="text">New</div>
+                  </div>
+                </div>
+                <div class="desc text-left">
+                  <p ng-show="project.summary != null">{{project.summary}}</p>
+                  <p ng-show="project.description != null">{{project.description}}</p>
+                  <p ng-show="project.improvements != null"><strong>improvements:</strong> {{project.improvements}}</p>
+                  <p ng-show="project.time_spent != null"><strong>Time spent:</strong> {{project.time_spent}}</p>
+                </div>
+                <!--//desc-->
+                <!--
                                 <a class="btn btn-cta-secondary" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank"><i class="fa fa-thumbs-o-up"></i> Back my project</a>
                                 -->
-                            </div><!--//item-->
-                            <hr class="divider" />
-                            <div class="item row job{{$index + 2}} pointer job-item"
-                                  ng-style="$index + 2 == 4 && {'display':'none'}"
-                                  ng-class="{'hide-jobs': $index + 2 == 4 }"
-                                  ng-repeat="project in company.projects | filter: { future_project: 'false' }"
-                                  data-tech="{{project.tech_tags | techTagFilter}}"  id="job{{$index + 2}}"
-                                  ng-show="company.projects != null">
-                              <div align="center">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="{{project.link_img}}" target="_blank">
-                                <img class="img-responsive project-image" src="{{project.img}}" alt="{{project.name}}" />
-                                </a>
-                              </div>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12 pointer">
-                                    <h3 class="title">{{project.name}}</h3>
-                                    <p ng-show="project.summary != null">{{project.summary}}</p>
-                                    <p ng-show="project.description != null">{{project.description}}</p>
-                                    <p ng-show="project.improvements != null"><strong>improvements:</strong> {{project.improvements}}</p>
-                                    <p ng-show="project.time_spent != null"><strong>Time spent:</strong> {{project.time_spent}}</p>
-                                </div><!--//desc-->
-                            </div><!--//item-->
+              </div>
+              <!--//item-->
+              <hr class="divider" />
+              <div class="item row job{{$index + 2}} pointer job-item" ng-style="$index + 2 == 4 && {'display':'none'}" ng-class="{'hide-jobs': $index + 2 == 4 }" ng-repeat="project in company.projects | filter: { future_project: 'false' }" data-tech="{{project.tech_tags | techTagFilter}}"
+                id="job{{$index + 2}}" ng-show="company.projects != null">
+                <div align="center">
+                  <a class="col-md-4 col-sm-4 col-xs-12" href="{{project.link_img}}" target="_blank">
+                    <img class="img-responsive project-image" src="{{project.img}}" alt="{{project.name}}" />
+                  </a>
+                </div>
+                <div class="desc col-md-8 col-sm-8 col-xs-12 pointer">
+                  <h3 class="title">{{project.name}}</h3>
+                  <p ng-show="project.summary != null">{{project.summary}}</p>
+                  <p ng-show="project.description != null">{{project.description}}</p>
+                  <p ng-show="project.improvements != null"><strong>improvements:</strong> {{project.improvements}}</p>
+                  <p ng-show="project.time_spent != null"><strong>Time spent:</strong> {{project.time_spent}}</p>
+                </div>
+                <!--//desc-->
+              </div>
+              <!--//item-->
 
-                            <div class="item row job5 pointer" ng-show="company.projects.length > 3">
-                              <div align="center">
-                                <p><a class="more-link" onclick="showMoreJobs();" id="showMoreJobs">Show anothers jobs</a></p>
-                              </div>
-                            </div>
+              <div class="item row job5 pointer" ng-show="company.projects.length > 3">
+                <div align="center">
+                  <p><a class="more-link" onclick="showMoreJobs();" id="showMoreJobs">Show anothers jobs</a></p>
+                </div>
+              </div>
+            </div>
+            <!--//section-inner-->
+            <div class="content" ng-show="companyError">
+              <div class="item featured text-center job1">
+                <h3 class="title">Netshoes - Recover Password</h3>
+                <p class="summary"></p>
+                <div class="featured-image" align="center">
+                  <a href="http://www.netshoes.com.br" target="_blank">
+                    <img class="img-responsive project-image" src="assets/images/projects/netshoes.png" alt="recover password" />
+                  </a>
+                  <div class="ribbon">
+                    <div class="text">New</div>
+                  </div>
+                </div>
+                <div class="desc text-left">
+                  <p>Change the <a data-toggle="tooltip" title="Oracle Commerce Platform" href="http://www.oracle.com/us/products/applications/atg/web-commerce/index.html" target="_blank">ATG's</a> recover password workflow.</p>
+                  <p>Through this new approach the user will receive a link to update his password directly in the website rather than receive a new password and have it changed by the platform.</p>
+                </div>
+                <!--//desc-->
+              </div>
+              <!--//item-->
+              <hr class="divider" />
+              <div class="item row job2 pointer">
+                <div align="center">
+                  <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.netshoes.com.br" target="_blank">
+                    <img class="img-responsive project-image" src="assets/images/projects/netshoes.png" alt="profile update" />
+                  </a>
+                </div>
+                <div class="desc col-md-8 col-sm-8 col-xs-12 pointer">
+                  <h3 class="title">Netshoes - Profile Update</h3>
+                  <p>Update user's contact information in the confirmation page in order to help to find the user if some problem happens with his order.</p>
+                </div>
+                <!--//desc-->
+              </div>
+              <!--//item-->
+              <div class="item row job6 pointer">
+                <div align="center">
+                  <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.netshoes.com.br" target="_blank">
+                    <img class="img-responsive project-image" src="assets/images/projects/netshoes.png" alt="Order Integration" />
+                  </a>
+                </div>
+                <div class="desc col-md-8 col-sm-8 col-xs-12 pointer">
+                  <h3 class="title">Netshoes - Order Integration</h3>
+                  <p>Send some order's informations to a JSM Queue which would be consumed and saved in a Mongo DB by a Spring Boot Service.</p>
+                </div>
+                <!--//desc-->
+              </div>
+              <!--//item-->
 
-                    </div><!--//section-inner-->
-                </section><!--//section-->
+              <div class="item row job3 pointer hide-jobs" style="display:none">
+                <div align="center">
+                  <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.etna.com.br/" target="_blank">
+                    <img class="img-responsive project-image" src="assets/images/projects/etna.png" alt="Etna Integration" />
+                  </a>
+                </div>
+                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                  <h3 class="title">Etna - Integrations</h3>
+                  <p>Help to develop all integrations between the ecommerce (ATG) and client's ERP. Also work in the construction of the api which is used for all integrations both versioned and unversioned of the ATG assets.</p>
+                  <!--
+                               <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                             -->
+                </div>
+                <!--//desc-->
+              </div>
+              <!--//item-->
 
-                <section class="projects section">
-                    <div class="section-inner">
-                        <h2 class="heading">Other Projects</h2>
-                        <div class="content">
-                            <div class="item">
-                                <h3 class="title"><a href="#">Ruby On Rails' Project - Play Card</a> <span class="label label-theme">Own Project</span></h3>
-                                <p class="summary">A Ruby on Rails application created in order to learn both Ruby and Ruby on Rails. It is a like card game based on the Poker rules.</p>
-                                <p><a class="more-link" href="https://polar-sea-96842.herokuapp.com/" target="_blank"><i class="fa fa-external-link"></i> Lets play it ?</a></p>
-                                <p><a class="more-link" href="https://github.com/tomasmaiorino/playpoker" target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
-                            </div><!--//item-->
-                            <div class="item">
-                                 <h3 class="title"><a href="#">Ruby On Rails' Project - Send Email</a> <span class="label label-theme">Own Project</span></h3>
-                                <p class="summary">A Ruby on Rails application created to send e-mails througth mailgun engine.</p>
-                                <p><a class="more-link" href="https://github.com/tomasmaiorino/send_email" target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
-                            </div><!--//item-->
-                            <!--
+              <div class="item row job4 pointer hide-jobs" style="display:none">
+                <div align="center">
+                  <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.etna.com.br/" target="_blank">
+                    <img class="img-responsive project-image" src="assets/images/projects/etna.png" alt="Etna Integration" />
+                  </a>
+                </div>
+                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                  <h3 class="title">Etna - Ordering furniture</h3>
+                  <p>Company allowed some skus, previous registered, to be bought even if the stock level being equal to 0. </p>
+                  <p>Improvement on the order's integration between the client's ERP and the e-commerce (ATG 11). After that, the order's integration started to be controlled by the integration status id instead the order's last modified date, which decrease
+                    the amount of orders not integrated.</p>
+                </div>
+                <!--//desc-->
+              </div>
+              <!--//item-->
+              <div class="item row job5 pointer hide-jobs" style="display:none">
+                <div align="center">
+                  <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.etna.com.br" target="_blank">
+                    <img class="img-responsive project-image" src="assets/images/projects/etna.png" alt="project name" />
+                  </a>
+                </div>
+                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                  <h3 class="title">Etna - General activities</h3>
+                  <p>Helped to identify and fix some problems in production environment.</p>
+                  <p>Improve the integration between the Ecommerce (ATG) and the payment gateway through RQLs improvement and integration tasks separation.</p>
+                  <p>Create some reports using OBIEE and custom queries for Oracle Database.</p>
+                  <!--
+                               <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-startups-tempo/" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                             -->
+                </div>
+                <!--//desc-->
+              </div>
+              <!--//item-->
+              <div class="item row job5 pointer">
+                <div align="center">
+                  <p><a class="more-link" onclick="showMoreJobs();" id="showMoreJobs">Show anothers jobs</a></p>
+                </div>
+              </div>
+              <!--//item-->
+            </div>
+            <!//content>
+        </section>
+        <!--//section-->
+
+        <section class="projects section">
+          <div class="section-inner">
+            <h2 class="heading">Other Projects</h2>
+            <div class="content">
+              <div class="item">
+                <h3 class="title"><a href="#">Ruby On Rails' Project - Play Card</a> <span class="label label-theme">Own Project</span></h3>
+                <p class="summary">A Ruby on Rails application created in order to learn both Ruby and Ruby on Rails. It is a like card game based on the Poker rules.</p>
+                <p><a class="more-link" href="https://polar-sea-96842.herokuapp.com/" target="_blank"><i class="fa fa-external-link"></i> Lets play it ?</a></p>
+                <p><a class="more-link" href="https://github.com/tomasmaiorino/playpoker" target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
+              </div>
+              <!--//item-->
+              <div class="item">
+                <h3 class="title"><a href="#">Ruby On Rails' Project - Send Email</a> <span class="label label-theme">Own Project</span></h3>
+                <p class="summary">A Ruby on Rails application created to send e-mails througth mailgun engine.</p>
+                <p><a class="more-link" href="https://github.com/tomasmaiorino/send_email" target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
+              </div>
+              <!--//item-->
+              <!--
                             <a class="btn btn-cta-secondary" href="#">More on CoderWall <i class="fa fa-chevron-right"></i></a>
 
                             -->
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </section><!--//section-->
+            </div>
+            <!--//content-->
+          </div>
+          <!--//section-inner-->
+        </section>
+        <!--//section-->
 
-                <section class="experience section">
-                    <div class="section-inner">
-                        <h2 class="heading">Work Experience</h2>
-                        <div class="content">
-                            <div class="item">
-                                <h3 class="title">Java Senior Developer <span class="place"><a href="#">Netshoes</a></span> <span class="year">(2015 - Present)</span></h3>
-                                <p>Responsible for developing new features and maintenance for a brasilian ecommerce using Oracle ATG Commerce 11 also responsible for developing and maintenace microservices (Spring boot and rest services) are consumed by the store. Analyzing and fixing problems in production environment. Managed Oracle. Worked on the planning and implementation of approvals, holding meetings with users to define gather system requirements.</p>
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title">Java Senior Developer - <span class="place"><a href="#">Compasso</a></span> <span class="year">(05/2014 - 12/2015)</span></h3>
-                                <p>Responsible for developing new features and maintenance for a brasilian ecommerce using Oracle ATG Commerce 11 also responsible for developing integrations services between ATG and client's ERP (webservices soap/rest). Analyzing and fixing problems in production environment. Managed Oracle Databases. Worked on the planning and implementation of approvals, holding meetings with users to define and gather system requirements.</p>
-                            </div><!--//item-->
+        <section class="experience section">
+          <div class="section-inner">
+            <h2 class="heading">Work Experience</h2>
+            <div class="content">
+              <div class="item">
+                <h3 class="title">Java Senior Developer <span class="place"><a href="#">Netshoes</a></span> <span class="year">(2015 - Present)</span></h3>
+                <p>Responsible for developing new features and maintenance for a brasilian ecommerce using Oracle ATG Commerce 11 also responsible for developing and maintenace microservices (Spring boot and rest services) are consumed by the store. Analyzing
+                  and fixing problems in production environment. Managed Oracle. Worked on the planning and implementation of approvals, holding meetings with users to define gather system requirements.</p>
+              </div>
+              <!--//item-->
+              <div class="item">
+                <h3 class="title">Java Senior Developer - <span class="place"><a href="#">Compasso</a></span> <span class="year">(05/2014 - 12/2015)</span></h3>
+                <p>Responsible for developing new features and maintenance for a brasilian ecommerce using Oracle ATG Commerce 11 also responsible for developing integrations services between ATG and client's ERP (webservices soap/rest). Analyzing and fixing
+                  problems in production environment. Managed Oracle Databases. Worked on the planning and implementation of approvals, holding meetings with users to define and gather system requirements.</p>
+              </div>
+              <!--//item-->
 
-                            <div class="item">
-                                <h3 class="title">Java Senior Developer - <span class="place"><a href="#">Via Varejo</a></span> <span class="year">(12/2013 - 05/2014)</span></h3>
-                                <p>Responsible for developing new features and maintaince some internal site for a brazilian's reatail company.</p>
-                            </div><!--//item-->
+              <div class="item">
+                <h3 class="title">Java Senior Developer - <span class="place"><a href="#">Via Varejo</a></span> <span class="year">(12/2013 - 05/2014)</span></h3>
+                <p>Responsible for developing new features and maintaince some internal site for a brazilian's reatail company.</p>
+              </div>
+              <!--//item-->
 
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </section><!--//section-->
+            </div>
+            <!--//content-->
+          </div>
+          <!--//section-inner-->
+        </section>
+        <!--//section-->
 
-                <section class="experience section" id="contact">
-                    <form name="sentMessage" id="contactForm">
-                    <div class="section-inner">
-                        <h2 class="heading">Contact</h2>
-                    <div class="content">
-                        <div class="item">
-                          <h3 class="title">Name</h3><p class="help-block text-danger"></p>
-                          <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-                        </div>
-                        <div class="item">
-                          <h3 class="title">Email Address</h3><p class="help-block text-danger"></p>
-                          <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                        </div>
-                        <div class="item">
-                          <h3 class="title">Message</h3><p class="help-block text-danger"></p>
-                          <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                        </div>
-                        <div id="success"></div>
-                        <div class="item">
-                            <button type="submit" id="btnSubmit" class="btn btn-cta-secondary">Send</button>
-                            <img id="imgLoad" style="display: none" src="assets/images/ajax-loader.gif" />
-                        </div>
+        <section class="experience section" id="contact">
+          <form name="sentMessage" id="contactForm">
+            <div class="section-inner">
+              <h2 class="heading">Contact</h2>
+              <div class="content">
+                <div class="item">
+                  <h3 class="title">Name</h3>
+                  <p class="help-block text-danger"></p>
+                  <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                </div>
+                <div class="item">
+                  <h3 class="title">Email Address</h3>
+                  <p class="help-block text-danger"></p>
+                  <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                </div>
+                <div class="item">
+                  <h3 class="title">Message</h3>
+                  <p class="help-block text-danger"></p>
+                  <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                </div>
+                <div id="success"></div>
+                <div class="item">
+                  <button type="submit" id="btnSubmit" class="btn btn-cta-secondary">Send</button>
+                  <img id="imgLoad" style="display: none" src="assets/images/ajax-loader.gif" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        </div>
+        <!--//primary-->
+        <div class="secondary col-md-4 col-sm-12 col-xs-12">
+          <aside class="info aside section">
+            <div class="section-inner">
+              <h2 class="heading sr-only">Basic Information</h2>
+              <div class="content">
+                <ul class="list-unstyled">
+                  <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>São Paulo, Brazil</li>
+                  <li><i class="fa fa-envelope-o"></i><span class="sr-only email-link">Email:</span><a href="#" class="email-link-link">tomasmaiorino@gmail.com</a></li>
+                </ul>
+              </div>
+              <!--//content-->
+            </div>
+            <!--//section-inner-->
+          </aside>
+          <!--//aside-->
+
+          <aside class="skills aside section" ng-controller="SkillCtrl">
+            <div class="section-inner">
+              <h2 class="heading">Skills</h2>
+              <div class="content">
+                <p class="intro">
+                  <div class="skill-load" align="center" ng-show="skills.skills == null" ng-hide="skillsError == true">
+                    <div style="width: 100px;">
+                      <div class="loading-container">
+                        <div class="loading"></div>
+                        <div class="loading-text">skill</div>
+                      </div>
                     </div>
                   </div>
-                  </form>
-                </section>
-
-            </div><!--//primary-->
-            <div class="secondary col-md-4 col-sm-12 col-xs-12">
-                 <aside class="info aside section">
-                    <div class="section-inner">
-                        <h2 class="heading sr-only">Basic Information</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>São Paulo, Brazil</li>
-                                <li><i class="fa fa-envelope-o"></i><span class="sr-only email-link">Email:</span><a href="#" class="email-link-link">tomasmaiorino@gmail.com</a></li>
-                            </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//aside-->
-
-                <aside class="skills aside section" ng-controller="SkillCtrl">
-                    <div class="section-inner">
-                        <h2 class="heading">Skills</h2>
-                        <div class="content">
-                            <p class="intro">
-                            <div class="skill-load" align="center" ng-show="skills.skills == null" ng-hide="skillsError == true">
-                              <div style="width: 100px;">
-                                <div class="loading-container">
-                                  <div class="loading"></div>
-                                  <div class="loading-text">skill</div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="skillset">
-                              <div ng-repeat="skill in skills.skills" class="item company-skill-item" ng-show="skills != null && skills.skills.length > 0">
-                                <h3 class="level-title">{{skill.name}}<span class="level-label" data-toggle="tooltip"
+                  <div class="skillset">
+                    <div ng-repeat="skill in skills.skills" class="item company-skill-item" ng-show="skills != null && skills.skills.length > 0">
+                      <h3 class="level-title">{{skill.name}}<span class="level-label" data-toggle="tooltip"
                                    data-placement="left" data-animation="false" title="">Pro</span>
                                 </h3>
-                                <div class="level-bar">
-                                  <div class="level-bar-inner" data-level="{{skill.level}}%" style="width:{{skill.level}}%"></div>
-                                </div><!--//level-bar-->
-                              </div>
-                            </div>
-                            <div class="skillset defaultSkillset" ng-show="skillsError">
-                              <div class="item">
-                                <h3 class="level-title">Java &amp; J2EE<span class="level-label" data-toggle="tooltip"
+                      <div class="level-bar">
+                        <div class="level-bar-inner" data-level="{{skill.level}}%" style="width:{{skill.level}}%"></div>
+                      </div>
+                      <!--//level-bar-->
+                    </div>
+                  </div>
+                  <div class="skillset defaultSkillset" ng-show="skillsError">
+                    <div class="item">
+                      <h3 class="level-title">Java &amp; J2EE<span class="level-label" data-toggle="tooltip"
                                    data-placement="left" data-animation="true" title="">Pro</span></h3>
-                                <div class="level-bar">
-                                  <div class="level-bar-inner" data-level="96%">
-                                  </div>
-                                </div><!--//level-bar-->
+                      <div class="level-bar">
+                        <div class="level-bar-inner" data-level="96%">
+                        </div>
+                      </div>
+                      <!--//level-bar-->
 
-                              </div><!--//item-->
+                    </div>
+                    <!--//item-->
 
-                              <div class="item">
-                                  <h3 class="level-title">Javascript &amp; jQuery<span class="level-label" title="Developer Level">Dev</span></h3>
-                                  <div class="level-bar">
-                                      <div class="level-bar-inner" data-level="70%">
-                                      </div>
-                                  </div><!--//level-bar-->
-                              </div><!--//item-->
+                    <div class="item">
+                      <h3 class="level-title">Javascript &amp; jQuery<span class="level-label" title="Developer Level">Dev</span></h3>
+                      <div class="level-bar">
+                        <div class="level-bar-inner" data-level="70%">
+                        </div>
+                      </div>
+                      <!--//level-bar-->
+                    </div>
+                    <!--//item-->
 
-                              <div class="item">
-                                  <h3 class="level-title">Databases<span class="level-label" title="Develpment">Pro</span></h3>
-                                  <div class="level-bar">
-                                      <div class="level-bar-inner" data-level="60%">
-                                      </div>
-                                  </div><!--//level-bar-->
-                              </div><!--//item-->
+                    <div class="item">
+                      <h3 class="level-title">Databases<span class="level-label" title="Develpment">Pro</span></h3>
+                      <div class="level-bar">
+                        <div class="level-bar-inner" data-level="60%">
+                        </div>
+                      </div>
+                      <!--//level-bar-->
+                    </div>
+                    <!--//item-->
 
-                              <div class="item">
-                                  <h3 class="level-title">Ruby on Rails<span class="level-label" title="Develpment of some particular projects">Developer</span></h3>
-                                  <div class="level-bar">
-                                      <div class="level-bar-inner" data-level="40%">
-                                      </div>
-                                  </div><!--//level-bar-->
-                              </div><!--//item-->
+                    <div class="item">
+                      <h3 class="level-title">Ruby on Rails<span class="level-label" title="Develpment of some particular projects">Developer</span></h3>
+                      <div class="level-bar">
+                        <div class="level-bar-inner" data-level="40%">
+                        </div>
+                      </div>
+                      <!--//level-bar-->
+                    </div>
+                    <!--//item-->
 
-                              <div class="item">
-                                  <h3 class="level-title">ATG &amp; ENDECA<span class="level-label">Pro</span></h3>
-                                  <div class="level-bar">
-                                      <div class="level-bar-inner" data-level="50%">
-                                      </div>
-                                  </div><!--//level-bar-->
-                              </div><!--//item-->
-                                <!--
+                    <div class="item">
+                      <h3 class="level-title">ATG &amp; ENDECA<span class="level-label">Pro</span></h3>
+                      <div class="level-bar">
+                        <div class="level-bar-inner" data-level="50%">
+                        </div>
+                      </div>
+                      <!--//level-bar-->
+                    </div>
+                    <!--//item-->
+                    <!--
                                 <p><a class="more-link" href="#"><i class=
                                 "fa fa-external-link"></i> More on Coderwall</a></p>
                                 -->
-                            </div>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
+                  </div>
+              </div>
+              <!--//content-->
+            </div>
+            <!--//section-inner-->
+          </aside>
+          <!--//section-->
 
-                <aside class="education aside section" ng-controller="TechCtrl">
-                    <div class="section-inner">
-                        <h2 class="heading">Another Technologies</h2>
-                        <div class="content">
-                          <div class="tech-load" align="center" ng-show="tech_tags.tech_tags == null" ng-hide="techError == true">
-                            <div style="width: 100px;">
-                              <div class="loading-container">
-                                  <div class="loading"></div>
-                                  <div class="loading-text">Another Technologies</div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="item tech-defaulf-content" style="color: #66cb8c;" ng-show="tech_tags.tech_tags != null && tech_tags.tech_tags.length > 0">
-                            <div ng-repeat="tech in tech_tags.tech_tags" style="display:inline">
-                              <span
-                              class="tech-item label label-success" id="{{tech | techIdFilter}}">{{tech}}</span>
-                            </div>
-                        </div><!--//item-->
-                        <div class="item" style="color: #66cb8c;" ng-show="techError == true">
-                          <span class="tech-default label label-success" id="ANT">ANT</span>
-                          <span class="tech-default label label-success" id="GIT">GIT</span>
-                          <span class="tech-default label label-success" id="REST">REST</span>
-                          <span class="tech-default label label-success" id="SOAP">SOAP</span>
-                          <span class="tech-default label label-success" id="SPRING-BOOT">SPRING BOOT</span>
-                          <span class="tech-default label label-success" id="SPRING-WEB">SPRING WEB</span>
-                          <span class="tech-default label label-success" id="JSF 1.2">JSF 1.2</span>
-                          <span class="tech-default label label-success" id="JSTL">JSTL</span>
-                          <span class="tech-default label label-success" id="MYSQL">MYSQL</span>
-                          <span class="tech-default label label-success" id="ORACLE">ORACLE</span>
-                          <span class="tech-default label label-success" id="WEBLOGIC">WEBLOGIC</span>
-                          <span class="tech-default label label-success" id="REDIS">REDIS</span>
-                          <span class="tech-default label label-success" id="MONGO-DB">MONGO DB</span>
-                          <span class="tech-default label label-success" id="SVN">SVN</span>
-                          <span class="tech-default label label-success" id="JMS">JMS</span>
-                        </div>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
+          <aside class="education aside section" ng-controller="TechCtrl">
+            <div class="section-inner">
+              <h2 class="heading">Another Technologies</h2>
+              <div class="content">
+                <div class="tech-load" align="center" ng-show="tech_tags.tech_tags == null" ng-hide="techError == true">
+                  <div style="width: 100px;">
+                    <div class="loading-container">
+                      <div class="loading"></div>
+                      <div class="loading-text">Another Technologies</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item tech-defaulf-content" style="color: #66cb8c;" ng-show="tech_tags.tech_tags != null && tech_tags.tech_tags.length > 0">
+                  <div ng-repeat="tech in tech_tags.tech_tags" style="display:inline">
+                    <span class="tech-item label label-success" id="{{tech | techIdFilter}}">{{tech}}</span>
+                  </div>
+                </div>
+                <!--//item-->
+                <div class="item" style="color: #66cb8c;" ng-show="techError == true">
+                  <span class="tech-default label label-success" id="ANT">ANT</span>
+                  <span class="tech-default label label-success" id="GIT">GIT</span>
+                  <span class="tech-default label label-success" id="REST">REST</span>
+                  <span class="tech-default label label-success" id="SOAP">SOAP</span>
+                  <span class="tech-default label label-success" id="SPRING-BOOT">SPRING BOOT</span>
+                  <span class="tech-default label label-success" id="SPRING-WEB">SPRING WEB</span>
+                  <span class="tech-default label label-success" id="JSF 1.2">JSF 1.2</span>
+                  <span class="tech-default label label-success" id="JSTL">JSTL</span>
+                  <span class="tech-default label label-success" id="MYSQL">MYSQL</span>
+                  <span class="tech-default label label-success" id="ORACLE">ORACLE</span>
+                  <span class="tech-default label label-success" id="WEBLOGIC">WEBLOGIC</span>
+                  <span class="tech-default label label-success" id="REDIS">REDIS</span>
+                  <span class="tech-default label label-success" id="MONGO-DB">MONGO DB</span>
+                  <span class="tech-default label label-success" id="SVN">SVN</span>
+                  <span class="tech-default label label-success" id="JMS">JMS</span>
+                </div>
+              </div>
+              <!--//content-->
+            </div>
+            <!--//section-inner-->
+          </aside>
+          <!--//section-->
 
-                <aside class="education aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Education</h2>
-                        <div class="content">
-                            <div class="item">
-                                <h3 class="title"><i class="fa fa-graduation-cap"></i> Analysis and Systems Development</h3>
-                                <h4 class="university">Universidade Metodista de São Paulo <span class="year">(2008-2010)</span></h4>
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title"><i class="fa fa-graduation-cap"></i> Bachelor in Music </h3>
-                                <h4 class="university">FIAM - FAAM <span class="year">(2003-2007)</span></h4>
-                            </div><!--//item-->
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
+          <aside class="education aside section">
+            <div class="section-inner">
+              <h2 class="heading">Education</h2>
+              <div class="content">
+                <div class="item">
+                  <h3 class="title"><i class="fa fa-graduation-cap"></i> Analysis and Systems Development</h3>
+                  <h4 class="university">Universidade Metodista de São Paulo <span class="year">(2008-2010)</span></h4>
+                </div>
+                <!--//item-->
+                <div class="item">
+                  <h3 class="title"><i class="fa fa-graduation-cap"></i> Bachelor in Music </h3>
+                  <h4 class="university">FIAM - FAAM <span class="year">(2003-2007)</span></h4>
+                </div>
+                <!--//item-->
+              </div>
+              <!--//content-->
+            </div>
+            <!--//section-inner-->
+          </aside>
+          <!--//section-->
 
-                <aside class="languages aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Languages</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li class="item">
-                                    <span class="title"><strong>Portuguese:</strong></span>
-                                    <span class="level">Native Speaker <br class="visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
-                                </li><!--//item-->
-                                <li class="item">
-                                    <span class="title"><strong>English:</strong></span>
-                                    <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half"></i></span>
-                                </li><!--//item-->
-                            </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
+          <aside class="languages aside section">
+            <div class="section-inner">
+              <h2 class="heading">Languages</h2>
+              <div class="content">
+                <ul class="list-unstyled">
+                  <li class="item">
+                    <span class="title"><strong>Portuguese:</strong></span>
+                    <span class="level">Native Speaker <br class="visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+                  </li>
+                  <!--//item-->
+                  <li class="item">
+                    <span class="title"><strong>English:</strong></span>
+                    <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half"></i></span>
+                  </li>
+                  <!--//item-->
+                </ul>
+              </div>
+              <!--//content-->
+            </div>
+            <!--//section-inner-->
+          </aside>
+          <!--//section-->
 
-            </div><!--//secondary-->
-        </div><!--//row-->
-    </div><!--//masonry-->
+        </div>
+        <!--//secondary-->
+      </div>
+      <!--//row-->
+    </div>
+    <!--//masonry-->
 
     <!-- ******FOOTER****** -->
     <footer class="footer">
-        <div class="container text-center">
-                <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-                <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-        </div><!--//container-->
-    </footer><!--//footer-->
+      <div class="container text-center">
+        <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+        <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+      </div>
+      <!--//container-->
+    </footer>
+    <!--//footer-->
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-     <div class="scroll-top page-scroll ">
-         <a class="btn btn-primary" href="#page-top">
-             <i class="fa fa-chevron-up"></i>
-         </a>
-     </div>
+    <div class="scroll-top page-scroll ">
+      <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
     <!-- Javascript -->
     <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -409,7 +575,8 @@
     <script type="text/javascript" src="assets/js/angular-resource.js"></script>
     <script type="text/javascript" src="assets/js/port.js"></script>
     <script>
-     initConfig();
-   </script>
+      initConfig();
+    </script>
 </body>
+
 </html>

@@ -245,6 +245,18 @@ function setLoadColor(pColor) {
   }
 }
 
+function setRatingColor() {
+  if (validToken) {
+    var pColor = getColorFromCompany();
+    if (pColor == '') {
+        pColor = DEFAULT_COLOR;
+    }
+    console.log('changing rating color to ' + pColor);
+    $('.starrr').find('span').each(function(){
+      $(this).css('color', '#'+pColor)});
+    }
+}
+
 function showProjectLoad(show) {
   if (show) {
     $('.project-load').show('slow');
@@ -331,6 +343,7 @@ function initConfig() {
     setLoadColor(getColorFromCompany());
     debug('load coloer fields.')
     loadColorsFields(getColorFromCompany());
+    //setRatingColor();
   }else {
     finalizeSkill(true);
     restoreDefaultColor();
@@ -403,6 +416,7 @@ function finalizeProject() {
         loadHighlight();
       });
       clearInterval(id);
+      $('.bs-example-modal-sm').modal('show');
     }
   }
 }

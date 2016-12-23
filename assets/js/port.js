@@ -8,24 +8,21 @@ app.factory('skillService', ['$resource', function($resource) {
    return function(cmp) {
      // does the external call
      console.log("Calling skill service for company token: " + cmp);
-     return Skill.get({param: cmp},
-       function success(response){
-        // console.log(response);
-       }, function error (response){
-         if(404 == response.status) {
-           showSkillLoad(false);
-         }
-       });
+     return Skill.get({param: cmp});
    };
  }]);
 
  app.controller('SkillCtrl', ['$scope', 'skillService', function($scope, skillService) {
   $scope.skills = skillService(companyToken);
-  if (!!$scope.skills) {
-    hideSkillSet(false);
-    skillLoaded = 'success';
-    finalizeSkill();
-  }
+    $scope.skills.$promise.then(function (result) {
+      hideSkillSet(false);
+      skillLoaded = 'success';
+      finalizeSkill();
+    }, function(error) {
+      $scope.skillsError = true;
+      treatError(error, 'skill');
+      finalizeSkill(true);
+   });
  }]);
 
  app.factory('techService', ['$resource', function($resource) {
@@ -35,29 +32,23 @@ app.factory('skillService', ['$resource', function($resource) {
    });
     return {
       call: function(cmp) {
-      // does the external call
-      console.log("Calling techService service for company token: " + cmp);
-      return Tech.get({param: 'cmp'},
-        function success(response){
-         // console.log(response);
-        }, function error (response){
-          var funcs = []
-          //funcs.push(function (){alert('ok')});
-          //funcs.push(function (){alert('ok again')});
-          techLoaded = 'error';
-          treatError(response, 'tech', funcs);
-        });
+        // does the external call
+        console.log("Calling techService service for company token: " + cmp);
+        return Tech.get({param: cmp});
       }
     };
   }]);
 
   app.controller('TechCtrl', ['$scope', 'techService', function($scope, techService) {
    $scope.tech_tags = techService.call(companyToken);
-   if (!!$scope.tech_tags) {
+   $scope.tech_tags.$promise.then(function (result) {
      hideDefaultTech(false);
      techLoaded = 'success';
      finalizeTech();
-   }
+   }, function(error) {
+     $scope.techError = true;
+     treatError(error, 'tech');
+  });
   }]);
 
   app.filter('techIdFilter', function () {
@@ -84,20 +75,17 @@ app.factory('skillService', ['$resource', function($resource) {
      return function(cmp) {
        // does the external call
        console.log("Calling company service for company token: " + cmp);
-       return Company.get({param: cmp},
-         function success(response){
-          // console.log(response);
-         }, function error (response){
-          treatError(response, 'company');
-         });
+       return Company.get({param: cmp});
      };
    }]);
 
    app.controller('CompanyCtrl', ['$scope', 'companyService', function($scope, companyService) {
     $scope.company = companyService(companyToken);
-    if (!!$scope.company) {
-      //hideDefaultProjects(false);
+    $scope.company.$promise.then(function (result) {
       projectsLoaded = 'success';
       finalizeProject();
-    }
+    }, function(error) {
+      $scope.companyError = true;
+      treatError(error, 'company');
+    });
    }]);

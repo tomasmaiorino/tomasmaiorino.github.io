@@ -224,7 +224,7 @@
                         <h2 class="heading">Skills</h2>
                         <div class="content">
                             <p class="intro">
-                            <div class="skill-load" align="center" ng-show="skills.skills == null">
+                            <div class="skill-load" align="center" ng-show="skills.skills == null" ng-hide="skillsError == true">
                               <div style="width: 100px;">
                                 <div class="loading-container">
                                   <div class="loading"></div>
@@ -242,7 +242,7 @@
                                 </div><!--//level-bar-->
                               </div>
                             </div>
-                            <div class="skillset defaultSkillset" style="display:none">
+                            <div class="skillset defaultSkillset" ng-show="skillsError">
                               <div class="item">
                                 <h3 class="level-title">Java &amp; J2EE<span class="level-label" data-toggle="tooltip"
                                    data-placement="left" data-animation="true" title="">Pro</span></h3>
@@ -311,7 +311,7 @@
                               class="tech-item label label-success" id="{{tech | techIdFilter}}">{{tech}}</span>
                             </div>
                         </div><!--//item-->
-                        <div class="item" style="color: #66cb8c;" ng-show="techError == true">{{techError}}
+                        <div class="item" style="color: #66cb8c;" ng-show="techError == true">
                           <span class="tech-default label label-success" id="ANT">ANT</span>
                           <span class="tech-default label label-success" id="GIT">GIT</span>
                           <span class="tech-default label label-success" id="REST">REST</span>

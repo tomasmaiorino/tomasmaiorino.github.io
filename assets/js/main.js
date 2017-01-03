@@ -79,6 +79,8 @@ var EXTERNAL_SERVICE_HOST = "http://127.0.0.1:3000";
 //var PROJECTS_URL = "token/:param";
 //var TECH_TAGS_URL = "tech/:param";
 var COMPANY_URL = EXTERNAL_SERVICE_HOST + "/api/v1/company/:option/:param";
+
+var RATING_URL = EXTERNAL_SERVICE_HOST + "/api/v1/rating";
 //var SKILL_URL = COMPANY_URL + "skill/:param";
 var DEFAULT_COLOR = "#5cb85c";
 var OWN_PROJECT_COLOR = "#3AAA64";

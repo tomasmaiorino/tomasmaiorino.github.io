@@ -106,3 +106,39 @@ app.factory('skillService', ['$resource', function($resource) {
         $scope.companyError = true;
       }
    }]);
+
+   app.factory('ratingService', ['$resource', function($resource) {
+     console.log("RATING_URL: " + RATING_URL);
+     var Rating = $resource(RATING_URL,{
+       query: { method: "GET", isArray: false }
+     });
+      return function() {
+        // does the external call
+        return Rating.get();
+      };
+    }]);
+
+    app.factory('sendRatingService', ['$resource', function($resource) {
+      console.log("RATING_URL: " + RATING_URL);
+      var Rating = $resource(RATING_URL,{}, {
+      rating: {method:'POST', params:{rating:true}}
+     });
+       return function() {
+         // does the external call
+         points = $('#ratingCount').val();
+         return Rating.post({points:points,cp:companyToken});
+       };
+     }]);
+
+    app.controller('ratingCtrl', ['$scope', 'ratingService', function($scope, ratingService) {
+      if (validToken) {
+         $scope.rating = ratingService();
+         $scope.rating.$promise.then(function (result) {
+           //finalizeRating();
+         }, function(error) {
+           treatError(error, 'rating');
+         });
+       } else {
+         $scope.ratingError = true;
+       }
+    }]);

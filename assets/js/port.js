@@ -109,28 +109,29 @@ app.factory('skillService', ['$resource', function($resource) {
 
    app.factory('ratingService', ['$resource', function($resource) {
      console.log("RATING_URL: " + RATING_URL);
-     var Rating = $resource(RATING_URL,{
-       query: { method: "GET", isArray: false }
-     });
+     var Rating = $resource(RATING_URL);
       return function() {
         // does the external call
+        console.log("Calling rating");
         return Rating.get();
       };
     }]);
-
+/*
     app.factory('sendRatingService', ['$resource', function($resource) {
       console.log("RATING_URL: " + RATING_URL);
       var Rating = $resource(RATING_URL,{}, {
       rating: {method:'POST', params:{rating:true}}
      });
        return function() {
+          $scope.entry = new Entry();
+          $scope.entry.points = $('#ratingCount').val();
+          $scope.entry.cp = companyToken;
          // does the external call
-         points = $('#ratingCount').val();
-         return Rating.post({points:points,cp:companyToken});
+         return Rating.save($scope.entry, function() {});
        };
      }]);
-
-    app.controller('ratingCtrl', ['$scope', 'ratingService', function($scope, ratingService) {
+*/
+    app.controller('RatingCtrl', ['$scope', 'ratingService', function($scope, ratingService) {
       if (validToken) {
          $scope.rating = ratingService();
          $scope.rating.$promise.then(function (result) {

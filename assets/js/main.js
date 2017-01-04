@@ -259,6 +259,14 @@ function setRatingColor() {
     }
 }
 
+function showRatingLoad(show) {
+  if (show) {
+    $('.rating-load').show('slow');
+  } else {
+    $('.rating-load').hide('slow');
+  }
+}
+
 function showProjectLoad(show) {
   if (show) {
     $('.project-load').show('slow');
@@ -350,6 +358,10 @@ function initConfig() {
     finalizeSkill(true);
     restoreDefaultColor();
   }
+}
+
+function finalizeRating(average){
+
 }
 
 function finalizeSkill(error) {

@@ -370,6 +370,30 @@
             </div>
           </div>
         </section>
+        <section class="experience section" id="ratingTotal" ng-controller="RatingCtrl">
+          <div class="section-inner" ng-show="rating.average != null" >
+            <div class="content">
+              <div class="content rating-load" align="center" ng-show="rating.average == null" ng-hide="ratingError == true">
+                <div style="width: 100px;" class="project-load">
+                  <div class="loading-container">
+                    <div class="loading"></div>
+                    <div class="loading-text">Rating</div>
+                  </div>
+                </div>
+              </div>
+              <div class="item lead" ng-show="rating.average != null">
+                <div id="stars" class="starrr" data-rating='{{rating.average}}'></div>
+              </div>
+              <!--
+              <div class="item">
+                <h3 class="title">If you have any suggestion, please type here ?</h3>
+                <p class="help-block text-danger"></p>
+                <textarea rows="5" class="form-control" placeholder="Suggestion" id="suggestion" required data-validation-required-message="Please enter a message."></textarea>
+              </div>
+            -->
+            </div>
+          </div>
+        </section>
         </div>
         <!--//primary-->
         <div class="secondary col-md-4 col-sm-12 col-xs-12">

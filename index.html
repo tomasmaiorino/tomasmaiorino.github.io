@@ -31,6 +31,7 @@
   <!-- Theme CSS -->
   <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
   <link id="load-style" rel="stylesheet" href="assets/css/load.css">
+  <link rel="stylesheet" href="assets/css/starrr.css">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -348,23 +349,23 @@
             </div>
           </form>
         </section>
-        <section class="experience section" id="rating">
+        <section class="experience section" id="rating" ng-controller="SendRatingCtrl">
           <div class="section-inner">
             <h2 class="heading">Did you like this page ? It was helpfull ? Please let me know</h2>
             <div class="content">
               <div class="item lead">
-                <div id="stars" class="starrr"></div>
+                <div id="starsRating" class="starrr"></div>
                 <input type="hidden" id="ratingCount"/>
             	</div>
-              <!--
+
               <div class="item">
                 <h3 class="title">If you have any suggestion, please type here ?</h3>
                 <p class="help-block text-danger"></p>
-                <textarea rows="5" class="form-control" placeholder="Suggestion" id="suggestion" required data-validation-required-message="Please enter a message."></textarea>
+                <textarea rows="5" id="suggestion" class="form-control" placeholder="Suggestion" id="suggestion" required data-validation-required-message="Please enter a message."></textarea>
               </div>
-            -->
+
               <div class="item">
-                <button type="submit" id="btnSubmitRating" class="btn btn-cta-secondary">Send</button>
+                <button type="button" id="btnRating" class="btn btn-cta-secondary" ng-click='sendRating()'>Send</button>
                 <img id="imgLoad" style="display: none" src="assets/images/ajax-loader.gif" />
               </div>
             </div>
@@ -372,6 +373,8 @@
         </section>
         <section class="experience section" id="ratingTotal" ng-controller="RatingCtrl">
           <div class="section-inner" ng-show="rating.average != null" >
+            <h2 class="heading">Ratings ({{rating.ratings.length}})</h2>
+            <span class="glyphicon glyphicon-start" style="color: red"></span>
             <div class="content">
               <div class="content rating-load" align="center" ng-show="rating.average == null" ng-hide="ratingError == true">
                 <div style="width: 100px;" class="project-load">
@@ -381,9 +384,12 @@
                   </div>
                 </div>
               </div>
-              <div class="item lead" ng-show="rating.average != null">
-                <div id="stars" class="starrr" data-rating='{{rating.average}}'></div>
+              <div class="item" ng-show="rating.average != null">
+                <div id="starsRatingTotal" class="starrr">
+                </div>
               </div>
+
+
               <!--
               <div class="item">
                 <h3 class="title">If you have any suggestion, please type here ?</h3>
@@ -626,7 +632,7 @@
     <script type="text/javascript" src="assets/js/angular.min.js"></script>
     <script type="text/javascript" src="assets/js/angular-resource.js"></script>
     <script type="text/javascript" src="assets/js/port.js"></script>
-    <script type="text/javascript" src="assets/js/ranking.js"></script>
+    <script type="text/javascript" src="assets/js/starrr.js"></script>
     <script>
       initConfig();
     </script>

@@ -1,5 +1,15 @@
 jQuery(document).ready(function($) {
 
+  $('#starsRatingTotal').starrr({
+     readOnly: true
+  });
+
+  $('#starsRating').starrr({
+    change: function(e, value){
+      $('#ratingCount').val(value);
+    }
+  })
+
   $('.body-scroll .contact-scroll').bind('click', function(event) {
     var $anchor = $(this);
     $('html, body').stop().animate({
@@ -254,7 +264,7 @@ function setRatingColor() {
         pColor = DEFAULT_COLOR;
     }
     console.log('changing rating color to ' + pColor);
-    $('.starrr').find('span').each(function(){
+    $('.starrr').find('a').each(function(){
       $(this).css('color', '#'+pColor)});
     }
 }
@@ -353,15 +363,24 @@ function initConfig() {
     setLoadColor(getColorFromCompany());
     debug('load coloer fields.')
     loadColorsFields(getColorFromCompany());
-    //setRatingColor();
-  }else {
+  } else {
     finalizeSkill(true);
     restoreDefaultColor();
   }
 }
 
 function finalizeRating(average){
-
+  if (average > 0) {
+  var cont = 1;
+  $('#starsRatingTotal').find('a').each(function(){
+      $(this).removeClass('fa-star-o');
+      $(this).addClass('fa-star');
+      if (average == cont) {
+        return false;
+      }
+      cont++;
+  });
+  }
 }
 
 function finalizeSkill(error) {

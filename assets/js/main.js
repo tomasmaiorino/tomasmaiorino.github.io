@@ -494,3 +494,18 @@ function log(msg) {
     console.log(msg);
   }
 }
+
+function showRatingErrorMessage(errorMessage, btn, load) {
+  // Fail message
+  $('#ratingSuccess').html("<div class='alert alert-danger'>");
+  $('#ratingSuccess > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+      .append("</button>");
+  if (errorMessage != "") {
+      $('#ratingSuccess > .alert-danger').append("<strong>"+ errorMessage + ".");
+  } else {
+    $('#ratingSuccess > .alert-danger').append("<strong>Sorry for that :( , Can we please try again later ?!");
+  }
+  $('#ratingSuccess > .alert-danger').append('</div>');
+  $(btn).attr("disabled", false);
+  $(load).hide();
+}

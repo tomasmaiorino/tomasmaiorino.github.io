@@ -125,66 +125,53 @@ app.factory('skillService', ['$resource', function($resource) {
     }]);
 
     app.controller('RatingCtrl', ['$scope', 'ratingService', function($scope, ratingService) {
-      if (validToken) {
          $scope.rating = ratingService();
          $scope.rating.$promise.then(function (result) {
            finalizeRating($scope.rating.average);
          }, function(error) {
            treatError(error, 'rating');
          });
-       } else {
-         $scope.ratingError = true;
-       }
     }]);
 
 
-        app.factory('sendRatingService', ['$resource', function($resource) {
-          console.log("RATING_URL: " + RATING_URL);
-          var Rating = $resource(RATING_URL,{}, {
-          rating: {method:'POST', params:{rating:true}}
-         });
-           return function(entry) {
-             // does the external call
-             return Rating.save(entry);
-           };
-         }]);
+      app.factory('sendRatingService', ['$resource', function($resource) {
+        console.log("RATING_URL: " + RATING_URL);
+        var Rating = $resource(RATING_URL,{}, {
+        rating: { method: "POST", headers: { 'Content-Type': 'application/json'}, params: {}}//method:'POST', params:{rating:true}}
+        }
+      );
+         return function(entry) {
+           console.debug(entry);
+           // does the external call
+           return Rating.save(entry);
+         };
+       }]);
 
-         app.controller('SendRatingCtrl', ['$scope', 'sendRatingService', function($scope, sendRatingService) {
-           $scope.sendRating = function() {
-             var Entry;
-             $scope.entry = new Entry();
-             $scope.entry.points = $('#ratingCount').val();
-             var comments = $('#suggestion').val().trim();
-             if (comments != '') {
-               $scope.entry.comments = comments;
-             }
-             if (validToken) {
-               $scope.entry.cp = companyToken;
-             }
-             $("#btnRating").attr("disabled", true);
-             $("#imgRatingLoad").show();
-
-             console.log('sending');
-
-             $scope.rating = sendRatingService($scope.entry);
-             $scope.rating.$promise.then(function (result) {
-               showRatingSuccessMessage();
-             }, function(error) {
-               console.log('deu ruim');
-               showRatingErrorMessage();
-               treatError(error, 'send rating');
-             });
+       app.controller('SendRatingCtrl', ['$scope', 'sendRatingService', function($scope, sendRatingService) {
+         $scope.sendRating = function() {
+           var content = new Object();
+           content.points = $('#ratingCount').val();
+           var comments = $('#suggestion').val().trim();
+           if (comments != '') {
+             content.comments = comments;
            }
-           /*
            if (validToken) {
-              $scope.rating = ratingService();
-              $scope.rating.$promise.then(function (result) {
-                finalizeRating($scope.rating.average);
-              }, function(error) {
-                treatError(error, 'rating');
-              });
-            } else {
-              $scope.ratingError = true;
-            }
-            */
-         }]);
+             content.cp = companyToken;
+           }
+           $("#btnRating").attr("disabled", true);
+           $("#imgRatingLoad").show();
+
+           console.log('sending');
+
+           //$scope.sentRating = sendRatingService(JSON.stringify(content));
+           $scope.sentRating = sendRatingService(content);
+           $scope.sentRating.$promise.then(function (result) {
+             showRatingSuccessMessage();
+           }, function(error) {
+             if (error.status == -1) {
+               showRatingErrorMessage('', '#btnRating', '#imgRatingLoad');
+             }
+             treatError(error, 'send rating');
+           });
+         }
+       }]);

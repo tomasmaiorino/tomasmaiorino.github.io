@@ -142,8 +142,10 @@ app.factory('skillService', ['$resource', function($resource) {
       );
          return function(entry) {
            console.debug(entry);
-           // does the external call
-           return Rating.save(entry);
+           Rating.points = entry.points;
+           Rating.comments = entry.comments;
+           Rating.cp = entry.cp;
+           return Rating.rating();
          };
        }]);
 
@@ -168,9 +170,7 @@ app.factory('skillService', ['$resource', function($resource) {
            $scope.sentRating.$promise.then(function (result) {
              showRatingSuccessMessage();
            }, function(error) {
-             if (error.status == -1) {
-               showRatingErrorMessage('', '#btnRating', '#imgRatingLoad');
-             }
+             showRatingErrorMessage('', '#btnRating', '#imgRatingLoad');
              treatError(error, 'send rating');
            });
          }

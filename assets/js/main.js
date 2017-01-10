@@ -263,7 +263,7 @@ function setRatingColor() {
     if (pColor == '') {
         pColor = DEFAULT_COLOR;
     }
-    console.log('changing rating color to ' + pColor);
+    log('changing rating color to ' + pColor);
     $('.starrr').find('a').each(function(){
       $(this).css('color', '#'+pColor)});
     }
@@ -388,7 +388,7 @@ function finalizeSkill(error) {
   function doesSkillTask() {
     var el;
     if (error != undefined && error) {
-      console.log('configuring skill for error');
+      log('configuring skill for error');
       el = $('.defaultSkillset').find('.item').find('.level-bar-inner');
     } else {
       el = $('.company-skill-item').find('.level-bar-inner');
@@ -438,7 +438,7 @@ function finalizeProject() {
   function doesProjectTask() {
     var itensQtd = $('.job-item').length;
     if (itensQtd > 0) {
-      console.log('configing job highlight');
+      log('configing job highlight');
       jobs = new Array();
       $(".job-item").each(function(){
         var pTech = $(this).data('tech');
@@ -495,8 +495,26 @@ function log(msg) {
   }
 }
 
-function showRatingErrorMessage(errorMessage, btn, load) {
+function showRatingSuccessMessage(successMessage, btn, load) {
+  // Enable button & show success message
+  $(btn).attr("disabled", false);
+  $(load).hide();
+  $('#ratingSuccess').html("<div class='alert alert-success'>");
+  $('#ratingSuccess > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+      .append("</button>");
+  $('#ratingSuccess > .alert-success')
+      .append("<strong>Rating sent. Thanks :) </strong>");
+  $('#ratingSuccess > .alert-success')
+      .append('</div>');
+  $('#suggestion').val('');
+}
+
+function showRatingErrorMessage(errorMessage, btn, load, hide) {
   // Fail message
+  if (hide != undefined) {
+    $('#ratingSuccess').html('');
+    return;
+  }
   $('#ratingSuccess').html("<div class='alert alert-danger'>");
   $('#ratingSuccess > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
       .append("</button>");
@@ -506,6 +524,10 @@ function showRatingErrorMessage(errorMessage, btn, load) {
     $('#ratingSuccess > .alert-danger').append("<strong>Sorry for that :( , Can we please try again later ?!");
   }
   $('#ratingSuccess > .alert-danger').append('</div>');
-  $(btn).attr("disabled", false);
-  $(load).hide();
+  if (load != undefined) {
+    $(load).hide();
+  }
+  if (btn != undefined) {
+    $(btn).attr("disabled", false);
+  }
 }

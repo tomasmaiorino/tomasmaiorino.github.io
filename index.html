@@ -373,7 +373,7 @@
         </section>
         <section class="experience section" id="ratingTotal" ng-controller="RatingCtrl">
           <div class="section-inner" ng-show="rating.average != null" >
-            <h2 class="heading">Ratings ({{rating.ratings.length}})</h2>
+            <h2 class="heading" id="ratingAverage">Ratings ({{rating.ratings.length}})</h2>
             <span class="glyphicon glyphicon-start" style="color: red"></span>
             <div class="content">
               <div class="content rating-load" align="center" ng-show="rating.average == null" ng-hide="ratingError == true">

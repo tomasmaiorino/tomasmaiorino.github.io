@@ -133,45 +133,53 @@ app.factory('skillService', ['$resource', function($resource) {
          });
     }]);
 
-
       app.factory('sendRatingService', ['$resource', function($resource) {
         console.log("RATING_URL: " + RATING_URL);
         var Rating = $resource(RATING_URL,{}, {
-        rating: { method: "POST", headers: { 'Content-Type': 'application/json'}, params: {}}//method:'POST', params:{rating:true}}
+        rating: { method: "POST", params: {}, headers: {'Content-Type':'application/json'}}
         }
       );
          return function(entry) {
            console.debug(entry);
-           Rating.points = entry.points;
-           Rating.comments = entry.comments;
-           Rating.cp = entry.cp;
-           return Rating.rating();
+           return Rating.rating(entry);
          };
        }]);
 
-       app.controller('SendRatingCtrl', ['$scope', 'sendRatingService', function($scope, sendRatingService) {
+       app.controller('SendRatingCtrl', ['$scope', 'sendRatingService', 'ratingService', function($scope, sendRatingService, ratingService) {
          $scope.sendRating = function() {
-           var content = new Object();
-           content.points = $('#ratingCount').val();
-           var comments = $('#suggestion').val().trim();
-           if (comments != '') {
-             content.comments = comments;
-           }
-           if (validToken) {
-             content.cp = companyToken;
-           }
-           $("#btnRating").attr("disabled", true);
-           $("#imgRatingLoad").show();
+           //only submit the rating if the user choose at least one star
+           if ($('#ratingCount').val() >= 1) {
+             showRatingErrorMessage(undefined, undefined, undefined, true);
+             var content = new Object();
+             content.points = $('#ratingCount').val();
+             var comments = $('#suggestion').val().trim();
+             if (comments != '') {
+               content.comments = comments;
+             }
+             if (validToken) {
+               content.cp = companyToken;
+             }
+             $("#btnRating").attr("disabled", true);
+             $("#imgRatingLoad").show();
 
-           console.log('sending');
-
-           //$scope.sentRating = sendRatingService(JSON.stringify(content));
-           $scope.sentRating = sendRatingService(content);
-           $scope.sentRating.$promise.then(function (result) {
-             showRatingSuccessMessage();
-           }, function(error) {
-             showRatingErrorMessage('', '#btnRating', '#imgRatingLoad');
-             treatError(error, 'send rating');
-           });
-         }
+             $scope.sentRating = sendRatingService(JSON.stringify(content));
+             //$scope.sentRating = sendRatingService(content);
+             $scope.sentRating.$promise.then(function (result) {
+               showRatingSuccessMessage('', '#btnRating', '#imgRatingLoad');
+               //update rating -- start
+               $scope.rating = ratingService();
+               $scope.rating.$promise.then(function (result) {
+                 finalizeRating($scope.rating.average);
+               }, function(error) {
+                 treatError(error, 'rating');
+               });
+               //update rating -- end
+             }, function(error) {
+               showRatingErrorMessage('', '#btnRating', '#imgRatingLoad');
+               treatError(error, 'send rating');
+             });
+           } else {
+             showRatingErrorMessage('You need to choose at least one start', undefined, undefined)
+           }
+        }
        }]);

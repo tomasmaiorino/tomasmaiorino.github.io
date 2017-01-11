@@ -85,7 +85,8 @@ function showMoreJobs(){
 
 
 //var fieldsToChangeColor = ['email-link', 'level-bar-inner', 'tech-defaulf-content', 'label-theme', 'more-link', 'fa fa-star'];
-var EXTERNAL_SERVICE_HOST = "http://127.0.0.1:3000";
+var EXTERNAL_SERVICE_HOST = "https://lit-chamber-65001";
+
 //var PROJECTS_URL = "token/:param";
 //var TECH_TAGS_URL = "tech/:param";
 var COMPANY_URL = EXTERNAL_SERVICE_HOST + "/api/v1/company/:option/:param";

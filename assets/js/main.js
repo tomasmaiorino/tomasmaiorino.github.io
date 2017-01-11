@@ -85,7 +85,7 @@ function showMoreJobs(){
 
 
 //var fieldsToChangeColor = ['email-link', 'level-bar-inner', 'tech-defaulf-content', 'label-theme', 'more-link', 'fa fa-star'];
-var EXTERNAL_SERVICE_HOST = "https://lit-chamber-65001.herokuapp.com";
+var EXTERNAL_SERVICE_HOST = "https://guarded-woodland-23664.herokuapp.com";
 
 //var PROJECTS_URL = "token/:param";
 //var TECH_TAGS_URL = "tech/:param";

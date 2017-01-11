@@ -119,7 +119,6 @@ app.factory('skillService', ['$resource', function($resource) {
      var Rating = $resource(RATING_URL);
       return function() {
         // does the external call
-        console.log("Calling rating");
         return Rating.get();
       };
     }]);
@@ -140,7 +139,7 @@ app.factory('skillService', ['$resource', function($resource) {
         }
       );
          return function(entry) {
-           console.debug(entry);
+           debug(entry);
            return Rating.rating(entry);
          };
        }]);

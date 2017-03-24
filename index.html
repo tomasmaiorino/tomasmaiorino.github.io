@@ -93,7 +93,7 @@
         </section>
         <!--//section-->
 
-        <section class="latest section" ng-controller="CompanyCtrl">
+        <section class="latest section" ng-controller="CompanyCtrl" id="latestProjectsSection">
           <div class="section-inner">
             <h2 class="heading">Latest Projects</h2>
             <div class="content project-load" align="center" ng-show="company.projects == null" ng-hide="companyError == true">
@@ -130,7 +130,8 @@
               </div>
               <!--//item-->
               <hr class="divider" />
-              <div class="item row job{{$index + 2}} pointer job-item" ng-style="$index + 2 == 4 && {'display':'none'}" ng-class="{'hide-jobs': $index + 2 == 4 }" ng-repeat="project in company.projects | filter: { future_project: 'false' }" data-tech="{{project.tech_tags | techTagFilter}}"
+              <div class="item row job{{$index + 2}} pointer job-item"
+              ng-style="$index + 2 > 3 && {'display':'none'}" ng-class="{'hide-jobs': $index + 2 > 3 }" ng-repeat="project in company.projects | filter: { future_project: 'false' }" data-tech="{{project.tech_tags | techTagFilter}}"
                 id="job{{$index + 2}}" ng-show="company.projects != null">
                 <div align="center">
                   <a class="col-md-4 col-sm-4 col-xs-12" href="{{project.link_img}}" target="_blank">

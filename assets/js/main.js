@@ -72,17 +72,27 @@ function loadHighlight () {
 function showMoreJobs(){
   var text_hide = 'Hide anothers jobs';
   var text = 'Show anothers jobs';
+  var shouldScroll = false;
   $('.hide-jobs').each(function(){
     if($(this).is(":visible")) {
       $(this).hide('slow');
     } else {
       $(this).show('slow');
-      text = text_hide;
     }
   });
-  $('#showMoreJobs').html(text);
+  if ($('#showMoreJobs').html() == text) {
+      $('#showMoreJobs').html(text_hide);
+  } else {
+      $('#showMoreJobs').html(text);
+      scrollTo('#latestProjectsSection');
+  }
 }
 
+function scrollTo(elementId) {
+  $('html, body').animate({
+      scrollTop: $(elementId).offset().top
+  }, 2000);
+}
 
 //var fieldsToChangeColor = ['email-link', 'level-bar-inner', 'tech-defaulf-content', 'label-theme', 'more-link', 'fa fa-star'];
 var EXTERNAL_SERVICE_HOST = "https://guarded-woodland-23664.herokuapp.com";

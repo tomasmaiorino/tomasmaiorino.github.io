@@ -142,7 +142,8 @@
                   <h3 class="title">{{project.name}}</h3>
                   <p ng-show="project.summary != null">{{project.summary}}</p>
                   <p ng-show="project.description != null">{{project.description}}</p>
-                  <p ng-show="project.improvements != null"><strong>improvements:</strong> {{project.improvements}}</p>
+                  <p ng-show="project.improvements != ''"><strong>improvements:</strong> {{project.improvements}}</p>
+                  <p ng-show="project.activities_done != ''"><strong>activities done:</strong> {{project.activities_done}}</p>
                   <p ng-show="project.time_spent != null"><strong>Time spent:</strong> {{project.time_spent}}</p>
                 </div>
                 <!--//desc-->
@@ -390,7 +391,6 @@
                 <div id="starsRatingTotal" class="starrr">
                 </div>
               </div>
-
 
               <!--
               <div class="item">

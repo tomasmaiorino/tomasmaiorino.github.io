@@ -143,7 +143,7 @@
                   <p ng-show="project.summary != null">{{project.summary}}</p>
                   <p ng-show="project.description != null">{{project.description}}</p>
                   <p ng-show="project.improvements != ''"><strong>improvements:</strong> {{project.improvements}}</p>
-                  <p ng-show="project.activities_done != ''"><strong>activities done:</strong> {{project.activities_done}}</p>
+                  <p ng-show="project.activities_done != null && project.activities_done != ''"><strong>activities done:</strong> {{project.activities_done}}</p>
                   <p ng-show="project.time_spent != null"><strong>Time spent:</strong> {{project.time_spent}}</p>
                 </div>
                 <!--//desc-->
@@ -298,7 +298,11 @@
             <h2 class="heading">Work Experience</h2>
             <div class="content">
               <div class="item">
-                <h3 class="title">Java Senior Developer <span class="place"><a href="#">Netshoes</a></span> <span class="year">(2015 - Present)</span></h3>
+                <h3 class="title">Enginer <span class="place"><a href="#">Labdoor</a></span> <span class="year">(2017 - Present)</span></h3>
+                <p>Helping to design and developer microservices using spring boot and rest API. Maintenance the site developing new features and also helping to fix production's problems.</p>
+              </div>
+              <div class="item">
+                <h3 class="title">Java Senior Developer <span class="place"><a href="#">Netshoes</a></span> <span class="year">(12/2015 - 02/2017)</span></h3>
                 <p>Responsible for developing new features and maintenance for a brasilian ecommerce using Oracle ATG Commerce 11 also responsible for developing and maintenace microservices (Spring boot and rest services) are consumed by the store. Analyzing
                   and fixing problems in production environment. Managed Oracle. Worked on the planning and implementation of approvals, holding meetings with users to define gather system requirements.</p>
               </div>

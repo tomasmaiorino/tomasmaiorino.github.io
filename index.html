@@ -131,7 +131,8 @@
               <!--//item-->
               <hr class="divider" />
               <div class="item row job{{$index + 2}} pointer job-item"
-              ng-style="$index + 2 > 3 && {'display':'none'}" ng-class="{'hide-jobs': $index + 2 > 3 }" ng-repeat="project in company.projects | filter: { future_project: 'false' }" data-tech="{{project.tech_tags | techTagFilter}}"
+              ng-style="$index + 2 > 3 && {'display':'none'}" ng-class="{'hide-jobs': $index + 2 > 3 }"
+              ng-repeat="project in company.projects | filter: { future_project: 'false' }" data-tech="{{project.tech_tags | techTagFilter}}"
                 id="job{{$index + 2}}" ng-show="company.projects != null">
                 <div align="center">
                   <a class="col-md-4 col-sm-4 col-xs-12" href="{{project.link_img}}" target="_blank">
@@ -142,15 +143,15 @@
                   <h3 class="title">{{project.name}}</h3>
                   <p ng-show="project.summary != null">{{project.summary}}</p>
                   <p ng-show="project.description != null">{{project.description}}</p>
-                  <p ng-show="project.improvements != ''"><strong>improvements:</strong> {{project.improvements}}</p>
-                  <p ng-show="project.activities_done != null && project.activities_done != ''"><strong>activities done:</strong> {{project.activities_done}}</p>
+                  <p ng-show="project.improvements != null && project.improvements != ''"><strong>Improvements:</strong> {{project.improvements}}</p>
+                  <p ng-show="project.activities_done != null && project.activities_done != ''"><strong>Activities done:</strong> {{project.activities_done}}</p>
                   <p ng-show="project.time_spent != null"><strong>Time spent:</strong> {{project.time_spent}}</p>
                 </div>
                 <!--//desc-->
               </div>
               <!--//item-->
 
-              <div class="item row job5 pointer" ng-show="company.projects.length > 3">
+              <div class="item row job5 pointer" ng-show="company.projects.length > 2">
                 <div align="center">
                   <p><a class="more-link" onclick="showMoreJobs();" id="showMoreJobs">Show anothers jobs</a></p>
                 </div>

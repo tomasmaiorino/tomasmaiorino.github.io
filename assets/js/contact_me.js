@@ -27,7 +27,7 @@ $(function() {
              content.message = message;
              content.subject = 'Contact';
             $.ajax({
-                url: "https://mighty-woodland-49949.herokuapp.com/api/v1/messages/"+token",
+                url: "https://mighty-woodland-49949.herokuapp.com/api/v1/messages/"+token,
                 contentType: "application/json",
                 type: "POST",
                 crossDomain: true,

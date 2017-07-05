@@ -12,26 +12,27 @@ $(function() {
             event.preventDefault();
 
             // get values from FORM
-            var name = $("input#name").val();
-            var email = $("input#email").val();
+            var name = $("input#senderName").val();
+            var email = $("input#senderEmail").val();
             var message = $("textarea#message").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
+		        var token = '4bcwqzoi4gng4';
+             var content = new Object();
+             content.senderName = name;
+             content.senderEmail = email;
+             content.message = message;
+             content.subject = 'Contact';
             $.ajax({
-                url: "https://boiling-stream-89308.herokuapp.com/api/v1/sendEmail",
+                url: "https://mighty-woodland-49949.herokuapp.com/api/v1/messages/"+token",
+                contentType: "application/json",
                 type: "POST",
                 crossDomain: true,
                 dataType: "json",
-                data: {
-                    sender_name: name,
-                    sender_email: email,
-                    message: message,
-                    subject: 'Contact',
-                    token: '4bcwqzoi4gng4'
-                },
+	        data: JSON.stringify(content),
                 cache: false,
                 success: function() {
                     // Enable button & show success message

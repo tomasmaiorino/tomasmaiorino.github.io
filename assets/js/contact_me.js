@@ -80,8 +80,12 @@ $(function() {
     function getErrorMessage(data) {
       var message = '';
       if (data != undefined && data.responseText != undefined) {
-        var parsed_data = JSON.parse(data.responseText);
-        message = parsed_data.message[0];
+          var parsed_data = JSON.parse(data.responseText);
+        if (data.status == 404) {
+          message = parsed_data.message;
+        } else {
+          message = parsed_data.message[0];
+        }
       }
       return message;
     }

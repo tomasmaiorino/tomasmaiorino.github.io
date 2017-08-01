@@ -568,3 +568,9 @@ iframe {
     opacity: 0.5;
     filter: alpha(opacity=50); /* For IE8 and earlier */
 }
+.input-text-error {
+  border:1px solid #ff0000
+}
+.text-error {
+  color: #ff0000
+}

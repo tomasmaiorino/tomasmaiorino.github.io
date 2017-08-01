@@ -6,6 +6,13 @@ $(function() {
             // additional error messages or events
         },
         submitSuccess: function($form, event) {
+            // get values from FORM
+            if (assertField($("input#senderName")) ||
+                assertField($("input#senderEmail")) ||
+                assertField($("textarea#message"))) {
+              return;
+            }
+
             // Prevent spam click and default submit behaviour
             $("#btnSubmit").attr("disabled", true);
             $("#imgLoad").show();
@@ -90,6 +97,30 @@ $(function() {
       return message;
     }
 });
+
+function assertField(field) {
+  if (field.val() == '' || field.val().trim() == '') {
+    addError(field, true);
+    return true;
+  } else {
+    addError(field, false);
+    return false;
+  }
+}
+
+function addError(pField, isError) {
+  if (isError) {
+    pField.addClass('input-text-error');
+    var message = pField.data('validation-required-message');
+    pField.next().html(message);
+    pField.next().show('slow');
+  } else {
+    pField.removeClass('input-text-error');
+    pField.next().html('');
+    pField.next().hide('slow');
+  }
+}
+
 
 // When clicking on Full hide fail/success boxes
 $('#name').focus(function() {

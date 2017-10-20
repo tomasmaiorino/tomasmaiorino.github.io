@@ -18,10 +18,10 @@ $(function() {
             $("#imgLoad").show();
             event.preventDefault();
 
-            // get values from FORM
             var name = $("input#senderName").val();
             var email = $("input#senderEmail").val();
             var message = $("textarea#message").val();
+
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {

@@ -543,3 +543,15 @@ function showRatingErrorMessage(errorMessage, btn, load, hide) {
     $(btn).attr("disabled", false);
   }
 }
+
+function showItem(item) {
+  if ($('#'+item).is(':visible')) {
+      $('#'+item).hide('slow');
+      $('.'+item+'icon').children().removeClass('fa-minus');
+      $('.'+item+'icon').children().addClass('fa-plus');
+  } else {
+    $('#'+item).show('slow');
+    $('.'+item+'icon').children().removeClass('fa-plus');
+    $('.'+item+'icon').children().addClass('fa-minus');
+  }
+}

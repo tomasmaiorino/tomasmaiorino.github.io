@@ -64,7 +64,7 @@ $(function() {
                     if (errorMessage != "") {
                         $('#success > .alert-danger').append("<strong>"+ errorMessage + ".");
                     } else {
-                      $('#success > .alert-danger').append("<strong>Desculpe " + firstName + ", parece que o servidor não esta respondendo. Porfavor, tente novamente mais tarde!");
+                      $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", we are having some technical problems. Please try again later!");
                     }
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields

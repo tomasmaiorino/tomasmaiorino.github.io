@@ -68,15 +68,35 @@
           <div class="section-inner">
             <h2 class="heading">About Me</h2>
             <div class="content">
-              <p ng-if="!company.cover_letter">Worked in large projects in various segments as financial, retail and ecommerce.
- Knowledge of Java, Java EE, java frameworks, applications server, databases, design patterns and tests apis.
- Helped the claimant team to find the better solution for their problem and better way to achieve their goals.</p>
+              <p ng-if="!company.cover_letter">
+                <div class="content">
+                  <!-- ngIf: !company.cover_letter -->
+                  <p ng-if="!company.cover_letter" class="ng-scope">
+                    <p>
+                      Motivated by big challenges, quality work and by constant self-improvement, I'm always doing my best to learn something new, to help the team to increase their knowledge and to find a better way to solve problems.
+                    </p>
+                    <p>
+                      Involved in software development and tech assignments since 2009, I have a great experience working on large projects in various segments as financial, retail, and e-commerce. I've consistently looked and developed the best solution possible for the existent
+                      problem by using both JavaSE and JavaEE and their many frameworks, databases, and applications servers.
+                    </p>
+                    <p>
+                      As a Full Stack Developer, I'm constantly finding the assertive way to achieve the required goal with agility and quality.<br> Nowadays, I'm working with Spring boot, microservices, containers, rest APIs for the backend and Angular
+                      4 on the frontend. I also have experience with Java 8, MongoDB, Redis, RabbitMQ, Redis.
+                    </p>
+                    <p>
+                      I'm used to dealing with the needs required for a high availability and fast performance applications and I'm great in finding and solving critical issues with a tight schedule.
+                    </p>
+                  </p>
+                  <!-- end ngIf: !company.cover_letter -->
+                  <!-- ngIf: company.cover_letter -->
+                </div>
+              </p>
               <p ng-if="company.cover_letter">{{company.cover_letter}}</p>
             </div>
             <!--//content-->
           </div>
 
-          <div class="modal fade bs-example-modal-sm" role="dialog" tabindex="-1" aria-labelledby="mySmallModalLabel" style="display: none;" >
+          <div class="modal fade bs-example-modal-sm" role="dialog" tabindex="-1" aria-labelledby="mySmallModalLabel" style="display: none;">
             <div class="modal-dialog modal-sm" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -131,9 +151,7 @@
               </div>
               <!--//item-->
               <hr class="divider" />
-              <div class="item row job{{$index + 2}} pointer job-item"
-              ng-style="$index + 2 > 3 && {'display':'none'}" ng-class="{'hide-jobs': $index + 2 > 3 }"
-              ng-repeat="project in company.projects | filter: { future_project: 'false' }" data-tech="{{project.tech_tags | techTagFilter}}"
+              <div class="item row job{{$index + 2}} pointer job-item" ng-style="$index + 2 > 3 && {'display':'none'}" ng-class="{'hide-jobs': $index + 2 > 3 }" ng-repeat="project in company.projects | filter: { future_project: 'false' }" data-tech="{{project.tech_tags | techTagFilter}}"
                 id="job{{$index + 2}}" ng-show="company.projects != null">
                 <div align="center">
                   <a class="col-md-4 col-sm-4 col-xs-12" href="{{project.link_img}}" target="_blank">
@@ -174,10 +192,10 @@
                 <div class="desc text-left">
                   <p>Recommendation of products which belongs same category if the desired product is out of stock.
                     <a onclick="showItem('item1');" class="item1icon" style="color: #778492; cursor:pointer"><i class="fa fa-plus"></i></a>
-                   <div style="display:none" id="item1">
-                    <p><strong>Main techs:</strong> Java 1.8, Docker, Amazon S3, Spring boot, Rest Services, Mysql, Play Framework 1.2.x, Mongo and Git.</p>
-                  </div>
-                 </p>
+                    <div style="display:none" id="item1">
+                      <p><strong>Main techs:</strong> Java 1.8, Docker, Amazon S3, Spring boot, Rest Services, Mysql, Play Framework 1.2.x, Mongo and Git.</p>
+                    </div>
+                  </p>
                 </div>
 
                 <!--//desc-->
@@ -192,12 +210,11 @@
                 </div>
                 <div class="desc col-md-8 col-sm-8 col-xs-12 pointer">
                   <h3 class="title">Netshoes - Funrace</h3>
-                  <p>Sending order's information from the Ecommerce Platform to another service which will be
-					used by a specific hotsite.</p>
-        					<div style="display:none;" id="item2">
-        						<p><strong>Main techs:</strong> Java 1.8, J2EE, RabbitMQ, Spring boot, Rest Services, Oracle, Redis, Mongo, Git and Oracle Ecommerce Platform.</p>
-        					</div>
-					        <a onclick="showItem('item2');" class="item2icon" style="color: #778492"><i class="fa fa-plus"></i></a>
+                  <p>Sending order's information from the Ecommerce Platform to another service which will be used by a specific hotsite.</p>
+                  <div style="display:none;" id="item2">
+                    <p><strong>Main techs:</strong> Java 1.8, J2EE, RabbitMQ, Spring boot, Rest Services, Oracle, Redis, Mongo, Git and Oracle Ecommerce Platform.</p>
+                  </div>
+                  <a onclick="showItem('item2');" class="item2icon" style="color: #778492"><i class="fa fa-plus"></i></a>
                 </div>
                 <!--//desc-->
               </div>
@@ -210,12 +227,11 @@
                 </div>
                 <div class="desc col-md-8 col-sm-8 col-xs-12 pointer">
                   <h3 class="title">Netshoes - NCard</h3>
-                  <p>It notifies the Ecommerce whether a specific client can ask or already has a Card credit card, if
-true, the client can receive some discounts during their shopping. </p>
-				  <div style="display:none;" id="item3">
-				  	<p><strong>Main techs:</strong> Java 1.8, J2EE, Spring boot, Rest Services, Oracle, Redis, Mongo, Git and Oracle Ecommerce Platform.</p>
-					</div>
-          <a onclick="showItem('item3');" class="item3icon" style="color: #778492"><i class="fa fa-plus"></i></a>
+                  <p>It notifies the Ecommerce whether a specific client can ask or already has a Card credit card, if true, the client can receive some discounts during their shopping. </p>
+                  <div style="display:none;" id="item3">
+                    <p><strong>Main techs:</strong> Java 1.8, J2EE, Spring boot, Rest Services, Oracle, Redis, Mongo, Git and Oracle Ecommerce Platform.</p>
+                  </div>
+                  <a onclick="showItem('item3');" class="item3icon" style="color: #778492"><i class="fa fa-plus"></i></a>
                 </div>
                 <!--//desc-->
               </div>
@@ -229,8 +245,7 @@ true, the client can receive some discounts during their shopping. </p>
                 </div>
                 <div class="desc col-md-8 col-sm-8 col-xs-12">
                   <h3 class="title">Etna - Integrations</h3>
-                  <p>Development of the integrations (orders, clients, price, products, among others) between the
-client's ERP (Protheus) and the Ecommerce Platform.</p>
+                  <p>Development of the integrations (orders, clients, price, products, among others) between the client's ERP (Protheus) and the Ecommerce Platform.</p>
                   <div style="display:none;" id="item4">
                     <p><strong>Main techs:</strong> Java 1.7, J2EE, Oracle 11g, Weblogic, SNV, SOAP Webservices, Oracle Ecommerce Platform.</p>
                   </div>
@@ -278,23 +293,25 @@ client's ERP (Protheus) and the Ecommerce Platform.</p>
             <h2 class="heading">Other Projects</h2>
             <div class="content">
               <div class="item">
+                <h3 class="title"><a href="#">Spring Boot Project - Send Email</a> <span class="label label-theme">Own Project</span></h3>
+                <p class="summary">A spring boot based application created to send emails through mailgun engine. This project is running as a Heroku app and has been using by more than 3 different clients.</p>
+                <p><a class="more-link" href="https://github.com/tomasmaiorino/send-email-sp" target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
+              </div>
+              <div class="item">
+                <h3 class="title"><a href="#">Spring Boot / React Project - English Cards</a> <span class="label label-theme">Own Project</span></h3>
+                <p class="summary">An applications to help english students to improve their vocabulary.</p>
+                <p><a class="more-link" href="https://github.com/tomasmaiorino/english-cards-js" target="_blank"><i class="fa fa-external-link"></i> View on GitHub (React app)</a></p>
+                <p><a class="more-link" href="https://github.com/tomasmaiorino/english-cards" target="_blank"><i class="fa fa-external-link"></i> View on GitHub (Spring app)</a></p>
+              </div>
+              <!--//item-->
+              <div class="item">
                 <h3 class="title"><a href="#">Ruby On Rails' Project - Play Card</a> <span class="label label-theme">Own Project</span></h3>
                 <p class="summary">A Ruby on Rails application created in order to learn both Ruby and Ruby on Rails. It is a like card game based on the Poker rules.</p>
                 <p><a class="more-link" href="https://polar-sea-96842.herokuapp.com/" target="_blank"><i class="fa fa-external-link"></i> Lets play it ?</a></p>
                 <p><a class="more-link" href="https://github.com/tomasmaiorino/playpoker" target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
               </div>
               <!--//item-->
-              <div class="item">
-                <h3 class="title"><a href="#">Ruby On Rails' Project - Send Email</a> <span class="label label-theme">Own Project</span></h3>
-                <p class="summary">A Ruby on Rails application created to send e-mails through mailgun engine.</p>
-                <p><a class="more-link" href="https://github.com/tomasmaiorino/send_email" target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
-              </div>
-              <div class="item">
-                <h3 class="title"><a href="#">Spring boot Project - Send Email</a> <span class="label label-theme">Own Project</span></h3>
-                <p class="summary">A spring boot based application created to send emails through mailgun engine. This project is running as a Heroku app and has been using by more than 3 different clients.</p>
-                <p><a class="more-link" href="https://github.com/tomasmaiorino/send-email-sp" target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
-              </div>
-              <!--//item-->
+
               <!--
                             <a class="btn btn-cta-secondary" href="#">More on CoderWall <i class="fa fa-chevron-right"></i></a>
 
@@ -312,48 +329,45 @@ client's ERP (Protheus) and the Ecommerce Platform.</p>
             <div class="content">
               <div class="item">
                 <h3 class="title">Engineer <span class="place"><a href="#">Labdoor</a></span> <span class="year">(2017 - Present)</span></h3>
-                <p>Develop, ​maintain ​and ​support ​application ​programs ​for ​administrative, ​Web ​and
-                systems ​using ​Java ​and ​related ​tools. ​Analyze ​code ​for ​system ​testing ​and ​debugging; create ​test ​transactions ​to ​find, ​isolate ​and ​rectify ​issues.&nbsp;&nbsp;<a onclick="showItem('job1');" class="job1icon" style="color: #778492; cursor: pointer"><i class="fa fa-plus"></i></a></p>
+                <p>Develop, ​maintain ​and ​support ​application ​programs ​for ​administrative, ​Web ​and systems ​using ​Java ​and ​related ​tools. ​Analyze ​code ​for ​system ​testing ​and ​debugging; create ​test ​transactions ​to ​find, ​isolate ​and
+                  ​rectify ​issues.&nbsp;&nbsp;<a onclick="showItem('job1');" class="job1icon" style="color: #778492; cursor: pointer"><i class="fa fa-plus"></i></a></p>
                 <div style="display: none" id="job1">
                   <p><strong>Accomplishments:</strong><br>
                     <ul>
-                        <li>Developed ​a ​project ​to ​recommend ​products ​which ​increase ​at ​least ​30% ​of the ​orders ​during ​a ​few ​weeks ​after ​the ​project's ​delivered</li>
-                        <li>Developed ​improvements ​for ​the ​test ​structure ​in ​order ​to ​optimize ​the ​time spent ​in ​repeated ​tests</li>
-                        <li>Delivered ​rest ​services' ​api ​documentation ​which ​were ​used ​by ​all ​team
-during ​the ​coding ​process.</li>
-                        <li>Helped ​with ​the ​code ​review ​process ​in ​order ​to ​improve ​and ​prevent
-possible ​failures ​on ​the ​project.</li>
+                      <li>Developed ​a ​project ​to ​recommend ​products ​which ​increase ​at ​least ​30% ​of the ​orders ​during ​a ​few ​weeks ​after ​the ​project's ​delivered</li>
+                      <li>Developed ​improvements ​for ​the ​test ​structure ​in ​order ​to ​optimize ​the ​time spent ​in ​repeated ​tests</li>
+                      <li>Delivered ​rest ​services' ​api ​documentation ​which ​were ​used ​by ​all ​team during ​the ​coding ​process.</li>
+                      <li>Helped ​with ​the ​code ​review ​process ​in ​order ​to ​improve ​and ​prevent possible ​failures ​on ​the ​project.</li>
                     </ul>
                   </p>
                 </div>
               </div>
               <div class="item">
                 <h3 class="title">Java Senior Developer <span class="place"><a href="#">Netshoes</a></span> <span class="year">(12/2015 - 02/2017)</span></h3>
-                <p>Senior ​programming ​tasks ​including ​enhancements, ​maintenance ​and ​support ​for
-company’s ​ecommerce ​and ​services. ​Handling ​complex ​analysis ​and ​programming ​to
-meet ​project ​requirements ​and ​deadline.&nbsp;&nbsp;<a onclick="showItem('job2');" class="job2icon" style="color: #778492; cursor: pointer"><i class="fa fa-plus"></i></a></p>
-              <div style="display: none" id="job2">
-                <p><strong>Accomplishments:</strong><br>
-                  <ul>
-                      <li>Developed ​and ​implemented ​cross-platform ​project ​to ​integrate ​the
-ecommerce ​platform, ​microservices ​to ​an ​external ​consumer.</li>
+                <p>Senior ​programming ​tasks ​including ​enhancements, ​maintenance ​and ​support ​for company’s ​ecommerce ​and ​services. ​Handling ​complex ​analysis ​and ​programming ​to meet ​project ​requirements ​and ​deadline.&nbsp;&nbsp;<a onclick="showItem('job2');"
+                    class="job2icon" style="color: #778492; cursor: pointer"><i class="fa fa-plus"></i></a></p>
+                <div style="display: none" id="job2">
+                  <p><strong>Accomplishments:</strong><br>
+                    <ul>
+                      <li>Developed ​and ​implemented ​cross-platform ​project ​to ​integrate ​the ecommerce ​platform, ​microservices ​to ​an ​external ​consumer.</li>
                       <li>Created ​shell ​script ​that ​reduced ​the ​time ​spent ​by ​the ​project's ​build ​by ​30% which ​made ​possible ​to ​provide ​a ​unique ​development ​test ​environment ​for all ​team.</li>
-                      <li> Helped ​to ​coded ​and ​designed ​a ​new ​way ​to ​recover ​the ​user's ​password ​on the ​ecommerce ​that ​reduced ​significantly ​the ​calls ​received ​by ​the ​call ​center team ​from ​the ​users ​that ​can't ​recover ​their ​password ​through ​the ecommerce.</li>
-                  </ul>
-                </p>
-              </div>
+                      <li> Helped ​to ​coded ​and ​designed ​a ​new ​way ​to ​recover ​the ​user's ​password ​on the ​ecommerce ​that ​reduced ​significantly ​the ​calls ​received ​by ​the ​call ​center team ​from ​the ​users ​that ​can't ​recover ​their ​password
+                        ​through ​the ecommerce.</li>
+                    </ul>
+                  </p>
+                </div>
               </div>
               <!--//item-->
               <div class="item">
                 <h3 class="title">Java Senior Developer - <span class="place"><a href="#">Compasso</a></span> <span class="year">(05/2014 - 12/2015)</span></h3>
-                <p>Helped ​to ​developed ​the ​main ​integrations ​between ​the ​ecommerce ​platform ​and ​the client's ​erp. ​Maintain ​and ​support ​the ​ecommerce ​working ​on ​both ​back ​and ​front ​end. Analysed ​logs ​from ​production ​environment ​in ​order ​to ​find ​the ​systems ​bugs ​and ​any possible ​bottleneck.&nbsp;&nbsp;<a onclick="showItem('job3');" class="job3icon" style="color: #778492; cursor: pointer"><i class="fa fa-plus"></i></a></p>
+                <p>Helped ​to ​developed ​the ​main ​integrations ​between ​the ​ecommerce ​platform ​and ​the client's ​erp. ​Maintain ​and ​support ​the ​ecommerce ​working ​on ​both ​back ​and ​front ​end. Analysed ​logs ​from ​production ​environment
+                  ​in ​order ​to ​find ​the ​systems ​bugs ​and ​any possible ​bottleneck.&nbsp;&nbsp;<a onclick="showItem('job3');" class="job3icon" style="color: #778492; cursor: pointer"><i class="fa fa-plus"></i></a></p>
                 <div style="display: none" id="job3">
                   <p><strong>Accomplishments:</strong><br>
                     <ul>
-                        <li>Improved ​the ​order's ​integration ​which ​reduced the discrepancy of the
-amount of orders between the client's erp and the ecommerce ​platform.</li>
-                        <li>Delivered ​back-office ​tools ​supporting ​ecommerce ​integrations, ​by ​making easier ​to ​check ​their ​statuses.</li>
-                        <li>Improved ​the ​Sql ​query ​used ​by ​the ​orders ​report ​generator ​which ​reduced the ​time ​spent ​by ​10% ​during ​the ​report ​generation.</li>
+                      <li>Improved ​the ​order's ​integration ​which ​reduced the discrepancy of the amount of orders between the client's erp and the ecommerce ​platform.</li>
+                      <li>Delivered ​back-office ​tools ​supporting ​ecommerce ​integrations, ​by ​making easier ​to ​check ​their ​statuses.</li>
+                      <li>Improved ​the ​Sql ​query ​used ​by ​the ​orders ​report ​generator ​which ​reduced the ​time ​spent ​by ​10% ​during ​the ​report ​generation.</li>
                     </ul>
                   </p>
                 </div>
@@ -407,8 +421,8 @@ amount of orders between the client's erp and the ecommerce ​platform.</li>
             <div class="content">
               <div class="item lead">
                 <div id="starsRating" class="starrr"></div>
-                <input type="hidden" id="ratingCount"/>
-            	</div>
+                <input type="hidden" id="ratingCount" />
+              </div>
 
               <div class="item">
                 <h3 class="title">If you have any suggestion, please type here ?</h3>
@@ -424,7 +438,7 @@ amount of orders between the client's erp and the ecommerce ​platform.</li>
           </div>
         </section>
         <section class="experience section" id="ratingTotal" ng-controller="RatingCtrl">
-          <div class="section-inner" ng-show="rating.average != null" >
+          <div class="section-inner" ng-show="rating.average != null">
             <h2 class="heading" id="ratingAverage">Ratings ({{rating.ratings.length}})</h2>
             <span class="glyphicon glyphicon-start" style="color: red"></span>
             <div class="content">
@@ -496,10 +510,10 @@ amount of orders between the client's erp and the ecommerce ​platform.</li>
                   </div>
                   <div class="skillset defaultSkillset" ng-show="skillsError">
                     <div class="item">
-                      <h3 class="level-title">Java &amp; J2EE<span class="level-label" data-toggle="tooltip"
+                      <h3 class="level-title">Java 8<span class="level-label" data-toggle="tooltip"
                                    data-placement="left" data-animation="true" title="">Pro</span></h3>
                       <div class="level-bar">
-                        <div class="level-bar-inner" data-level="96%">
+                        <div class="level-bar-inner" data-level="76%">
                         </div>
                       </div>
                       <!--//level-bar-->
@@ -508,7 +522,7 @@ amount of orders between the client's erp and the ecommerce ​platform.</li>
                     <!--//item-->
 
                     <div class="item">
-                      <h3 class="level-title">Spring Suite<span class="level-label">Dev</span></h3>
+                      <h3 class="level-title">Spring Boot<span class="level-label">Pro</span></h3>
                       <div class="level-bar">
                         <div class="level-bar-inner" data-level="70%">
                         </div>
@@ -517,9 +531,18 @@ amount of orders between the client's erp and the ecommerce ​platform.</li>
                     </div>
 
                     <div class="item">
-                      <h3 class="level-title">Javascript &amp; jQuery<span class="level-label" title="Developer Level">Dev</span></h3>
+                      <h3 class="level-title">Angular 4<span class="level-label" title="Developer Level">Dev</span></h3>
                       <div class="level-bar">
-                        <div class="level-bar-inner" data-level="70%">
+                        <div class="level-bar-inner" data-level="50%">
+                        </div>
+                      </div>
+                    </div>
+                      <!--//level-bar-->
+
+                    <div class="item">
+                      <h3 class="level-title">React<span class="level-label" title="Developer Level">Dev</span></h3>
+                      <div class="level-bar">
+                        <div class="level-bar-inner" data-level="40%">
                         </div>
                       </div>
                       <!--//level-bar-->
@@ -527,7 +550,7 @@ amount of orders between the client's erp and the ecommerce ​platform.</li>
                     <!--//item-->
 
                     <div class="item">
-                      <h3 class="level-title">Databases<span class="level-label" title="Develpment">Pro</span></h3>
+                      <h3 class="level-title">Rest Api's<span class="level-label" title="Develpment">Pro</span></h3>
                       <div class="level-bar">
                         <div class="level-bar-inner" data-level="60%">
                         </div>
@@ -536,14 +559,6 @@ amount of orders between the client's erp and the ecommerce ​platform.</li>
                     </div>
                     <!--//item-->
 
-                    <div class="item">
-                      <h3 class="level-title">Ruby on Rails<span class="level-label" title="Develpment of some particular projects">Developer</span></h3>
-                      <div class="level-bar">
-                        <div class="level-bar-inner" data-level="40%">
-                        </div>
-                      </div>
-                      <!--//level-bar-->
-                    </div>
                     <!--//item-->
                     <!--//item-->
                     <!--
@@ -693,14 +708,20 @@ amount of orders between the client's erp and the ecommerce ​platform.</li>
       initConfig();
     </script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
       ga('create', 'UA-90444298-1', 'auto');
       ga('send', 'pageview');
-
     </script>
 </body>
 

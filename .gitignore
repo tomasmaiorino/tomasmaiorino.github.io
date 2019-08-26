@@ -1,6 +1,8 @@
 target/
 !.mvn/wrapper/maven-wrapper.jar
 
+package-lock.json
+
 ### STS ###
 .apt_generated
 .classpath
@@ -24,3 +26,4 @@ dist/
 nbdist/
 .nb-gradle/
 bin/
+node_modules

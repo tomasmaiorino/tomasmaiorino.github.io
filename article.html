@@ -28,12 +28,12 @@
       .hidden-print {
         display: none !important;
       }
-      .display-print {
-        display: inline !important;
-      }
+      .break-line {page-break-after: always;}
     }
-    .hidden-page {
-      display: none !important;
+    @media screen {
+      .print-only {
+        display: none !important;
+      }
     }
   </style>
 
@@ -50,7 +50,7 @@
           <div class="row align-items-center">
             <div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
               <h2 class="resume-name mb-0 text-uppercase">Tomas Maiorino</h2>
-              <div class="resume-tagline mb-3 mb-md-0">Senior Fullstack Software Engineer - Full version</div>
+              <div class="resume-tagline mb-3 mb-md-0">Senior Fullstack Software Engineer</div>
             </div>
             <!--//resume-title-->
             <div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
@@ -95,7 +95,7 @@
         </div>
         <!--//resume-intro-->
         <hr>
-        <section class="project-section py-3">
+        <section class="project-section py-3 break-line">
           <h3 class="text-uppercase resume-section-heading mb-4">Projects</h3>
           <!--<p>Here are some relevant projects that I worked during my career and I'm still working on.</p>-->
           <div class="item mb-3">
@@ -165,7 +165,6 @@
           <!--//item-->
         </section>
         <!--//project-section-->
-
         <div class="resume-body">
           <div class="row">
             <div class="resume-main col-12 col-lg-8 col-xl-9 pr-0 pr-lg-5">
@@ -257,13 +256,20 @@
                 <h3 class="text-uppercase resume-section-heading mb-4">Skills</h3>
                 <div class="item">
                   <h4 class="item-title">Technical</h4>
-                  <div class="hidden-page">
+                  <div class="print-only">
                     <span class="ml-1 mt-1">JavaSE 8+,</span>
                     <span class="ml-1 mt-1">Angular 2,</span>
-                    <span class="ml-1 mt-1">Spring Boot,</span>
-                    <span class="ml-1 mt-1">Spring Data,</span>
-                    <span class="ml-1 mt-1">Spring Transactions,</span>
-                    <span class="ml-1 mt-1">Hibernate</span>
+                    <span class="ml-1 mt-1">Spring Boot/Spring Data/Spring Transactions,</span>
+                    <span class="ml-1 mt-1">PostgreSQL/MySQL/Oracle,</span>
+                    <span class="ml-1 mt-1">RabbitMQ/ActiveMQ,</span>
+                    <span class="ml-1 mt-1">Mongo/Redis,</span>
+                    <span class="ml-1 mt-1">Object-oriented design,</span>
+                    <span class="ml-1 mt-1">JMeter,</span>
+                    <span class="ml-1 mt-1">GIT,</span>
+                    <span class="ml-1 mt-1">JIRA/Bitbucket/JENKINS/DBeaver,</span>
+                    <span class="ml-1 mt-1">Docker/Kubernetes,</span>
+                    <span class="ml-1 mt-1">Unit and Integration tests/WireMock/Mockito,</span>
+                    <span class="ml-1 mt-1">Design and implement database structures</span>
                   </div>
                   <ul class="list-unstyled resume-skills-list hidden-print">
                     <li class="mb-2">JavaSE 8+</li>
@@ -279,7 +285,7 @@
                     <li class="mb-2">Docker/Kubernetes</li>
                     <li class="mb-2">Unit and Integration tests/WireMock/Mockito</li>
                     <li class="mb-2">Design and implement database structures</li>
-                    
+
                     <!--
                     <li class="mb-2">Node.js</li>
                     <li class="mb-1"><a href="#">more</a></li>
@@ -288,14 +294,20 @@
                 </div>
                 <!--//item-->
                 <div class="item">
-                  <h4 class="item-title">Professional</h4>
-                  <ul class="list-unstyled resume-skills-list">
+                  <h4 class="item-title mt-2">Professional</h4>
+                  <div class="print-only">
+                    <span class="ml-1 mt-1">Team player,</span>
+                    <span class="ml-1 mt-1">Focus,</span>
+                    <span class="ml-1 mt-1">Strong problem solver,</span>
+                    <span class="ml-1 mt-1">Good time management</span>
+                  </div>
+                  <ul class="list-unstyled resume-skills-list hidden-print">
                     <li class="mb-2">Team player
                     <li>
                     <li class="mb-2">Focus
                     <li>
                     <li class="mb-2">Strong problem solver</li>
-                    <li>Good time management</li>
+                    <li class="mb-2">Good time management</li>
                   </ul>
                 </div>
                 <!--//item-->

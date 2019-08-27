@@ -27,3 +27,4 @@ nbdist/
 .nb-gradle/
 bin/
 node_modules
+assets/main.js

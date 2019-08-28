@@ -1,4 +1,4 @@
-/*! 
+/*!
  * Template Name: DevResume - Bootstrap 4 Resume/CV Template for Software Developers
  * Version: 1.0
  * Author: Xiaoying Riley
@@ -7083,6 +7083,12 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: darkgray; } }
 
+@media print {
+  .hidden-print {
+    display: none !important; }
+  .break-line {
+    page-break-after: always; } }
+
 /*************************** DevResume Styles ****************************/
 /*********** Theme Generic **********/
 body {
@@ -7204,3 +7210,9 @@ a.resume-link {
 @media (max-width: 767.98px) {
   .resume-contact {
     border-left: 0; } }
+
+@media screen {
+  .shadow-border {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important; }
+  .print-only {
+    display: none !important; } }

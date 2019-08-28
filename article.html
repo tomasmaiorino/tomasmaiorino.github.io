@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="Tomas Maiorino">
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="assets/clients/ar/favicon.ico">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
@@ -23,20 +23,6 @@
   <!-- Theme CSS -->
   <link id="theme-style" rel="stylesheet" href="assets/css/devresume-ar.css">
 
-  <style>
-    @media print {
-      .hidden-print {
-        display: none !important;
-      }
-      .break-line {page-break-after: always;}
-    }
-    @media screen {
-      .print-only {
-        display: none !important;
-      }
-    }
-  </style>
-
 </head>
 
 <body>
@@ -44,7 +30,7 @@
   <!-- DEMO ONLY -->
   <div class="main-wrapper">
     <div class="container px-3 px-lg-5">
-      <article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
+      <article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-border">
 
         <div class="resume-header">
           <div class="row align-items-center">
@@ -98,20 +84,7 @@
         <section class="project-section py-3 break-line">
           <h3 class="text-uppercase resume-section-heading mb-4">Projects</h3>
           <!--<p>Here are some relevant projects that I worked during my career and I'm still working on.</p>-->
-          <div class="item mb-3">
-            <div class="item-heading row align-items-center mb-2">
-              <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Housing Loan Simulator</h4>
-              <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Financial</div>
-            </div>
-            <div class="item-content">
-              <p>Working on the development of microservices that are used by a mortgage lender of a finance company.
-                Helping in the definition and development of architecture, working throughout development from
-                development, testing to production. Building testable, fast and lightweight applications. Support less
-                experienced developers and interact with the business team to understand their needs and build a better
-                product.</p>
-            </div>
-          </div>
-          <!--//item-->
+
           <div class="item">
             <div class="item-heading row align-items-center mb-2">
               <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Ecommerce Integration</h4>
@@ -163,6 +136,28 @@
             </div>
           </div>
           <!--//item-->
+          <div class="item mb-3">
+            <div class="item-heading row align-items-center mb-2">
+              <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Housing Loan Simulator</h4>
+              <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Financial</div>
+            </div>
+            <div class="item-content">
+              <p>Working on the development of microservices that are used by a mortgage lender of a finance company.
+                Helping in the definition and development of architecture, working throughout development from
+                development, testing to production. Building testable, fast and lightweight applications. Support less
+                experienced developers and interact with the business team to understand their needs and build a better
+                product.</p>
+            </div>
+          </div>
+          <!--//item-->
+          <div class="item">
+            <div class="item-heading row align-items-center mb-2">
+              <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Command Tips </h4>
+              <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Open Source | Own project</div>
+            </div>
+            <div class="item-content">
+              <p>A node/react application where you can find/remember your most used commands. Click <a href="https://intense-shore-54487.herokuapp.com/" target="_blank">here</a> to take a look at the live application.</p>										</div>
+          </div><!--//item-->
         </section>
         <!--//project-section-->
         <div class="resume-body">
@@ -335,7 +330,7 @@
                 </ul>
               </section>
               <!--//education-section-->
-              <section class="skills-section py-3">
+              <section class="skills-section py-3 hidden-print">
                 <h3 class="text-uppercase resume-section-heading mb-4">Languages</h3>
                 <ul class="list-unstyled resume-lang-list">
                   <li class="mb-2">Portuguese <span class="text-muted">(Native)</span></li>
@@ -355,7 +350,7 @@
               <section class="skills-section py-3 hidden-print">
                 <h3 class="text-uppercase resume-section-heading mb-4">More</h3>
                 <ul class="list-unstyled resume-interests-list mb-0">
-                  <li class="mb-2">Click <a href="index.html">here</a> to go back to the reduced of the resume.</li>
+                  <li class="mb-2">Click <a href="index-full.html">here</a> to see the full resume with all projects and work experience.</li>
                 </ul>
               </section>
               <!--//certificates-section-->
@@ -367,7 +362,7 @@
         </div>
         <!--//resume-body-->
         <hr>
-        <div class="resume-footer text-center hidden-print">
+        <div class="resume-footer text-center">
           <ul class="resume-social-list list-inline mx-auto mb-0 d-inline-block text-muted">
             <li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" href="https://github.com/tomasmaiorino"
                 target="_blank"><i class="fab fa-github-square fa-2x mr-2" data-fa-transform="down-4"></i><span
@@ -376,9 +371,10 @@
                 href="https://www.linkedin.com/in/tomasmaiorino" target="_blank"><i class="fab fa-linkedin fa-2x mr-2"
                   data-fa-transform="down-4"></i><span
                   class="d-none d-lg-inline-block text-muted">https://www.linkedin.com/in/tomasmaiorino/</span></a></li>
-            <li class="list-inline-item mb-lg-0 mr-lg-3"><a class="resume-link" href="#"><i
+          <!-- <li class="list-inline-item mb-lg-0 mr-lg-3"><a class="resume-link" href="#"><i
                   class="fab fa-twitter-square fa-2x mr-2" data-fa-transform="down-4"></i><span
                   class="d-none d-lg-inline-block text-muted">@twittername</span></a></li>
+                  -->
           </ul>
         </div>
         <!--//resume-footer-->

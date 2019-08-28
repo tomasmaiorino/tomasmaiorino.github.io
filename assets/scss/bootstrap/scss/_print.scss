@@ -139,3 +139,10 @@
     // Bootstrap specific changes end
   }
 }
+
+@media print {
+  .hidden-print {
+    display: none !important;
+  }
+  .break-line {page-break-after: always;}
+}

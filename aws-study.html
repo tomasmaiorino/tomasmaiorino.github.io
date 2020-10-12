@@ -3,7 +3,10 @@
 
 <head>
 	<title>Tomas Maiorino - Software Developers</title>
-
+	<!--
+	<li(?=>( ?|[a-z]+|<strong))
+	<p(?=>( ?|[a-z]+|<strong))
+-->
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +39,7 @@
 				<div class="resume-header">
 					<div class="row align-items-center">
 						<div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
-							<h2 class="resume-name mb-0 text-uppercase">AWS Study</h2>
+							<h2 class="resume-name mb-0 text-uppercase" data-sound>AWS Study</h2>
 						</div>
 						<!--//resume-title-->
 					</div>
@@ -50,74 +53,75 @@
 						<div class="resume-main col-12 col-lg-8 col-xl-9 pr-0 pr-lg-5">
 
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">VPC</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>VPC</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>It is confined to an AWS region</p>
-										<p>
-											<ul class="resume-list">
-												<li>The VPC is region specific, it can not extend to multiples regions.
-												</li>
-												<li>A reagion has many availability zone.</li>
-												<li>CIDR</li>
-												<li>Implied Router</li>
-												<li>Route tables</li>
-												<li>Internet Gateway</li>
-												<li>Security Groups</li>
-												<li>N.ACL</li>
-												<li>VGW</li>
-												<li>Custom VPC has no internet gateway</li>
-											</ul>
-										</p>
+										<p data-sound>It is confined to an AWS region</p>
+										<ul class="resume-list">
+											<li data-sound>The VPC is region specific, it can not extend to multiples
+												regions.
+											</li>
+											<li data-sound>A reagion has many availability zone.</li>
+											<li data-sound>CIDR</li>
+											<li data-sound>Implied Router</li>
+											<li data-sound>Route tables</li>
+											<li data-sound>Internet Gateway</li>
+											<li data-sound>Security Groups</li>
+											<li data-sound>N.ACL</li>
+											<li data-sound>VGW</li>
+											<li data-sound>Custom VPC has no internet gateway</li>
+											<li data-sound>In a newly created VPC, the DNS resolution and DNS hostname
+												attributes are disabled.</li>
+										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Implied Router</h3>
-								<div class="item mb-3">
-									<div class="item-content">
-										<p>
-											<ul class="resume-list">
-												<li>It connects different AZ's together and connects VPC to the internet
-													gateway.</li>
-												<li>Each subnet will have a Route table</li>
-											</ul>
-										</p>
-									</div>
-								</div>
-							</section>
-							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Route tables</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Implied Router</h3>
 								<div class="item mb-3">
 									<div class="item-content">
 										<ul class="resume-list">
-											<li>Each subnet must be associated with only one route table at any given
+											<li data-sound>It connects different AZ's together and connects VPC to the
+												internet
+												gateway.</li>
+											<li data-sound>Each subnet will have a Route table</li>
+										</ul>
+									</div>
+								</div>
+							</section>
+							<section class="project-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Route tables</h3>
+								<div class="item mb-3">
+									<div class="item-content">
+										<ul class="resume-list">
+											<li data-sound>Each subnet must be associated with only one route table at
+												any given
 												time</li>
 										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">VPC IP addressing</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>VPC IP addressing</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>The CIDR block is the range if IP addresses that you choose for the VPC when
+										<p data-sound>The CIDR block is the range if IP addresses that you choose for
+											the VPC when
 											create it.</p>
-										<p>
-											<ul class="resume-list">
-												<li>The first 4 IP addresses in each subnet and the last one are
-													reserved by AWS.</li>
-											</ul>
-										</p>
+										<ul class="resume-list">
+											<li data-sound>The first 4 IP addresses in each subnet and the last one are
+												reserved by AWS.</li>
+										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Internet Gateway
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Internet Gateway
 								</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>Is the Gateway through which your VPC communicates with the internet, and
+										<p data-sound>Is the Gateway through which your VPC communicates with the
+											internet, and
 											with other AWS services</p>
 									</div>
 								</div>
@@ -125,19 +129,23 @@
 							<!--//project-section-->
 
 							<section class="work-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Public Subnet</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Public Subnet</h3>
 								<div class="item mb-3">
 									<div class="item-content">
 										<ul class="resume-list">
-											<li>The subnets connect to each other through a implied router. It uses
+											<li data-sound>The subnets connect to each other through a implied router.
+												It uses
 												route tables to map the packages between the subnets.</li>
-											<li>We can have one or more subnets per availability zone. A subnet can not
+											<li data-sound>We can have one or more subnets per availability zone. A
+												subnet can not
 												extend to another availability zone.</li>
-											<li>Its VPC has internet gateway attached to it</li>
-											<li>It is associated automatically with a route table that has an entry for
+											<li data-sound>Its VPC has internet gateway attached to it</li>
+											<li data-sound>It is associated automatically with a route table that has an
+												entry for
 												a default route pointing a VPC's internet gateway</li>
-											<li>Subnets (private/public) are AZ specifics</li>
-											<li>When you create a subnet, you specify the CIDR block for the subnet,
+											<li data-sound>Subnets (private/public) are AZ specifics</li>
+											<li data-sound>When you create a subnet, you specify the CIDR block for the
+												subnet,
 												which is a subset of the VPC CIDR block</li>
 										</ul>
 									</div>
@@ -146,17 +154,17 @@
 								<!--
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Senior Software
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>Senior Software
 											Engineer</h4>
 										<div
 											class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">
 											Compasso | 2017 - 2019</div>
 									</div>
 									<div class="item-content">
-										<p>Worked for a big brazilians ecommerce in Sao Paulo. My roles and
+										<p data-sound>Worked for a big brazilians ecommerce in Sao Paulo. My roles and
 											responsibilities included.</p>
 										<ul class="resume-list">
-											<li>Responsible for the catalog integration between the Oracle Cloud
+											<li data-sound>Responsible for the catalog integration between the Oracle Cloud
 												Commerce and
 												the clients catalog management tool using Spring Boot, Java 8,
 												Webservices Rest,
@@ -164,19 +172,19 @@
 												and
 												Jenkins. Helped on the architecture definition and which technologies to
 												use.</li>
-											<li>Develop and maintain rest api’s using Microservices, Spring Boot, Java,
+											<li data-sound>Develop and maintain rest api’s using Microservices, Spring Boot, Java,
 												Java EE,
 												JUnit, Mockito, Gradle, ldap and Weblogic. Maintain the frontend
 												application
 												which interacts with the rest apis using Angular 2 and Angular material.
 											</li>
-											<li>Isolate and rectify issues in production through the analyses of
+											<li data-sound>Isolate and rectify issues in production through the analyses of
 												applications'
 												source code (Java 7), systems transactions' logs (Ecommerce and OSB) and
 												thread
 												dumps by using the following tools (Splunk, Dynatrace, Eclipse, Sql
 												developer).</li>
-											<li>Generate reports through complex queries and scripts (Oracle 11) to help
+											<li data-sound>Generate reports through complex queries and scripts (Oracle 11) to help
 												the
 												business team to check the impact of some issues in production in order
 												to
@@ -188,216 +196,255 @@
 								-->
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Elastic IP Addresses</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Elastic IP Addresses
+								</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>
-											<ul class="resume-list">
-												<li>You have 5 Elastic IP's addresses per REGION</li>
-												<li>NAT Gateway required Elastic IP</li>
-											</ul>
-										</p>
+										<ul class="resume-list">
+											<li data-sound>You have 5 Elastic IP's addresses per REGION</li>
+											<li data-sound>NAT Gateway required Elastic IP</li>
+										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Security Group</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Security Group</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>
-											<ul class="resume-list">
-												<li>Statefull</li>
-												<li>Only have permit rules</li>
-												<li>Implicit denied at the end</li>
-												<li>Associated with EC2 instances' Elastic network interface (ENI)</li>
-												<li>Are VPC resources</li>
-											</ul>
-										</p>
+										<ul class="resume-list">
+											<li data-sound>Statefull</li>
+											<li data-sound>Only have permit rules</li>
+											<li data-sound>Implicit denied at the end</li>
+											<li data-sound>Associated with EC2 instances' Elastic network interface
+												(ENI)</li>
+											<li data-sound>Are VPC resources</li>
+										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">N.ALC</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>N.ALC</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>
-											<ul class="resume-list">
-												<li>It is a function performed on the implied router (the implied router
-													hosts the network ACL function)</li>
-												<li>Stateless, for an allowed inbound traffic must be "explicity"
-													allowed too</li>
-												<li>Have "permit" and "deny" rules</li>
-												<li>Each rule has a number</li>
-												<li>Explicity denied at the end</li>
-												<li>A subnet must be associated with a N.ACL</li>
-												<li>A custom (not-default) N.ACL blocks/denies all traffic inbound and
-													outbound by default</li>
-												<li>N.ACL rules are evaluated by rule number, from the lowest to
-													highest, and executed immediately when a matching allw/deny rule is
-													found</li>
-												<li>When using a default configuration, by default N.ACL allows all
-													inbound and outbound IPV4 traffic</li>
-											</ul>
-										</p>
+										<ul class="resume-list">
+											<li data-sound>It is a function performed on the implied router (the implied
+												router
+												hosts the network ACL function)</li>
+											<li data-sound>Stateless, for an allowed inbound traffic must be "explicity"
+												allowed too</li>
+											<li data-sound>Have "permit" and "deny" rules</li>
+											<li data-sound>Each rule has a number</li>
+											<li data-sound>Explicity denied at the end</li>
+											<li data-sound>A subnet must be associated with a N.ACL</li>
+											<li data-sound>A custom (not-default) N.ACL blocks/denies all traffic
+												inbound and
+												outbound by default</li>
+											<li data-sound>N.ACL rules are evaluated by rule number, from the lowest to
+												highest, and executed immediately when a matching allw/deny rule is
+												found</li>
+											<li data-sound>When using a default configuration, by default N.ACL allows
+												all
+												inbound and outbound IPV4 traffic</li>
+										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">VCP Peering</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>VCP Peering</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>
-											<ul class="resume-list">
-												<li>Allows two VPC's to communicate with each other with a highly
-													available networking that enables routing traffic between the using
-													private IP4/IPV6</li>
-												<li>It can comunicate with another AWS account within the same region or
-													between AWS regions</li>
-												<li>Transitive peering relationships are not supported.</li>
-												<li>Edge to Edge routing via gateway are INVALID</li>
-											</ul>
-										</p>
+										<ul class="resume-list">
+											<li data-sound>Allows two VPC's to communicate with each other with a highly
+												available networking that enables routing traffic between the using
+												private IP4/IPV6</li>
+											<li data-sound>It can comunicate with another AWS account within the same
+												region or
+												between AWS regions</li>
+											<li data-sound>Transitive peering relationships are not supported.</li>
+											<li data-sound>Edge to Edge routing via gateway are INVALID</li>
+											<li data-sound>To enable the flow of traffic between the VPC's using private
+												IP
+												adresses, the owner of each VPC in the VPC peering connection must
+												manually add a route to one or more of their VPC route talbesthat
+												points to the IP address of the other VPC</li>
+										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">VPN</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>VPN</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>A secure connection over the internet or direct connect between on-premisse
+										<p data-sound>A secure connection over the internet or direct connect between
+											on-premisse
 											and AWS</p>
 									</div>
 									<div class="item-content">
-										<p>
-											<ul class="resume-list">
-												<li>Quick easy to deploy and cost effective</li>
-												<li>A VGW is required on the VPC side and a customer Gateway on the
-													clients data center</li>
-												<li>Can not use the NAT Gateway in your VPC(?) through VPN con.</li>
-												<li>Route propagationto update the route tables through VGQ and the VPN
-													connection dynamically</li>
-												<li>You can not access Elastic IP's on your VPC side using VPN tunnel
-													estabilished</li>
-											</ul>
-										</p>
+										<ul class="resume-list">
+											<li data-sound>Quick easy to deploy and cost effective</li>
+											<li data-sound>A VGW is required on the VPC side and a customer Gateway on
+												the
+												clients data center</li>
+											<li data-sound>Can not use the NAT Gateway in your VPC(?) through VPN con.
+											</li>
+											<li data-sound>Route propagationto update the route tables through VGQ and
+												the VPN
+												connection dynamically</li>
+											<li data-sound>You can not access Elastic IP's on your VPC side using VPN
+												tunnel
+												estabilished</li>
+										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Direct Connect (DX)</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Direct Connect (DX)
+								</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>
-											<ul class="resume-list">
-												<li>It is a direct connection (not internet based) and provided for
-													higher speeds (bandwidth), less latency and higher performance</li>
-												<li>Use one private VIF(virtual interface) to connect to your private
-													VPC and one public VIF to connect to AWS public services</li>
-												<li>Once connected via DX you can access all AZ's in a region</li>
-											</ul>
-										</p>
+										<ul class="resume-list">
+											<li data-sound>It is a direct connection (not internet based) and provided
+												for
+												higher speeds (bandwidth), less latency and higher performance</li>
+											<li data-sound>Use one private VIF(virtual interface) to connect to your
+												private
+												VPC and one public VIF to connect to AWS public services</li>
+											<li data-sound>Once connected via DX you can access all AZ's in a region
+											</li>
+										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">AWS Transit Gateway</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>AWS Transit Gateway
+								</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>
-											<ul class="resume-list">
-												<li>A transit gateway is a network transit hub that you can use to inter
-													connect your VPC and on-premises networks to a single gateway</li>
-												<li>It is a REGIONAL resource</li>
-												<li>It can be associated across accounts</li>
-												<li>With Transit Gateway, you only have to create and manage a single
-													connection from the central gateway to each Amazon VPC, on-premises
-													data center, or remote office across your network</li>
-												<li>If you attach a transit gateway peering connection, the transit
-													gateway must be in a different region</li>
-											</ul>
-										</p>
+										<ul class="resume-list">
+											<li data-sound>A transit gateway is a network transit hub that you can use
+												to inter
+												connect your VPC and on-premises networks to a single gateway</li>
+											<li data-sound>It can be associated across accounts</li>
+											<li data-sound>With Transit Gateway, you only have to create and manage a
+												single
+												connection from the central gateway to each Amazon VPC, on-premises
+												data center, or remote office across your network</li>
+											<li data-sound>If you attach a transit gateway peering connection, the
+												transit
+												gateway must be in a different region</li>
+											<li data-sound>Transit Gateway leverages the AWS global network to allow
+												customers
+												to route traffic across AWS Regions</li>
+											<li data-sound>Inter-region peering provides an enasy and cost-effective way
+												to
+												replicate data for geographic redundancy or to share resources
+												between AWS regions</li>
+										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Interface VPC endpoints (AWS
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Interface VPC
+									endpoints (AWS
 									private links)</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>
+										<p data-sound>
 											VPC endpoints allow the connection from within a VPC to AWS service (that
-											are powerd by AWS private link) privately without over the internet.
+											are powerd by AWS private link) privately without over the internet.<br>
+											<strong>S3 and DynamoDB </strong>use VPC Gateway Endpoint, the other AWS
+											services use VPC Interface Endpoint
 										</p>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">EC2</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>EC2</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>
-											<ul class="resume-list">
-												<li>It required a KEY and Keypair name to access the instance</li>
-												<li>You can add an IAM role to an EC2 instance during or after it is
-													launched</li>
-												<li>Dedicated Instances run on single tenante hardware</li>
-												<li>Dedicated hosts run on a fully dedicated host</li>
-												<li>ENI is attache when the EC2 instance is running (hot attach), when
-													the instance is stopped (warn attach), when the instance is being
-													launched (cold attach)</li>
-												<li>You are limited to running On-demand instances per your vCPU based
-													On-demand instance.</li>
-												<li>Limit increased are tied to the REGION they were
-													requested.</li>
-												<li>If you need more instances, complete the EC2 limit increase request
-													form.</li>
-											</ul>
-										</p>
+										<ul class="resume-list">
+											<li data-sound>It required a KEY and Keypair name to access the instance
+											</li>
+											<li data-sound>You can add an IAM role to an EC2 instance during or after it
+												is
+												launched</li>
+											<li data-sound>Dedicated Instances run on single tenante hardware</li>
+											<li data-sound>Dedicated hosts run on a fully dedicated host</li>
+											<li data-sound>ENI is attache when the EC2 instance is running (hot attach),
+												when
+												the instance is stopped (warn attach), when the instance is being
+												launched (cold attach)</li>
+											<li data-sound>You are limited to running On-demand instances per your vCPU
+												based
+												On-demand instance.</li>
+											<li data-sound>Limit increased are tied to the REGION they were
+												requested.</li>
+											<li data-sound>If you need more instances, complete the EC2 limit increase
+												request
+												form.</li>
+											<li data-sound>When yoy launch an instance into a non-default VPC, AWS
+												provides the
+												instance with a private DNS hostname only</li>
+											<li data-sound>You can use Run command from the console to configure
+												instances
+												without having to login to each instance. AWS Systems Manager Run
+												Command lets you remotely and securely manage the configuration of
+												your managed instances.</li>
+											<li data-sound>You can use Run Command from the AWS console, the AWS Command
+												Line
+												Interface, AWS Tools for Windows PowerShell, or the AWS SDKs.</li>
+										</ul>
 									</div>
 								</div>
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Block Store</h4>
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>Block
+											Store</h4>
 									</div>
 									<div class="item-content">
-										<p>Elastic block store (EBS)</p>
+										<p data-sound>Elastic block store (EBS)</p>
 										<ul class="resume-list">
-											<li>Persistent</li>
-											<li>Networg attached virtual drives</li>
+											<li data-sound>Persistent</li>
+											<li data-sound>Networg attached virtual drives</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Instace Store
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Instace Store
 											</h4>
 										</div>
 										<ul class="resume-list">
-											<li>Basically the virtual hard drive on the host alllocated to this EC2
+											<li data-sound>Basically the virtual hard drive on the host alllocated to
+												this EC2
 												instance</li>
 										</ul>
 									</div>
 								</div>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>
-											<ul class="resume-list">
-												<li>Charged for data transfer in/out of EC2 instance (if sent outside
-													the AWS REGION</li>
-											</ul>
-										</p>
+										<ul class="resume-list">
+											<li data-sound>Charged for data transfer in/out of EC2 instance (if sent
+												outside
+												the AWS REGION</li>
+										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Elastic Fabric
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Elastic Fabric
 												Adapter (EFA)</h4>
 										</div>
 										<ul class="resume-list">
-											<li>Is a network device that you can attach to you EC2 instance to
+											<li data-sound>Is a network device that you can attach to you EC2 instance
+												to
 												accelerate High Performance Computing (HPC)</li>
-											<li>EFA proveides lower and more consistent latency and higher throughput
+											<li data-sound>EFA proveides lower and more consistent latency and higher
+												throughput
 												than the TCP transport traditionally used in could-based HPC sustems
 											</li>
-											<li>The OS-bypass capabilities of EFA's are not supported on Windows
+											<li data-sound>The OS-bypass capabilities of EFA's are not supported on
+												Windows
 												instnaces. OS-bypass enables HPC and machine learning applications to
 												bypass the OS kernel and to communicate directly with the EFA device
 											</li>
@@ -405,199 +452,258 @@
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Enhanced
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Enhanced
 												Networking
 											</h4>
 										</div>
 										<ul class="resume-list">
-											<li>EC2 enhanced networking can function across Multi-AZ</li>
-											<li>It uses SR-I/O on supported EC2 instance types to provide: higher
-												inter-instance PPS rates, low latency. It does not cost extra.</li>
+											<li data-sound>EC2 enhanced networking can function across Multi-AZ</li>
+											<li data-sound>It uses SR-I/O on supported EC2 instance types to provide:
+												higher
+												bandwidth, higher packet per second (PPS) performance, and consistently
+												lower inter-instance latencies. It does not cost extra.</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Cluster
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Cluster
 												Placement Group
 											</h4>
 										</div>
 									</div>
 									<div class="item-content">
-										<p>Clustering of EC2 instances in a single AZ</p>
+										<p data-sound>Clustering of EC2 instances in a single AZ</p>
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">EC2 - Partion
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>EC2
+												- Partion
 												PLacement Group</h4>
 										</div>
 										<ul class="resume-list">
-											<li>AWS tries to launch your group instances into different logical entities
+											<li data-sound>AWS tries to launch your group instances into different
+												logical entities
 												called partitions</li>
-											<li>Can be single or Multi-AZ in the same REGION</li>
+											<li data-sound>Can be single or Multi-AZ in the same REGION</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">EC2 - Spread
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>EC2
+												- Spread
 												PLacement Group</h4>
 										</div>
 										<ul class="resume-list">
-											<li>Lauches each instance in the group in a different hack.</li>
+											<li data-sound>Lauches each instance in the group in a different hack.</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">EC2 -
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>EC2
+												-
 												Monitoring</h4>
 										</div>
 										<ul class="resume-list">
-											<li>EC2 check status</li>
-											<li>It sends its metric data to AWS Cloud Watch every 5 min (enable by
+											<li data-sound>EC2 check status</li>
+											<li data-sound>It sends its metric data to AWS Cloud Watch every 5 min
+												(enable by
 												default)</li>
-											<li>For EC2 instances Cloud Watch monitors:
+											<li data-sound>For EC2 instances Cloud Watch monitors:
 												<ul>
-													<li>CPU Utilization</li>
-													<li>Disk Performance</li>
-													<li>Disk read/write</li>
+													<li data-sound>CPU Utilization</li>
+													<li data-sound>Disk Performance</li>
+													<li data-sound>Disk read/write</li>
 												</ul>
 											</li>
-											<li>To get more information, such as memoru Utilization, disk swap, page
+											<li data-sound>To get more information, such as memoru Utilization, disk
+												swap, page
 												file, log collection. It is necessary to install a Cloud Watch agent in
 												the instance</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">EC2 -
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>EC2
+												-
 												Bastion Hosts(Linux) Remote Desktop(Windows)</h4>
 										</div>
 										<ul class="resume-list">
-											<li>It is used to centralized the access to all EC2 instances for SSH
+											<li data-sound>It is used to centralized the access to all EC2 instances for
+												SSH
 												requests</li>
 										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">EBS</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>EBS</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>
-											<ul class="resume-list">
-												<li>EBS Volume data is replicated by AWS across multiple servers in the
-													same AZ to prevent data loss resulting from any single AWS component
-													failure</li>
-												<li>Both EBS volume and EC2 must be in the same AZ</li>
-												<li>EBS-backed EC2 instance has an EBS root volume</li>
-												<li>Instance-Store backed EC2 instance has an instance store root
-													volume. It should be used when a very high IOPS rate is required
-												</li>
-												<li>ELB Snapshots are stored in S3 and you can only access them through
-													EC2 API</li>
-												<li>You can create a Snapshot and access the volume simultaneously, if
-													the instance is running</li>
-												<li>EBS Snapshot are point-in-time images/copies of your EBS Volume</li>
-												<li>Snapshots are REGION specific</li>
-												<li>To migrate an EBS from one AZ to anothre, you have to create a
-													snapshot(region specific) and create a EBS volume from the snapshot
-													in the intended (other) AZ
-												</li>
-												<li>Snapshots are stored incrementally, what you need is a single
-													snapshot, then further snapshots will only carry the changed blocks
-													(incremental update)</li>
-												<li>They are asynchronously created</li>
-												<li>Cold HDD: Low-cost magnetic storage that focuses on throughput
-													rather than IOPS. Throughput up to 250 MiB/s</li>
-											</ul>
-										</p>
+										<ul class="resume-list">
+											<li data-sound>EBS Volume data is replicated by AWS across multiple servers
+												in the
+												same AZ to prevent data loss resulting from any single AWS component
+												failure</li>
+											<li data-sound>Both EBS volume and EC2 must be in the same AZ</li>
+											<li data-sound>EBS-backed EC2 instance has an EBS root volume</li>
+											<li data-sound>Instance-Store backed EC2 instance has an instance store root
+												volume. It should be used when a very high IOPS rate is required
+											</li>
+											<li data-sound>ELB Snapshots are stored in S3 and you can only access them
+												through
+												EC2 API</li>
+											<li data-sound>You can create a Snapshot and access the volume
+												simultaneously, if
+												the instance is running</li>
+											<li data-sound>EBS Snapshot are point-in-time images/copies of your EBS
+												Volume</li>
+											<li data-sound>Snapshots are REGION specific</li>
+											<li data-sound>To migrate an EBS from one AZ to anothre, you have to create
+												a
+												snapshot(region specific) and create a EBS volume from the snapshot
+												in the intended (other) AZ
+											</li>
+											<li data-sound>Snapshots are stored incrementally, what you need is a single
+												snapshot, then further snapshots will only carry the changed blocks
+												(incremental update)</li>
+											<li data-sound>They are asynchronously created</li>
+											<li data-sound><strong>HDD: </strong>Low-cost magnetic storage that focuses
+												on
+												throughput rather than IOPS. Throughput up to 250 MiB/s. Suitable
+												for less frequently accessed workloads.</li>
+											<li data-sound>HDD volumes can not be used as bootable volume</li>
+											<li data-sound><strong>SSD</strong>
+												<ul>
+													<li data-sound>Best for transacional workloads</li>
+													<li data-sound>IOPS</li>
+													<li data-sound>Small, random I/O operations</li>
+												</ul>
+											</li>
+											<li data-sound><strong>HDD</strong>
+												<ul>
+													<li data-sound>Best large streaming workloads</li>
+													<li data-sound>Throughput</li>
+													<li data-sound>large, sequential I/O operations</li>
+												</ul>
+											</li>
+										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">EBS -
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>EBS
+												-
 												Encryption</h4>
 										</div>
 										<ul class="resume-list">
-											<li>Encryption operation is done on the servers hosting the EC2 instances
+											<li data-sound>Encryption operation is done on the servers hosting the EC2
+												instances
 											</li>
-											<li>There is not direct way to change the Encryption state of a volume</li>
-											<li>You can change the encrypted/un-encrypted status of an EBS through
+											<li data-sound>There is not direct way to change the Encryption state of a
+												volume</li>
+											<li data-sound>You can change the encrypted/un-encrypted status of an EBS
+												through
 												copies of snapshots</li>
-											<li>When encrypting the first EBS volume, AWS creates a default CMK key</li>
-											<li>You CAN NOT share snapshots encrypted using the default CMK</li>
-											<li>EBS volumes are AZ specific (can be used in the AZ where they were
+											<li data-sound>When encrypting the first EBS volume, AWS creates a default
+												CMK key</li>
+											<li data-sound>You CAN NOT share snapshots encrypted using the default CMK
+											</li>
+											<li data-sound>EBS volumes are AZ specific (can be used in the AZ where they
+												were
 												created only)</li>
-											<li>You CAN NOT make your encrypted snapshot public</li>
+											<li data-sound>You CAN NOT make your encrypted snapshot public</li>
 										</ul>
 									</div>
 								</div>
 								<div class="item-content">
 									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Redundant Array of
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+											Redundant Array of
 											Independent Disk - RAID</h4>
 									</div>
 									<ul class="resume-list">
-										<li>Usedto increase I/O performance/throughput of your EC2</li>
-										<li>RAID array is a collection of drivers (BS volumes in our case) it is
+										<li data-sound>Usedto increase I/O performance/throughput of your EC2</li>
+										<li data-sound>RAID array is a collection of drivers (BS volumes in our case) it
+											is
 											accomplished at the OS level</li>
-										<li>Stripping: Parallel writing (faster writting)</li>
-										<li>Mirroring: writing the same data to multiple array disk (redundancy)</li>
-										<li>RAID 10 is the best option, it combines both RAID 0 and RAID 1</li>
+										<li data-sound>Stripping: Parallel writing (faster writting)</li>
+										<li data-sound>Mirroring: writing the same data to multiple array disk
+											(redundancy)</li>
+										<li data-sound>RAID 10 is the best option, it combines both RAID 0 and RAID 1
+										</li>
 									</ul>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">ELB</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>ELB</h3>
 								<div class="item mb-3">
 									<div class="item-content">
 										<ul class="resume-list">
-											<li>ELB is a REGION specific</li>
-											<li>It supports HTTP/S, TCP, SSL</li>
-											<li>Frontend Listeners check for traffic from clientes to the ELB</li>
-											<li>Backend Listeners are configured with protocol/port to check for traffic
+											<li data-sound>ELB is a REGION specific</li>
+											<li data-sound>It supports HTTP/S, TCP, SSL</li>
+											<li data-sound>Frontend Listeners check for traffic from clientes to the ELB
+											</li>
+											<li data-sound>Backend Listeners are configured with protocol/port to check
+												for traffic
 												from the ELB to the EC2 instance</li>
-											<li>A healthy instance show as "in-service" under the ELB</li>
-											<li>Enable "cross-zone load balancing" to the CLB distribute traffic evenly
+											<li data-sound>A healthy instance show as "in-service" under the ELB</li>
+											<li data-sound>Enable "cross-zone load balancing" to the CLB distribute
+												traffic evenly
 												among registered EC2 instances in different AZ's </li>
-											<li>CLB needs to be enable in at least two AZ in the desired region</li>
-											<li>Pay attention in the amount of availables IP's in the subnet</li>
-											<li>Perfect forward secrecy is used to offer SSL/TLS cypher suite to cloud
+											<li data-sound>CLB needs to be enable in at least two AZ in the desired
+												region</li>
+											<li data-sound>Pay attention in the amount of availables IP's in the subnet
+											</li>
+											<li data-sound>Perfect forward secrecy is used to offer SSL/TLS cypher suite
+												to cloud
 												front and ELB</li>
-											<li>An ELB Internet facing will haev a public ip for its nodes</li>
-											<li>You must assign a security group to your ELB</li>
-											<li>You must ensure that the subnet's N.ACL allow traffic to/from the ELB
+											<li data-sound>An ELB Internet facing will haev a public ip for its nodes
+											</li>
+											<li data-sound>You must assign a security group to your ELB</li>
+											<li data-sound>You must ensure that the subnet's N.ACL allow traffic to/from
+												the ELB
 												both ways</li>
-											<li>You can defined your custom security olicies or use the ELB pre-defined
+											<li data-sound>You can defined your custom security olicies or use the ELB
+												pre-defined
 												security policies for the FE (client to ELB {TPS/SSL})</li>
-											<li>Backend always uses pre-defined security policies</li>
+											<li data-sound>Backend always uses pre-defined security policies</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Charged</h4>
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Charged</h4>
 										</div>
 										<ul class="resume-list">
-											<li>Hourly</li>
-											<li>For GBS transfered through your CLB</li>
-											<li>For Load balance capacity units (LCUs) per hour in case of ALB and NLB
+											<li data-sound>Hourly</li>
+											<li data-sound>For GBS transfered through your CLB</li>
+											<li data-sound>For Load balance capacity units (LCUs) per hour in case of
+												ALB and NLB
 											</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Session
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Session
 												Affinity (session sticknese)</h4>
 										</div>
 										<ul class="resume-list">
-											<li>Whereby the CLB binds a client user session/requrest to a specific
+											<li data-sound>Whereby the CLB binds a client user session/requrest to a
+												specific
 												backend EC2 instance</li>
+											<li data-sound>Sticky session is not scalable or distributed</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Connection
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Connection
 												Draining</h4>
 										</div>
 									</div>
 									<div class="item-content">
-										<p>When identifying unhealthy instances, the CLB will wait for a period
+										<p data-sound>When identifying unhealthy instances, the CLB will wait for a
+											period
 											of 300 seconds (by default) for the in-flight sessions to this EC2
 											instance to complete, if not finish, the ELB will force
 											terminationof these sessions. Auto-scaling will honer the connection
@@ -605,116 +711,141 @@
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Monitoring</h4>
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Monitoring</h4>
 										</div>
 										<ul class="resume-list">
-											<li>ELB sends metrics to CW every minute</li>
-											<li>You can use CQ to send SNS notifications</li>
-											<li>Access logs are disabled by default</li>
+											<li data-sound>ELB sends metrics to CW every minute</li>
+											<li data-sound>You can use CQ to send SNS notifications</li>
+											<li data-sound>Access logs are disabled by default</li>
 										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">ALB</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>ALB</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>An ALB functions at the application layer, the seventh layer of the open
+										<p data-sound>An ALB functions at the application layer, the seventh layer of
+											the open
 											system inter connection (OSI) model. It supports HTTP/s, HTTP/2, websockets
 										</p>
 									</div>
 									<div class="item-content">
 										<ul class="resume-list">
-											<li><strong>Target:</strong> being a member of a target group</li>
-											<li>Health check at the target group level</li>
+											<li data-sound><strong>Target:</strong> being a member of a target group
+											</li>
+											<li data-sound>Health check at the target group level</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">ALB Components
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>ALB
+												Components
 											</h4>
 										</div>
 										<ul class="resume-list">
-											<li>Listeners</li>
-											<li><strong>Target Groups: </strong> confined to a Region, associated with
+											<li data-sound>Listeners</li>
+											<li data-sound><strong>Target Groups: </strong> confined to a Region,
+												associated with
 												only one load balancer</li>
-											<li><strong>Targets: </strong> You can't mixe targets of differents types in
+											<li data-sound><strong>Targets: </strong> You can't mixe targets of
+												differents types in
 												one target group.</li>
-											<li><strong>Rules (Condition, action, priority): </strong>Provides a link
+											<li data-sound><strong>Rules (Condition, action, priority):
+												</strong>Provides a link
 												between the listener and the targe group. They are defined on listeners.
 												You must defined a default rule for each listener</li>
-											<li>Deleting a target group does not affect the targes registered with the
+											<li data-sound>Deleting a target group does not affect the targes registered
+												with the
 												target group.</li>
-											<li>ALB supports enhanced CW metrics and health checks</li>
-											<li>Content based routing: Host based / path based</li>
-											<li>Cross zone load balancing is enabled by default</li>
-											<li>You can use AWS WAF with your ALB to allow or block requests</li>
-											<li>It supports SNI</li>
-											<li>It supports connection draining (300 seconds by default)</li>
-											<li>Enable stick sessions at the target group level</li>
+											<li data-sound>ALB supports enhanced CW metrics and health checks</li>
+											<li data-sound>Content based routing: Host based / path based</li>
+											<li data-sound>Cross zone load balancing is enabled by default</li>
+											<li data-sound>You can use AWS WAF with your ALB to allow or block requests
+											</li>
+											<li data-sound>It supports SNI</li>
+											<li data-sound>It supports connection draining (300 seconds by default)</li>
+											<li data-sound>Enable stick sessions at the target group level</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">ALB Monitoring
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>ALB
+												Monitoring
 											</h4>
 										</div>
 										<ul class="resume-list">
-											<li>Sends metrics to CW every minute if there are requests flowing through
+											<li data-sound>Sends metrics to CW every minute if there are requests
+												flowing through
 												the ALB
 											</li>
-											<li>Access logs</li>
-											<li>Request tracing</li>
+											<li data-sound>Access logs</li>
+											<li data-sound>Request tracing</li>
 										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">NLB</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>NLB</h3>
 								<div class="item mb-3">
 									<div class="item-content">
 										<ul class="resume-list">
-											<li>It operates at transport layer (layer 4) only of OSI model</li>
-											<li>It supports TCP and TLS listeners</li>
-											<li>It supports UDP traffic</li>
-											<li>It has a higher connection rates per second compared with the ELB.</li>
-											<li>Health checks at the target group level</li>
-											<li>Many CW metrics are also supported and reported at the target group
+											<li data-sound>It operates at transport layer (layer 4) only of OSI model
+											</li>
+											<li data-sound>It supports TCP and TLS listeners</li>
+											<li data-sound>It supports UDP traffic</li>
+											<li data-sound>It has a higher connection rates per second compared with the
+												ELB.</li>
+											<li data-sound>Health checks at the target group level</li>
+											<li data-sound>Many CW metrics are also supported and reported at the target
+												group
 												level</li>
-											<li>You CAN NOT enable or disable AZ's for a NLB after you create it</li>
-											<li>Access logs, delete protection are disables by default on NLB</li>
-											<li>Yo can use websockets with your listeners</li>
-											<li><strong>Target types: </strong> IP address / Instance ID</li>
-											<li>It does not supports Lambda Target type</li>
-											<li>If you use the instance id as target type, NLB preserves the clients
+											<li data-sound>You CAN NOT enable or disable AZ's for a NLB after you create
+												it</li>
+											<li data-sound>Access logs, delete protection are disables by default on NLB
+											</li>
+											<li data-sound>Yo can use websockets with your listeners</li>
+											<li data-sound><strong>Target types: </strong> IP address / Instance ID</li>
+											<li data-sound>It does not supports Lambda Target type</li>
+											<li data-sound>If you use the instance id as target type, NLB preserves the
+												clients
 												source IP addres, and provide them to the target</li>
-											<li>If you use IP as target type, them you have to use Proxy Protocol
+											<li data-sound>If you use IP as target type, them you have to use Proxy
+												Protocol
 												(disabled by default) to send the source ip address</li>
-											<li>It uses passive (the load balancer observes how targets respond to
+											<li data-sound>It uses passive (the load balancer observes how targets
+												respond to
 												connections)/active health checks</li>
-											<li>It supports Sever Name Indicator</li>
-											<li>It DOES NOT supports connection draining</li>
-											<li><a href="https://tutorialsdojo.com/application-load-balancer-vs-network-load-balancer-vs-classic-load-balancer/"
+											<li data-sound>It supports Sever Name Indicator</li>
+											<li data-sound>It DOES NOT supports connection draining</li>
+											<li data-sound><a
+													href="https://tutorialsdojo.com/application-load-balancer-vs-network-load-balancer-vs-classic-load-balancer/"
 													target="_blank">Link comparing CLB, ALB and NLB</a></li>
 										</ul>
 									</div>
 									<div class="item mb-3">
 										<div class="item-content">
 											<div class="item-heading row align-items-center mb-2">
-												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Monitoring
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Monitoring
 												</h4>
 												<ul class="resume-list">
-													<li>ELB send publisehd data points to CW for load balancars and
+													<li data-sound>ELB send publisehd data points to CW for load
+														balancars and
 														targets</li>
-													<li>CW can be used to verify that the NLB is performing as expected
+													<li data-sound>CW can be used to verify that the NLB is performing
+														as expected
 													</li>
-													<li>VPC flow logs can be used to capture detailed information about
+													<li data-sound>VPC flow logs can be used to capture detailed
+														information about
 														the traffic going to and from your NLB</li>
-													<li>Create a flow log for each network interface for your load
+													<li data-sound>Create a flow log for each network interface for your
+														load
 														balancer. There is one network interface per load balancer
 														subnet</li>
-													<li>NLB does not support security groups</li>
-													<li>Access logs are disabled by default</li>
+													<li data-sound>NLB does not support security groups</li>
+													<li data-sound>Access logs are disabled by default</li>
 												</ul>
 											</div>
 										</div>
@@ -722,148 +853,186 @@
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">AUTO SCALING</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>AUTO SCALING</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>Configure automatic scaling for the AWS resources quickly through a scaling
+										<p data-sound>Configure automatic scaling for the AWS resources quickly through
+											a scaling
 											plan that uses dynamic scaling and predictive scaling</p>
 									</div>
 									<div class="item-content">
 										<ul class="resume-list">
-											<li><strong>Target tracking scaling: </strong> Scale are source based on a
+											<li data-sound><strong>Target tracking scaling: </strong> Scale are source
+												based on a
 												target value for a specific CW metric</li>
-											<li><strong>Step scaling: </strong> Based on a set of scaling adjustments
-												that vary based on the size of the alarm health</li>
-											<li><strong>Scheduled scaling</strong></li>
-											<li><strong>AS Group: </strong> is a logical grouping of EC2 instances. You
+											<li data-sound><strong>Step scaling: </strong> Based on a set of scaling
+												adjustments
+												that vary based on the size of the alarm breach</li>
+											<li data-sound><strong>Simple scaling: </strong> Increase or decrease the
+												current
+												capacity of the group based on a single scaling adjustment.</li>
+											<li data-sound><strong>Scheduled scaling</strong></li>
+											<li data-sound><strong>AS Group: </strong> is a logical grouping of EC2
+												instances. You
 												specify the number the instances for each AS Group</li>
-											<li><strong>Scaling Policy Plan: </strong> determines when/if and how the
+											<li data-sound><strong>Scaling Policy Plan: </strong> determines when/if and
+												how the
 												ASG scales or shrinks</li>
-											<li>It can span multi AZ's within the same region, but not across regions.
+											<li data-sound>It can span multi AZ's within the same region, but not across
+												regions.
 											</li>
-											<li>There is no additional cost for lauching AS groups</li>
-											<li>It works well with ELB, CW and Cloud Trail</li>
-											<li>It tries to distribute EC2 instances evenly across AZ's where it is
+											<li data-sound>There is no additional cost for lauching AS groups</li>
+											<li data-sound>It works well with ELB, CW and Cloud Trail</li>
+											<li data-sound>It tries to distribute EC2 instances evenly across AZ's where
+												it is
 												enabled</li>
-											<li>You can attach on or mode ELB's (classic, ALB, NLB)to your existing AS
+											<li data-sound>You can attach on or mode ELB's (classic, ALB, NLB)to your
+												existing AS
 												group</li>
-											<li>The ELB's must be in the same REGION as the AS group</li>
-											<li>If you have an ELB defined with the AS Group, you can configured AS to
+											<li data-sound>The ELB's must be in the same REGION as the AS group</li>
+											<li data-sound>If you have an ELB defined with the AS Group, you can
+												configured AS to
 												use both the EC2 health check and the ELB health check to determine the
 												instances health status. If one source reporting the instance as
 												unhealthy is enough for AS to mark it for replacement</li>
-											<li><strong>Cooldown period: </strong> is a configurable setting that helps
+											<li data-sound><strong>Cooldown period: </strong> is a configurable setting
+												that helps
 												ensure to not launch or terminate additional instances before previous
 												scaling activities take effect</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Termination
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Termination
 												Policies
 											</h4>
 										</div>
 										<ul class="resume-list">
-											<li>OldestInstance: terminate the oldest instance in the group</li>
-											<li>NewestInstance: terminate the newest instance in the group</li>
-											<li>ClosestToNextInstanceHour: Terminate instances that have are closest to
+											<li data-sound>OldestInstance: terminate the oldest instance in the group
+											</li>
+											<li data-sound>NewestInstance: terminate the newest instance in the group
+											</li>
+											<li data-sound>ClosestToNextInstanceHour: Terminate instances that have are
+												closest to
 												the next billing hour</li>
-											<li>OldestLaunchConfiguration: Terminates instance that have the oldest
+											<li data-sound>OldestLaunchConfiguration: Terminates instance that have the
+												oldest
 												launch configuration</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Scaling
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Scaling
 												Policies
 											</h4>
 										</div>
 										<ul class="resume-list">
-											<li>Maintain</li>
-											<li>Manual Scaling</li>
-											<li>Cyclic</li>
-											<li>On-demand/dynamic (event based)</li>
-											<li>Predictive Scaling: Combines AWS AS with on-demand scaling (Proactive
+											<li data-sound>Maintain</li>
+											<li data-sound>Manual Scaling</li>
+											<li data-sound>Cyclic</li>
+											<li data-sound>On-demand/dynamic (event based)</li>
+											<li data-sound>Predictive Scaling: Combines AWS AS with on-demand scaling
+												(Proactive
 												and reactive together)</li>
-											<li>ASG can have multiple policies attached to it at any time</li>
+											<li data-sound>ASG can have multiple policies attached to it at any time
+											</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Lauch
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Lauch
 												configuration
 											</h4>
 										</div>
-										<p>It is the template used to create new EC2 instances for the ASG. It has
+										<p data-sound>It is the template used to create new EC2 instances for the ASG.
+											It has
 											parameters like: instance family, instance type, AMI, key pair, block
 											devices, and security groups</p>
 										<ul class="resume-list">
-											<li>You can not update a launch configuration, if you change anything,
+											<li data-sound>You can not update a launch configuration, if you change
+												anything,
 												you have to create a new one</li>
-											<li>Launch templates are similar to launch configuration and you can
+											<li data-sound>Launch templates are similar to launch configuration and you
+												can
 												create versions of it.</li>
-											<li>By using templates you can provision your capacity using on demand
+											<li data-sound>By using templates you can provision your capacity using on
+												demand
 												and spot instances (can't be done using launch configuration)</li>
 										</ul>
 									</div>
 								</div>
 								<div class="item-content">
 									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Monitoring
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+											Monitoring
 										</h4>
 									</div>
 									<ul class="resume-list">
-										<li>AWS EC2 service sends EC2 metrics to CW about the ASG instances</li>
-										<li>Basic Monitoring(5 minutes)</li>
-										<li>Detaile (every 1 minute)</li>
-										<li>It can sends SNS notifications when your AS Groups launch or terminates
+										<li data-sound>AWS EC2 service sends EC2 metrics to CW about the ASG instances
+										</li>
+										<li data-sound>Basic Monitoring(5 minutes)</li>
+										<li data-sound>Detaile (every 1 minute)</li>
+										<li data-sound>It can sends SNS notifications when your AS Groups launch or
+											terminates
 											instances</li>
 									</ul>
 								</div>
 							</section>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">CLOUD FORMATION</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>CLOUD FORMATION</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>
+										<p data-sound>
 											It is a service that helps you model and set up your Amazon Web Services
 											Resources. You can model your Cloudformation templates in JSON or YAML
 										</p>
 									</div>
 									<div class="item-content">
 										<ul class="resume-list">
-											<li>You create a templace that describes all the AWS resources that you want
+											<li data-sound>You create a templace that describes all the AWS resources
+												that you want
 												(like Amazon EC2 instances or Amazon RDS DB instances),then AWS takes
 												care of provisioning and configuring those resources for you.</li>
-											<li>The results is called a "stack"</li>
-											<li>SImplify infrastructure management: You can create, update, version
+											<li data-sound>The results is called a "stack"</li>
+											<li data-sound>SImplify infrastructure management: You can create, update,
+												version
 												control and delete your stacks.</li>
-											<li>Quickly Replicate Your infrastructure: Just describe your resource once
+											<li data-sound>Quickly Replicate Your infrastructure: Just describe your
+												resource once
 												and then provision the same resources over and over in multiple REGIONS
 											</li>
-											<li>Easily Control and Track Changes your infrastructure: manager your
+											<li data-sound>Easily Control and Track Changes your infrastructure: manager
+												your
 												infrastructure as code</li>
-											<li>When you create a stack, AWS CloudFormation makes underlying service API
+											<li data-sound>When you create a stack, AWS CloudFormation makes underlying
+												service API
 												calls to AWS to provision and configure your resources</li>
-											<li>When you need to update your stack's resources, you can modify the
+											<li data-sound>When you need to update your stack's resources, you can
+												modify the
 												stack's template, you don't need to create a new stack and delete the
 												old one</li>
-											<li>When you delete a stack, you specify the stack to delete, and AWS
+											<li data-sound>When you delete a stack, you specify the stack to delete, and
+												AWS
 												CloudFormation deletes the stack and ALL RESOURCES in that stack</li>
-											<li>If AWS CloudFormation can not delete a resource, the stack WILL NOT be
+											<li data-sound>If AWS CloudFormation can not delete a resource, the stack
+												WILL NOT be
 												deleted</li>
-											<li>CloudFormation design is a graphic toll for creating, viewing and
+											<li data-sound>CloudFormation design is a graphic toll for creating, viewing
+												and
 												modifying AWS CloudFormation templates.</li>
 										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">BEANSTALK</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>BEANSTALK</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>
+										<p data-sound>
 											It is an easy service for deploying and scaling web applications and
 											services deployed with supported programming langhates,on familiar servers
 											such as Apache, Nginx, Passenger, Docker, Tomcat and IIS.
@@ -871,85 +1040,103 @@
 									</div>
 									<div class="item-content">
 										<ul class="resume-list">
-											<li>Simply upload your application, and Beanstalk automatically handles the
+											<li data-sound>Simply upload your application, and Beanstalk automatically
+												handles the
 												details of capacity provisioning, load balancing, scaling and
 												application health monitoring.</li>
-											<li>It provisions the resources needed to run your application, including
+											<li data-sound>It provisions the resources needed to run your application,
+												including
 												one or more EC2 instances.</li>
-											<li>Elastic Beanstalk applications run on EC2 instances that have no
+											<li data-sound>Elastic Beanstalk applications run on EC2 instances that have
+												no
 												persistent local storage.</li>
-											<li>You should design your application to store data in a persistent data
+											<li data-sound>You should design your application to store data in a
+												persistent data
 												source.</li>
-											<li>Your Elastic Beanstalk environment can become unusable if you don't use
+											<li data-sound>Your Elastic Beanstalk environment can become unusable if you
+												don't use
 												Elastic Beanstalk funcionality to modify or terminate the environment's
 												underlying AWS resources</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Beanstalk
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Beanstalk
 												Components: Application</h4>
 										</div>
 										<ul class="resume-list">
-											<li>An application server as a container for the environment that run you
+											<li data-sound>An application server as a container for the environment that
+												run you
 												web app, and versions of you web app's source code, saved configuration,
 												logs an other artifacts that you create while using Elastic Beanstalk
 											</li>
-											<li>An Beanstalk application is a logical collection of Elastic Beanstalk
+											<li data-sound>An Beanstalk application is a logical collection of Elastic
+												Beanstalk
 												components, including environments, versions and environment
 												configurations.
 												An applicaion is concepltually similar do a folder.
 											</li>
-											<li>An application version points to an S3 object that contains the deployed
+											<li data-sound>An application version points to an S3 object that contains
+												the deployed
 												code such as Java War</li>
-											<li>In a running environment, you can deploy any application version you
+											<li data-sound>In a running environment, you can deploy any application
+												version you
 												already uploaded to the application,or you can upload and imediately
 												deploy a new application version</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Beanstalk
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Beanstalk
 												Components: Environment</h4>
 										</div>
 										<ul class="resume-list">
-											<li>is a version that is deployed onto AWS Resources</li>
-											<li>Each environment runs only a single application version at a time.</li>
+											<li data-sound>is a version that is deployed onto AWS Resources</li>
+											<li data-sound>Each environment runs only a single application version at a
+												time.</li>
 										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Ops Works</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Ops Works</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>
+										<p data-sound>
 											Ops Works Stacks provides a simple and flexible way to create and manage
 											stacks and applications.
 										</p>
 									</div>
 									<div class="item-content">
 										<ul class="resume-list">
-											<li>The stack is the core AWS OpsWorks component.</li>
-											<li>OpsWorks allows ssh and RDP access to stack instances</li>
-											<li>Resources can be managed only in the region in which they are created
+											<li data-sound>The stack is the core AWS OpsWorks component.</li>
+											<li data-sound>OpsWorks allows ssh and RDP access to stack instances</li>
+											<li data-sound>Resources can be managed only in the region in which they are
+												created
 											</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">CHEF</h4>
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>CHEF
+											</h4>
 										</div>
 										<ul class="resume-list">
-											<li>Chef provides automated configuration management that enables consistent
+											<li data-sound>Chef provides automated configuration management that enables
+												consistent
 												configurations at scale</li>
-											<li>Chef helps in ensuring that configuration, policy is
+											<li data-sound>Chef helps in ensuring that configuration, policy is
 												flexible,versionable, testable and human readable.</li>
-											<li>cookbooks: it is a package file containing configuration information,
+											<li data-sound>cookbooks: it is a package file containing configuration
+												information,
 												including instructions called recipes</li>
-											<li>Recipes: A recipe is a set of one or more instructions written in Ruby
+											<li data-sound>Recipes: A recipe is a set of one or more instructions
+												written in Ruby
 												language syntax, that specifies the resources to use</li>
-											<li>Resources: In Chef terms, A resource, as used in Chef is a statement of
+											<li data-sound>Resources: In Chef terms, A resource, as used in Chef is a
+												statement of
 												configuration policy (this is different from what a resource is to
 												OpsWorks</li>
 										</ul>
@@ -957,15 +1144,16 @@
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Snowmobile</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Snowmobile</h3>
 								<div class="item mb-3">
 									<div class="item-content">
 										<ul class="resume-list">
-											<li>
+											<li data-sound>
 												An exabyte-scale data transfer service used to move extremely large
 												amounts of data to AWS, You can transfer up to 100PB per snowmobile
 											</li>
-											<li>Snowmobile will be returned to your designated AWS region where you data
+											<li data-sound>Snowmobile will be returned to your designated AWS region
+												where you data
 												will be uploaded into the AWS storage services you have selected, such
 												as S3 or Glacier</li>
 										</ul>
@@ -973,97 +1161,114 @@
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Snowball edge</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Snowball edge</h3>
 								<div class="item mb-3">
 									<div class="item-content">
 										<ul class="resume-list">
-											<li>
+											<li data-sound>
 												A type of Snowball device with on-board storage and compute power for
 												select AWS capabilities. It can undertake local processing and
 												edge-computing workloads in addition to transferring data between your
 												local environment and AWS cloud
 											</li>
-											<li>Storage Optimized: up to 80TBof useable storage (it has most storage
+											<li data-sound>Storage Optimized: up to 80TBof useable storage (it has most
+												storage
 												capacity)</li>
-											<li>Compute Optimized: Is has most compunte funcionality. This options also
+											<li data-sound>Compute Optimized: Is has most compunte funcionality. This
+												options also
 												comes with 42TB of additional storage space</li>
 										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">RDS</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>RDS</h3>
 								<div class="item mb-3">
-									<p>It is a fully managed relational DB engine service</p>
+									<p data-sound>It is a fully managed relational DB engine service</p>
 									<ul class="resume-list">
-										<li>Best suit for OLTP (Online Transaction Processing - Read/Writes)</li>
-										<li>It supports:
+										<li data-sound>Best suit for OLTP (Online Transaction Processing - Read/Writes)
+										</li>
+										<li data-sound>It supports:
 											<ul>
-												<li>MS SQL Server</li>
-												<li>Oracle</li>
-												<li>PostgreSQL</li>
-												<li>Maria DB</li>
-												<li>Mysql</li>
-												<li>AWS Aurora</li>
+												<li data-sound>MS SQL Server</li>
+												<li data-sound>Oracle</li>
+												<li data-sound>PostgreSQL</li>
+												<li data-sound>Maria DB</li>
+												<li data-sound>Mysql</li>
+												<li data-sound>AWS Aurora</li>
 											</ul>
 										</li>
-										<li>It uses EBS volumes</li>
-										<li>General Purpose(GP2) RDS storage: Used for DB workloads with moderate I/O
+										<li data-sound>It uses EBS volumes</li>
+										<li data-sound>General Purpose(GP2) RDS storage: Used for DB workloads with
+											moderate I/O
 											requirements</li>
-										<li>Provisioned IOPS(io1) RDS storage: Used for high performance OLTP workloads
+										<li data-sound>Provisioned IOPS(io1) RDS storage: Used for high performance OLTP
+											workloads
 										</li>
-										<li>Magnetic RDS Storage</li>
-										<li>RDS supports encryption at rest and supports SSL encryption for
+										<li data-sound>Magnetic RDS Storage</li>
+										<li data-sound>RDS supports encryption at rest and supports SSL encryption for
 											communication between the DB clients and RDS DB instances</li>
-										<li>Reserved instances are REGION specific</li>
-										<li>You can have UP to 40 RDS DB instances</li>
-										<li>Point-in-time restore and snapshot features for RDS of Mysql are only
+										<li data-sound>Reserved instances are REGION specific</li>
+										<li data-sound>You can have UP to 40 RDS DB instances</li>
+										<li data-sound>Point-in-time restore and snapshot features for RDS of Mysql are
+											only
 											supported by InnoDB engine</li>
-										<li>RDS storage Auto Scaling automatically scales storage capacity</li>
-										<li><strong>Instances classes types: </strong> Standard, Memoru Optimized and
+										<li data-sound>RDS storage Auto Scaling automatically scales storage capacity
+										</li>
+										<li data-sound><strong>Instances classes types: </strong> Standard, Memoru
+											Optimized and
 											Burstable Performance</li>
-										<li>You can change the CPU and memory available to a DB instance by changing its
+										<li data-sound>You can change the CPU and memory available to a DB instance by
+											changing its
 											DB instance class</li>
-										<li>Deletion protection is disabled by default</li>
+										<li data-sound>Deletion protection is disabled by default</li>
 									</ul>
 								</div>
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Enhanced Monitoring
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>Enhanced
+											Monitoring
 											for RDS instances
 										</h4>
 									</div>
 									<ul class="resume-list">
-										<li>RDS child processes</li>
-										<li>RDS processes</li>
-										<li>OS processes</li>
+										<li data-sound>RDS child processes</li>
+										<li data-sound>RDS processes</li>
+										<li data-sound>OS processes</li>
 									</ul>
 								</div>
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Multi-AZ option
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>Multi-AZ
+											option
 										</h4>
 									</div>
 									<ul class="resume-list">
-										<li>It provides high availability, data durability, and fault tolerance for DB
+										<li data-sound>It provides high availability, data durability, and fault
+											tolerance for DB
 											instances.</li>
-										<li>Oracle, Mysql, Maria DB, PostgreSQL uses failover technology</li>
-										<li>You can select the Multi-AZ option during RDS DB instance launch or modify
+										<li data-sound>Oracle, Mysql, Maria DB, PostgreSQL uses failover technology</li>
+										<li data-sound>You can select the Multi-AZ option during RDS DB instance launch
+											or modify
 											an existing standalone RDS instance</li>
-										<li>It creates an standby instance in a different AZ in the same REGION and
+										<li data-sound>It creates an standby instance in a different AZ in the same
+											REGION and
 											configure "synchronous" replication between the primary and standby</li>
-										<li>You CAN NOT read/write from/to a standby RDS instance</li>
-										<li>You'll be alerted by a DB instance event when a failover occurs (SNS)</li>
-										<li>The canonical name record (CNAME)is swicth from the primary to the stand by
+										<li data-sound>You CAN NOT read/write from/to a standby RDS instance</li>
+										<li data-sound>You'll be alerted by a DB instance event when a failover occurs
+											(SNS)</li>
+										<li data-sound>The canonical name record (CNAME)is swicth from the primary to
+											the stand by
 											if the primary fails</li>
-										<li>Actions done in the stand by instance
+										<li data-sound>Actions done in the stand by instance
 											<ul>
-												<li>OS patching</li>
-												<li>DB scaling</li>
-												<li>System upgrade</li>
-												<li>Snapshot / Auto backup</li>
-												<li>Maintenance</li>
-												<li>DB engine versio upgrade (both primary and replica must have the
+												<li data-sound>OS patching</li>
+												<li data-sound>DB scaling</li>
+												<li data-sound>System upgrade</li>
+												<li data-sound>Snapshot / Auto backup</li>
+												<li data-sound>Maintenance</li>
+												<li data-sound>DB engine versio upgrade (both primary and replica must
+													have the
 													same version)</li>
 											</ul>
 										</li>
@@ -1071,106 +1276,156 @@
 								</div>
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Backup / Snapshot
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>Backup /
+											Snapshot
 										</h4>
 									</div>
 									<ul class="resume-list">
-										<li>You can share only manual backups</li>
-										<li>Retention period: 7 days</li>
-										<li>Automatic backups are incremental (snapshot)</li>
-										<li>You can not restore into an existing DB instance, it has to be a new DB
+										<li data-sound>You can share only manual backups</li>
+										<li data-sound>Retention period: 7 days</li>
+										<li data-sound>Automatic backups are incremental (snapshot)</li>
+										<li data-sound>You can not restore into an existing DB instance, it has to be a
+											new DB
 											instance with a new instance/db endpoint</li>
-										<li>You can change the storage type (magnects, provisioned IOP, geleram purpose)
+										<li data-sound>You can change the storage type (magnects, provisioned IOP,
+											geleram purpose)
 											during a restore process</li>
-										<li>Automatic backup MUST be enable and remain enabled for read replicas to work
+										<li data-sound>Automatic backup MUST be enable and remain enabled for read
+											replicas to work
 										</li>
-										<li>Read replicas can be created in the same REGION as the master and also in a
+										<li data-sound>Read replicas can be created in the same REGION as the master and
+											also in a
 											different region</li>
-										<li>Read replicas are done using asynchronous replication</li>
+										<li data-sound>Read replicas are done using asynchronous replication</li>
 									</ul>
 								</div>
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">IAM Authentication
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>IAM
+											Authentication
 											for Mysql and PostgreSQL</h4>
 									</div>
-									<p>It is a mechanism that allows authentication to access the RDS instance without
+									<p data-sound>It is a mechanism that allows authentication to access the RDS
+										instance without
 										use a password when you connect to a DB instance, instead you use authentication
 										token (expires in 15 minutes), the authentication is managed externaly using IAM
 									</p>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">AURORA DB</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>AURORA DB</h3>
 								<div class="item mb-3">
 									<div class="item-content">
 										<ul class="resume-list">
-											<li>It is compatible with Mysql and PostgreSQL</li>
-											<li>Multi-AZ (one region)</li>
-											<li>An Aurora dbclister consist of one or more DB instances and a cluster
+											<li data-sound>It is compatible with Mysql and PostgreSQL</li>
+											<li data-sound>Multi-AZ (one region)</li>
+											<li data-sound>An Aurora dbcluster consist of one or more DB instances and a
+												cluster
 												volume that manages the data for those DB instances</li>
-											<li><strong>Primary DB instance: </strong> supports reads and writes</li>
-											<li><strong>Aurora Replicas: </strong> supports only read operations</li>
-											<li><strong>Cluster endpoint: </strong> connects to the current primery DB
+											<li data-sound><strong>Primary DB instance: </strong> supports reads and
+												writes</li>
+											<li data-sound><strong>Aurora Replicas: </strong> supports only read
+												operations</li>
+											<li data-sound><strong>Cluster endpoint: </strong> connects to the current
+												primery DB
 												instance (the only one that can perform write operations)</li>
-											<li><strong>Reader endpoint: </strong> connects to on of the available
+											<li data-sound><strong>Reader endpoint: </strong> connects to on of the
+												available
 												Aurora Replicas for that DB cluster (used for only read operations)</li>
-											<li><strong>Instance endpoint: </strong> </li>
-											<li><strong>Custom endpoint: </strong> </li>
-											<li>You can use IAM database authentication to authenticate to your Aurora
+											<li data-sound><strong>Instance endpoint: </strong> </li>
+											<li data-sound><strong>Custom endpoint: </strong> </li>
+											<li data-sound>You can use IAM database authentication to authenticate to
+												your Aurora
 												Mysql</li>
-											<li>It uses a VPC security group to control which devices and EC2 instances
+											<li data-sound>It uses a VPC security group to control which devices and EC2
+												instances
 												can open connections to the Aurora endpoint and port</li>
-											<li><strong>Aurora Global Database: </strong>it consist of one primary AWS
+											<li data-sound><strong>Aurora Global Database: </strong>it consist of one
+												primary AWS
 												region where data is mastered, and one read only secondary AWS region
 											</li>
-											<li>You use Aurora mysql native functions to invoke lambda functions</li>
-											<li>?Loading data from S3 and save queries results in S3</li>
+											<li data-sound>You use Aurora mysql native functions to invoke lambda
+												functions</li>
+											<li data-sound>?Loading data from S3 and save queries results in S3</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Backup tracking
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Backup tracking
 											</h4>
 										</div>
-										<p>It provides an easily way to undo mistakes, backtracking a DB cluster does
+										<p data-sound>It provides an easily way to undo mistakes, backtracking a DB
+											cluster does
 											not require a new DB cluster and rewinds the cluster in minutes
 										</p>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Monitoring</h4>
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Failover</h4>
+										</div>
+										<p data-sound>If you have an Aurora replica in the same or a different AZ, when
+											failing
+											over, Amazon Aurora flips the canonical name record (CNAME) for your DB
+											instance point at the healthy replica, which in turn is promoted to become
+											the new primary. (around 30 seconds)<br>
+											If you dont have Aurora Read Replica (i.e single instance) and are not using
+											servless, Aurora will attempt to create a NEW DB instance in the same AZ as
+											the original instance
+										</p>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Monitoring</h4>
 										</div>
 										<ul class="resume-list">
-											<li>Cloud trails</li>
-											<li>Enhanced monitoring (for the OS and DB cluster)</li>
-											<li>Amazon RDS performance insights</li>
-											<li>Aurora Event Notification using SNS</li>
+											<li data-sound>Cloud trails</li>
+											<li data-sound>Enhanced monitoring (for the OS and DB cluster)</li>
+											<li data-sound>Amazon RDS performance insights</li>
+											<li data-sound>Aurora Event Notification using SNS</li>
 										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Aurora Servless</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Aurora Servless</h3>
 								<div class="item mb-3">
 									<div class="item-content">
 										<ul class="resume-list">
-											<li>It is an on-demand, auto-scaling configuration for Aurora</li>
-											<li>A non-serveless DB cluster for Aurora is called a provisioned DB cluster
+											<li data-sound>It is an on-demand, auto-scaling configuration for Aurora
 											</li>
-											<li>It manages the warnpool of resources in an AWS region to minimize
+											<li data-sound>A non-serveless DB cluster for Aurora is called a provisioned
+												DB cluster
+											</li>
+											<li data-sound>It manages the warnpool of resources in an AWS region to
+												minimize
 												scaling time</li>
-											<li>The cluster volume for an Aurora Serveless cluster is always encrypted
+											<li data-sound>The cluster volume for an Aurora Serveless cluster is always
+												encrypted
 											</li>
 										</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Failover</h4>
+										</div>
+										<p data-sound>If you are running Aurora Serverless and the DB instance or AZ
+											become
+											unavailable, Aurora will automatically recreate the DB instance in a
+											different AZ.
+										</p>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">AWS SNS</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>AWS SNS</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>Is an event-driver computing hub that has native integration with a wide
+										<p data-sound>Is an event-driver computing hub that has native integration with
+											a wide
 											variety of AWS event sources (including EC2, S3 and RDS) and AWS event
 											destinations (including SQS and lambda)<br>
 											<strong>Event-driver computing </strong>is a model in which subscriber
@@ -1178,227 +1433,913 @@
 											automatically perform work in response to events triggerred by publisher
 											services.</p>
 										<ul class="resume-list">
-											<li>
+											<li data-sound>
 												It sores all topic and message information within Amazon's proven
 												network infrastructure and data center at least three copies of data are
 												stored accross multiple AZ's</li>
-											<li>Published iamges maximum limitsare 256kb</li>
-											<li><strong>SNS mobile notifications </strong>allows you to fanout mobile
+											<li data-sound>Published iamges maximum limitsare 256kb</li>
+											<li data-sound><strong>SNS mobile notifications </strong>allows you to
+												fanout mobile
 												push notifications to iOS, Android, FireOS, Windows and Baidu based
 												devices.</li>
-											<li>You pay based on the number of notifications you publish, the number of
+											<li data-sound>You pay based on the number of notifications you publish, the
+												number of
 												notifications you deliver</li>
-											<li>You can have a Lambda function, a SQS queue and an Http/s endpoint as
+											<li data-sound>You can have a Lambda function, a SQS queue and an Http/s
+												endpoint as
 												subscribers.</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Cloud Trail
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Cloud Trail
 												logs</h4>
 										</div>
 										<ul class="resume-list">
-											<li>SNS api called</li>
-											<li>Source id address</li>
-											<li>time of the api call</li>
-											<li>Request parameters</li>
-											<li>Response elements returned by SNS</li>
+											<li data-sound>SNS api called</li>
+											<li data-sound>Source id address</li>
+											<li data-sound>time of the api call</li>
+											<li data-sound>Request parameters</li>
+											<li data-sound>Response elements returned by SNS</li>
 										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Cloud Trail</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Cloud Trail</h3>
 								<div class="item mb-3">
 									<div class="item-content">
-										<p>CloudTrail focuses on auditing API activity.<br>
+										<p data-sound>CloudTrail focuses on auditing API activity.<br>
 											Actions taken by a use, role, or an AWS service in the AWS management
 											console, AWS command line interface and AWS SDKs and APIS are recorder as
 											events</p>
 										<ul class="resume-list">
-											<li>When activity occours in yout AWS account that activity is recorded in a
+											<li data-sound>When activity occours in yout AWS account that activity is
+												recorded in a
 												CloudTrail event.</li>
-											<li>Create a CloudTrail trail to archive, analyze and respond to changes in
+											<li data-sound>Create a CloudTrail trail to archive, analyze and respond to
+												changes in
 												your AWS resources</li>
-											<li>A cloudtrail trail is a configuration that enables delivery of events to
+											<li data-sound>A cloudtrail trail is a configuration that enables delivery
+												of events to
 												an S3 bucket that you specify. It can be in another region</li>
-											<li>You can create an organization trail that will log all events for all
+											<li data-sound>You can create an organization trail that will log all events
+												for all
 												AWS accounts in an organization created by AWS Organizations</li>
-											<li>CloudTrail loggin, which is basically sending the cloudtrail events to a
+											<li data-sound>CloudTrail loggin, which is basically sending the cloudtrail
+												events to a
 												bucket, is not enabled by default</li>
-											<li>It enables governance, complienced, operational auditing and risk
+											<li data-sound>It enables governance, complienced, operational auditing and
+												risk
 												audition for your AWS account</li>
+											<li data-sound>By default, cloudtrail event log files are encrypted using S3
+												SSE. You
+												can also choose to encrypt your log files with AWS-Key management</li>
 										</ul>
 									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Monitoring</h4>
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Monitoring</h4>
 										</div>
-										<p>Uses CloudWatch logs file integrity validation to determine whether a log
+										<p data-sound>Uses CloudWatch logs file integrity validation to determine
+											whether a log
 											file was
 											modified, deleted or unchanged after cloudtrail has delivered it to your S3
 											bucket</p>
 										<ul class="resume-list">
-											<li>SNS notification</li>
-											<li>CW -> it can send events to CW logs and you can trigger alarms according
+											<li data-sound>SNS notification</li>
+											<li data-sound>CW -> it can send events to CW logs and you can trigger
+												alarms according
 												to the metrics filters you define</li>
 										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">AWS Config TODO</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>AWS CloudWatch</h3>
 								<div class="item mb-3">
 									<div class="item-content">
+										<p data-sound>It provides system-wide visibility into resource utilization,
+											application
+											performance and operational health. It is a monitoring tool for you AWS
+											<ul class="resume-list">
+												<li data-sound>It monitors AWS resources and any application that runs
+													on AWS in
+													realtime</li>
+												<li data-sound>It does not aggregate data across regions. Therefore,
+													metrics are
+													completely separate between regions.</li>
+												<li data-sound><strong>Note for EC2 instances: </strong> CloudWatch does
+													not
+													collect memory utilization and disk pace usage metrics from the get
+													go. You need to install CloudWatch Agent in your instances first to
+													retrievee these metrics</li>
+												<li data-sound><strong>CloudWatch Events: </strong> delivery near
+													real-time
+													stream of system events that describe changes in AWS resources.
+												</li>
+												<li data-sound><strong>CloudWatch logs Insights: </strong> enables you
+													to
+													interactively search and analyze you log data in CloudWatch logs
+													using queries.
+												</li>
+												<li data-sound>CAN NOT invoke Lambda functions directly</li>
+												<li data-sound>CAN DO: auto scaling, EC2 instances or SNS actions</li>
+												<li data-sound>Standard resolution metric: one minute granularity,
+													produced by
+													default for AWS services</li>
+												<li data-sound>High resolution metric: one second granularity</li>
+												<li data-sound>You must have permissions to create CloudWatch dashboead,
+													view
+													metrics, create or access CloudWatch</li>
+												<li data-sound>Permissions granted using IAM cover all the cloud
+													resources you use
+													or monitor with CloudWatch</li>
+												<li data-sound>Every AWS resource is owned by an AWS account</li>
+												<li data-sound>You can colaborate with an owner of a different AWS
+													account and
+													receive their log events on your AWS resources. Kinesis stream are
+													currently the only resource supported as a destination for across
+													account subscriptions</li>
+											</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												CloudWatch
+												Events</h4>
+										</div>
 										<ul class="resume-list">
-											<li>
-												Is a service that enables you to access, audit, and evaluate the
-												configurations of your AWS reources.</li>
-											<li>It monitors and records your AWS resources configuration</li>
-											<li>You can use a config rule to check IAM_PASSWORD_POLICY on an account
+											<li data-sound>Deliveres a near real time stram of system events that
+												describes changes
+												in AWS resources</li>
+											<li data-sound>You can use CloudWatch Events to schedule automated actions
+												that self
+												trigger at certain times using cron or rate expressions</li>
+											<li data-sound>One account can receive events from another account, both
+												send and
+												receiver MUST be in the same AWS region. The sending account pays for
+												the event sent.</li>
+										</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												CloudWatch Logs
+											</h4>
+										</div>
+										<ul class="resume-list">
+											<li data-sound>It can be used to monitor, store and access logs from many
+												AWS and
+												non-AWS
+												sources</li>
+											<li data-sound>It can monitor,store and access logs from on-premises servces
+												(required
+												to install CloudWatch agent)</li>
+											<li data-sound><strong>Log events </strong>is a record of some activity
+												recorded by the
+												application or resource being monitored</li>
+											<li data-sound><strong>Log stream </strong> is a sequence of log events that
+												share the
+												same source. It has to belong to one log group</li>
+											<li data-sound><strong>Log Groups </strong> define groups of log stream that
+												share the
+												same retention, monitoring and access control settings</li>
+											<li data-sound>It sends metrics to CloudWatch every minute</li>
+											<li data-sound>Encrypted at rest and in transit</li>
+											<li data-sound>CloudWatch log manage the serve side encryption keys</li>
+											<li data-sound>You can configure a CloudWatch logs group to stream data it
+												receives to
+												a Elastic Search Service in real time through CloudWatch logs
+												subscription</li>
+										</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Concepts</h4>
+										</div>
+										<ul class="resume-list">
+											<li data-sound><strong>Namespace: </strong> is a container for CloudWatch
+												metrics</li>
+											<li data-sound><strong>Metrics: </strong>it represents a time-ordered set of
+												data
+												points that are published to CloudWatch
+												<ul>
+													<li data-sound>You can send your custom metric to CloudWatch</li>
+													<li data-sound>Metrics exist only in the region in which they are
+														created. They
+														are completely separate between regions. Metrics filter are
+														assigned to a log group, and all of the filters assigned to a
+														log group are applied to their log streams.</li>
+													<li data-sound>Cannot be delete, but they automatically expire after
+														15 months
+														if no new data is published to them</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Alarms</h4>
+										</div>
+										<p data-sound>Watches a single metric over a specified time period, and perform
+											one or more
+											specified actions, based on the value of the metric relative to a threshold
+											over time. The alarm can perform one or more actions.</p>
+										<ul class="resume-list">
+											<li data-sound><strong>Alarms states:</strong>
+												<ul class="resume-list">
+													<li data-sound>OK</li>
+													<li data-sound>ALARM</li>
+													<li data-sound>INSUFFICIENT DATA</li>
+												</ul>
+											</li>
+											<li data-sound>When you create an alarm, you specif three settings:
+												<ul>
+													<li data-sound>Period: is the length of time to evaluate the metric
+														(in
+														seconds)</li>
+													<li data-sound>Evaluation period: Is the number of the recent
+														periods, or data
+														points to evaluate when determining alarm state</li>
+													<li data-sound>Datapoints to alarm: is the number of data points
+														within the
+														evaluation period</li>
+												</ul>
 											</li>
 										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">AWS Shield</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>AWS Config TODO</h3>
 								<div class="item mb-3">
 									<div class="item-content">
 										<ul class="resume-list">
-											<li>AWS Shield is a managed Distributed Denial of Service (DDoS) protection
+											<li data-sound>
+												Is a service that enables you to access, audit, and evaluate the
+												configurations of your AWS reources.</li>
+											<li data-sound>It monitors and records your AWS resources configuration</li>
+											<li data-sound>You can use a config rule to check IAM_PASSWORD_POLICY on an
+												account
+											</li>
+										</ul>
+									</div>
+								</div>
+							</section>
+							<section class="project-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>AWS ECS TODO</h3>
+								<div class="item mb-3">
+									<div class="item-content">
+										<ul class="resume-list">
+											<li data-sound>You can launch a combination of EC2 instances. E.g: You can
+												launch
+												reserver EC2 instances to process the mission-critical data and Spot EC2
+												instances for processing non-essentional batch jobs</li>
+										</ul>
+									</div>
+								</div>
+							</section>
+							<section class="project-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>AWS Shield</h3>
+								<div class="item mb-3">
+									<div class="item-content">
+										<ul class="resume-list">
+											<li data-sound>AWS Shield is a managed Distributed Denial of Service (DDoS)
+												protection
 												service that safeguards applications running on AWS</li>
-											<li>It proveis always-on detection and automatic inline mitigations that
+											<li data-sound>It proveis always-on detection and automatic inline
+												mitigations that
 												minimiza application downtime and latency</li>
 										</ul>
 									</div>
 								</div>
 							</section>
 							<section class="project-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4" data-sound>AWS Trusted Advisor
+								</h3>
+								<div class="item mb-3">
+									<div class="item-content">
+										<p data-sound>It is an online tool that provides you real-time guidance to help
+											you
+											provision your resources following AWS best practices. It inspects your AWS
+											environment and makes recomendations for saving money, improving system
+											performance and realibility, or closing security gaps</p>
+									</div>
+								</div>
+							</section>
+							<section class="project-section py-3">
 								<section class="project-section py-3">
-									<h3 class="text-uppercase resume-section-heading mb-4">Cloud Watch TODO</h3>
+									<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Cloud Watch TODO
+									</h3>
 									<div class="item mb-3">
 										<div class="item-content">
-											<p>
-												<ul class="resume-list">
-													<li></li>
-												</ul>
-											</p>
-										</div>
-										<div class="item-content">
 											<div class="item-heading row align-items-center mb-2">
-												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">AWS
-													CloudWacth Agents</h4>
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													AWS
+													CloudWatch Agents</h4>
 											</div>
 											<ul class="resume-list">
-												<li>To collect logs from a EC2 instances and on-premises services you
+												<li data-sound>To collect logs from a EC2 instances and on-premises
+													services you
 													have
-													to use either an unified CloudWacth Agent, or the old one CloudWacth
+													to use either an unified CloudWatch Agent, or the old one CloudWatch
 													Logs agent</li>
-												<li>Unified agent also enables the collection of additional system
+												<li data-sound>Unified agent also enables the collection of additional
+													system
 													metrics,
 													for in-guest visibility</li>
 											</ul>
 										</div>
 										<div class="item-content">
 											<div class="item-heading row align-items-center mb-2">
-												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">AWS
-													CloudWacth Monitoring Scripts</h4>
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													AWS
+													CloudWatch Monitoring Scripts</h4>
 											</div>
 											<ul class="resume-list">
-												<li>As CloudWacth does not monitor EC2 memory usage as well as disk
+												<li data-sound>As CloudWatch does not monitor EC2 memory usage as well
+													as disk
 													space utilization. You would have to collect the metrics using a
-													script or by using a CloudWacth agent, then send the data to
-													CloudWacth</li>
+													script or by using a CloudWatch agent, then send the data to
+													CloudWatch</li>
 											</ul>
 										</div>
 									</div>
 								</section>
 								<section class="project-section py-3">
-									<h3 class="text-uppercase resume-section-heading mb-4">S3 TODO</h3>
+									<h3 class="text-uppercase resume-section-heading mb-4" data-sound>S3</h3>
+									<div class="item-content">
+										<ul class="resume-list">
+											<li data-sound>It is an object storage. It has a distributed data-storage
+												architecture,
+												where objects are redundantly stored in multiple locations</li>
+											<li data-sound>It provides read-after-write (imediate or strong) consistency
+												of new
+												objects and eventual consistency for overwrite (PUT and DELETE)</li>
+											<li data-sound><strong>Elemental media storage: </strong> is a caching and
+												content
+												distributed system buil for video workflows and mediai delivery from
+												Amazon S3</li>
+											<li data-sound><strong>Byte Range Fetches: </strong> relies on the range
+												http header in
+												an object request to fetch a byte-range from an object tranfering only
+												the specificed portion</li>
+											<li data-sound>Updates are key-based operations</li>
+											<li data-sound>S3 supports paralel requests, that means you can scale your
+												S3
+												performance by the factor of your compute cluster</li>
+											<li data-sound>S3 DOES NOT support object locking</li>
+											<li data-sound>S3 object locking feature prefents an object from being
+												deletes or
+												overwritten for a fixed amount of time or indefinitely</li>
+											<li data-sound><strong>Resource ownnership: </strong> the resource owner is
+												the account
+												the create the resource(bucket or object)</li>
+										</ul>
+									</div>
 									<div class="item-content">
 										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Encryption
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Cross-account
+												access to objects</h4>
+										</div>
+										<p data-sound>Use on of the following methods:</p>
+										<ul class="resume-list">
+											<li data-sound>Resource base policies and IAM policies (for programtic only
+												access)
+											</li>
+											<li data-sound>Resource-based access control list (ACL) and IAM policies
+												(for
+												programatic access only)</li>
+											<li data-sound>Cross-account IAM roles ( for programit and console access to
+												S3
+												buckets objects)</li>
+										</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Security</h4>
+										</div>
+										<ul class="resume-list">
+											<li data-sound><strong>Policies:</strong>
+												<ul>
+													<li data-sound><strong>Resources: </strong> buckets and objects</li>
+													<li data-sound><strong>Actions: </strong> set of operations</li>
+													<li data-sound><strong>Effects: </strong> can be either allow or
+														deny. Need to
+														explicity grant allow to a resource</li>
+													<li data-sound><strong>Principal: </strong> the account, service or
+														user who is
+														allowed to access to the actions and resources in the statement
+													</li>
+												</ul>
+											</li>
+											<li data-sound>Resource based policies:
+												<ul>
+													<li data-sound>Bucket policies:
+														<ul>
+															<li data-sound>Provides centralized access control to
+																buckets
+																and obects based on a variety of conditions,
+																including S3 operations, requester, resources
+																and aspect of the request (e.g, IP address)</li>
+															<li data-sound>Grant permissions to user or accounts (same
+																or cross
+																accounts)</li>
+															<li data-sound>They apply only to resources owned by the
+																bucket owner
+															</li>
+															<li data-sound>IAM users need additional permissions from
+																root account
+																to perform bucket operations</li>
+														</ul>
+													</li>
+													<li data-sound>Access Control Lists
+														<ul>
+															<li data-sound>Are lists of grands, it provides basic
+																read/write
+																operation on the resources. It CAN NOT do conditional
+																permissions (bucket policies can)</li>
+															<li data-sound>You can defined permissions for accounts
+																(cross account
+																permissions), CAN NOT provide user level permissions
+																directly</li>
+															<li data-sound>Only use objects ACL to manage permissions
+																for specific
+																scenarios and only if ACLs meet your needs better than
+																IAM and S3 buckets poclcies</li>
+															<li data-sound>Only recommened use case for the bucket ACLis
+																to grant
+																write permissions to the S3 log delivery group</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li data-sound>Use Policies</li>
+											<ul>
+												<li data-sound>Attched to an use, group or IAM role</li>
+												<li data-sound>You CAN NOT grant anonymous access through a user access
+													policy</li>
+												<li data-sound>IAM uer or IAM Role policies are inline policies</li>
+												<li data-sound>IAM group policies are standalone policies</li>
+											</ul>
+										</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>S3
+												Events
+												Notification</h4>
+										</div>
+										<ul class="resume-list">
+											<li data-sound>Can publish following events:
+												<ul>
+													<li data-sound>A new object created event</li>
+													<li data-sound>An object removal event</li>
+													<li data-sound>A reduced redundancy storage (RRS) object lost event
+													</li>
+												</ul>
+											</li>
+											<li data-sound>It supports the following destinations for your events:</li>
+											<ul>
+												<li data-sound>SNS topic</li>
+												<li data-sound>SQS</li>
+												<li data-sound>AWS Lambda</li>
+											</ul>
+										</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>S3
+												Select
+											</h4>
+											<ul class="resume-list">
+												<li data-sound>Is an Amazon S3 capability designed to pull out only the
+													data
+													you
+													need from an object, which can dramatically improve the
+													performance
+													and reduce the cost of applicaitons that need to access data in
+													S3
+												</li>
+												<li data-sound>IT works on objects stored in CSVand JSON format, Apache
+													Parquet
+													format, JSON Arrays and BZIP2 compression for csv and json
+													objects
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>S3
+												Object
 											</h4>
 										</div>
 										<ul class="resume-list">
-											<li>SSE-KMS provides an audit trail that shows when your CMK was used and by
-												whom. You can also create and manage customer-managed CMKs or use WAS
+											<li data-sound>Are private by default.</li>
+											<li data-sound>Each S3 object has data, a key and metadata.</li>
+											<li data-sound>You CAN NOT modify object metadata after object is uploaded
+											</li>
+											<li data-sound>Objects size up to 5TB</li>
+											<li data-sound>Objects store in a bucket in a region will never leave that
+												region,
+												unless you specifically move them to another region, or enable cross
+												region replication</li>
+											<li data-sound>Objects are redundantly store on multiples devices across
+												multiples
+												facilities in S3 region(where the bucket exist</li>
+											<li data-sound>A key is the unique identifier for an object within a bucket
+											</li>
+											<li data-sound>You can receive SNS notification when upload is completed
+											</li>
+										</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Bucket
+											</h4>
+										</div>
+										<ul class="resume-list">
+											<li data-sound>Is a flat container of objects. A bucket store unlimited
+												objects but
+												an
+												object can not exceeds 5TB</li>
+											<li data-sound>It is region specific</li>
+											<li data-sound><strong>Bucket name </strong>must be unique DNS-compliant
+												name</li>
+											<li data-sound>You can't change its region after creation</li>
+											<li data-sound>You can create up to 100 buckets in each of your AWS account
+											</li>
+										</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Versioning
+											</h4>
+										</div>
+										<ul class="resume-list">
+											<li data-sound>You can't delete an S3 bucket using CLI if versioning is
+												enabled
+											</li>
+											<li data-sound>It protects against accidental object/data deletion or
+												overwrite
+											</li>
+											<li data-sound>Versioning states:
+												<ul>
+													<li data-sound>Enable</li>
+													<li data-sound>Suspended</li>
+													<li data-sound>un-versioned</li>
+												</ul>
+											</li>
+											<li data-sound>It applies to all objects in a bucket</li>
+											<li data-sound>It is disabled by default</li>
+											<li data-sound>Multi-factor delete is a versioning capability, it adds
+												another
+												layer of
+												security for changing your bucket's versioning state, or
+												permanentely
+												deleting an object version</li>
+										</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Storage
+												Classes
+											</h4>
+										</div>
+										<ul class="resume-list">
+											<li data-sound>S3 Standard for general-purpose
+												<p data-sound>Miliseconds access time and frequently accessed data.</p>
+											</li>
+											<li data-sound>RRS
+												<p data-sound>Non critical, reproducible data that can be stored with
+													less
+													redundancy</p>
+											</li>
+											<li data-sound>Standard ID (30 days)
+												<ul>
+													<li data-sound>Long lived and infrequently accessed data</li>
+													<li data-sound>It stores object data redundantly across multiple
+														geographically
+														separeted AZs
+													<li data-sound>Objects must be stored <strong>at least 30
+															days</strong> in
+														the
+														current storage class before you can transition them to
+														STANDARD_IA or ONE_ZONE_IA</li>
+												</ul>
+											</li>
+											<li data-sound>OneZone ID (30 days)
+												<ul>
+													<li data-sound>Less expensive than Standard-IA, but the data is no
+														resilient to
+														the physical loss of the AZ</li>
+												</ul>
+											</li>
+											<li data-sound>Intelligent Tiering
+												<ul>
+													<li data-sound>It automatically moves data to the most
+														cost-effective
+														storage
+														tier</li>
+													<li data-sound>It operates at a granular object level</li>
+													<li data-sound>There are no retrieval fees in S3 Intelligent-Tiering
+													</li>
+												</ul>
+											</li>
+											<li data-sound>Glacier (90 days)
+												<ul>
+													<li data-sound>For a long-term archive</li>
+													<li data-sound>You can not specify Glacier as the storage class at
+														the time
+														that you create an object</li>
+													<li data-sound>Glacier objects are visible through S3 only</li>
+													<li data-sound>Retrieval options:
+														<ul>
+															<li data-sound>Expedited: Data accessed are typically made
+																available
+																within 1-5 minutes</li>
+															<li data-sound>Standard: Retrievals are typically available
+																within
+																3-5
+																hours</li>
+															<li data-sound>Bulk: Lowers-cost retrieval option. Typically
+																complete
+																within 5-12 hours</li>
+															<li data-sound>Uploading is synchronous while downloading is
+																asynchronous</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li data-sound>Deep Archive (180 days)
+												<ul>
+													<li data-sound>Use for archiving data that rarely needs to be
+														accessed</li>
+													<li data-sound>It is the lowest cost storage in the cloud</li>
+													<li data-sound>Can be restored within 12 hours or less</li>
+													<li data-sound>It also offers a bulk retrieval option, where you can
+														retrieve
+														petabytes of data within 48 hours</li>
+													<li data-sound>it does not have the ability to do expedited
+														retrievals,
+														unlike
+														Glacier</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>Life
+												Cycle
+												Policy
+											</h4>
+										</div>
+										<ul class="resume-list">
+											<li data-sound>It applies to certain objects in a bucket folder, objects
+												with a
+												specific TAG or objects with a specific prefix</li>
+											<li data-sound><strong>Transition actions: </strong> define when objects
+												transitionto
+												another class</li>
+											<li data-sound><strong>Expiration actions: </strong>define when objects
+												expire. S3
+												deletes expired objects on your behalf</li>
+										</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Encryption
+											</h4>
+										</div>
+										<ul class="resume-list">
+											<li data-sound>SSE-KMS provides an audit trail that shows when your CMK was
+												used
+												and by
+												whom. You can also create and manage customer-managed CMKs or use
+												WAS
 												managed CMKs that are unique to you, your service, and your region
 											</li>
+											<li data-sound>There are two ways fo stored encrypted data on S3.
+												<ul>
+													<li data-sound><strong>Client side encryption: </strong> The data is
+														encrypted
+														on the client side, then transfer to S3. (in transit/at
+														rest)
+														<ul>
+															<li data-sound>AWS KMS-Managed customer master key)</li>
+															<li data-sound>client-side master key</li>
+														</ul>
+													</li>
+													<li data-sound><strong>Server side encryption: </strong>The data is
+														encrypted
+														by the S3 storage disks. Data is decrypted when you download
+														it.
+														Each object is encrypted by a unique key. It uses AES-256
+														bits.
+														<ul>
+															<li data-sound>Amazon S3-Managed Keys (SSE-S3)</li>
+															<li data-sound>AWS KMS-Managed Keys (SSE-KMS)</li>
+															<li data-sound>Customer-Provided Keys(SSE-C)</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li data-sound>If you created a CMK, this CMK and the bucket must be in the
+												same
+												region
+											</li>
+										</ul>
+									</div>
+									<div class="item-content">
+										<div class="item-heading row align-items-center mb-2">
+											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+												Multipart
+												upload
+											</h4>
+										</div>
+										<ul class="resume-list">
+											<li data-sound>You can upload and copy objects of up to 5GB in size in a
+												single
+												operation</li>
+											<li data-sound>It is used to upload an object in parts</li>
+											<li data-sound>It is recommended for objects sizes of 100MB larger</li>
+											<li data-sound>For objects greather than 5GB up to 5TB you must use the
+												Multipart
+												upload API</li>
 										</ul>
 									</div>
 									<div class="item mb-3">
 										<div class="item-content">
 											<div class="item-heading row align-items-center mb-2">
-												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Monitoring
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Monitoring
 												</h4>
 											</div>
 											<ul class="resume-list">
-												<li>Server access logging give access to referrer and turn-around time
-													and
-													provides you visibility into object-level operations on your data in
-													S3
+												<li data-sound><strong>Server access logging (disabled by
+														default)</strong> give
+													access to referrer and
+													turn-around time
+													and provides you visibility into object-level operations on your
+													data in S3 . It provides detailed records for the requests that are
+													made to a bucket. Both source and tagget bucket must be owned by the
+													same accound and must be in the same region</li>
+												<li data-sound>CloudWatch metrics for S3 requests, buckets storage,
+													bucket size,
+													all requests, http 4xx, http 5xx</li>
+												<li data-sound>Daily CloudWatch, bucket level, storage metrics on by
+													default with
+													no additional cost</li>
+												<li data-sound>cloudtrail capture all API calls. (logs bucket level)
 												</li>
 											</ul>
 										</div>
 										<div class="item-content">
 											<div class="item-heading row align-items-center mb-2">
-												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">AWS
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													AWS
 													S3 Transfer Acceleration</h4>
 											</div>
 											<ul class="resume-list">
-												<li>Enables fast, easy , and secure transfer of files over log
+												<li data-sound>Enables fast, easy , and secure transfer of files over
+													log
 													distances
 													between your client and your S3 bucket</li>
-												<li>Tranfer Acceleration leverages Amazon CloudFront's globally
+												<li data-sound>Tranfer Acceleration leverages Amazon CloudFront's
+													globally
 													distributed edge locations</li>
-												<li>It improves performace for a wide range of applications over TCP
+												<li data-sound>It improves performace for a wide range of applications
+													over TCP
 													or
 													UDP by proxying packages at the edge to applications running in
 													one
 													or more ARS Regions</li>
-												<li>It routes the traffic to the closest edge location via Anycast
+												<li data-sound>It routes the traffic to the closest edge location via
+													Anycast
+												</li>
+												<li data-sound>It can not be disabled, and can only be Suspended</li>
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													MFA
+													Delete
+												</h4>
+											</div>
+											<p data-sound>MFA delete grants additional authentication for either change
+												the
+												versioning state of your bucket or permanentely delete an object
+												version
+											</p>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													S3
+													Replication (SRR - CRR)</h4>
+											</div>
+											<p data-sound>Is a bucket level replication which enables sync and async
+												copying of
+												objects across buckets source/dest can be same or different accounts
+												and
+												same/dif regions.</p>
+											<ul class="resume-list">
+												<li data-sound>You can configure S3 replication with S3 lifecycle
+													management
+													rules.
+												</li>
+												<li data-sound>It requires versioning enable source/dest</li>
+												<li data-sound><strong>Requirements of CRR: </strong>
+													<ul>
+														<li data-sound>The source and destination must be in different
+															AWS
+															Regions
+														</li>
+														<li data-sound>S3 must have permissions to replicate objects
+															from the
+															source to the destination bucket on your behalf</li>
+													</ul>
+												</li>
+												<li data-sound>You can speficy a different storage class for objects
+													replicas
+													while
+													creating the replication configuration.</li>
+												<li data-sound>You must have permission (IAM role) to replicate objects
+													from
+													the
+													source bucket to the destination bucket</li>
+												<li data-sound><strong>CRR delete operations: </strong>
+													<ul>
+														<li data-sound>If you make a DELETE request without specifying
+															an
+															object
+															version IS, S3 addes a delete marker.</li>
+														<li data-sound>If you specify an object version ID to delete in
+															an DELETE request, S3 deletes that object version in the
+															source
+															bucket, but it doesn't replicate the deletion in the
+															destination bucket. This protects data from malicious
+															deletions.</li>
+
+													</ul>
 												</li>
 											</ul>
 										</div>
 								</section>
 								<section class="project-section py-3">
-									<h3 class="text-uppercase resume-section-heading mb-4">AWS Global Accelerator</h3>
+									<h3 class="text-uppercase resume-section-heading mb-4" data-sound>AWS Global
+										Accelerator</h3>
 									<div class="item mb-3">
 										<div class="item-content">
 											<ul class="resume-list">
-												<li>
+												<li data-sound>
 													Is a service that improves the availability and performance of your
 													applications with local or global users.
 												</li>
-												<li>It provides static IP address that act as a fixed entry point to
-													your
-													application endpoints in a single or multiple AWS Regions, such as
-													ALB,
-													NLB and EC2 instances</li>
+												<li data-sound>It provides static IP address that act as a fixed entry
+													point to your application endpoints in a single or multiple AWS
+													Regions, such as ALB, NLB and EC2 instances</li>
 											</ul>
 										</div>
 									</div>
 								</section>
 								<section class="project-section py-3">
-									<h3 class="text-uppercase resume-section-heading mb-4">AWS Step Functions</h3>
+									<h3 class="text-uppercase resume-section-heading mb-4" data-sound>AWS Step Functions
+									</h3>
 									<div class="item mb-3">
 										<div class="item-content">
 											<ul class="resume-list">
-												<li>A fully managed service that makes it easy to coordinate the
+												<li data-sound>A fully managed service that makes it easy to coordinate
+													the
 													components
 													of distributed applications and microservices using visual
 													workflows.</li>
-												<li>It provides servless orchestration for modern application.
+												<li data-sound>It provides servless orchestration for modern
+													application.
 													Orchestration
 													centrally manages a workflow by breaking it into multiple steps. As
 													your
 													applications execute, Step Functions maintains application state.
 												</li>
-												<li>You can user Step Functions to coordinate multiple AWS services into
+												<li data-sound>You can user Step Functions to coordinate multiple AWS
+													services into
 													servless workflows</li>
-												<li>You define <strong>state machines </strong> that describe you
+												<li data-sound>You define <strong>state machines </strong> that describe
+													you
 													workflow as a series of steps, their relathionship, and their inputs
 													and outputs. State machines contain a number of states, each of
 													which represents an individual step in a workflow diagram</li>
@@ -1408,12 +2349,13 @@
 									</div>
 								</section>
 								<section class="project-section py-3">
-									<h3 class="text-uppercase resume-section-heading mb-4">Amazon Simple Workflow (SWF)
+									<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Amazon Simple
+										Workflow (SWF)
 									</h3>
 									<div class="item mb-3">
 										<div class="item mb-3">
 											<div class="item-content">
-												<p>
+												<p data-sound>
 													A fully-managed state tracker and task coordinator in the Cloud. You
 													create desired workflow with their associated tasks, and any
 													conditional
@@ -1422,190 +2364,230 @@
 											</div>
 											<div class="item-content">
 												<ul class="resume-list">
-													<li>Is a web service that makes it easy to coordinate work across
+													<li data-sound>Is a web service that makes it easy to coordinate
+														work across
 														distributed applications</li>
-													<li>SWF tasks represent invocations of logical steps in
+													<li data-sound>SWF tasks represent invocations of logical steps in
 														applications. Tasks are processed by workers which are program
 														that interact with Amazon SWF to get tasks, process them and
 														return their results.</li>
-													<li>SWF API actions are task oriented. SQS API actions are message
+													<li data-sound>SWF API actions are task oriented. SQS API actions
+														are message
 														oriented</li>
-													<li>Storage Optimized: up to 80TBof useable storage (it has most
+													<li data-sound>Storage Optimized: up to 80TBof useable storage (it
+														has most
 														storage
 														capacity)</li>
-													<li>Compute Optimized: Is has most compunte funcionality. This
+													<li data-sound>Compute Optimized: Is has most compunte funcionality.
+														This
 														options
 														also comes with 42TB of additional storage space</li>
-													<li>SWF lets you write your application components and coordination
+													<li data-sound>SWF lets you write your application components and
+														coordination
 														login in any programming language anr run them in the cloud or
 														on-premises</li>
-													<li>It ensures a task is never duplicated and is assigned only once.
+													<li data-sound>It ensures a task is never duplicated and is assigned
+														only once.
 													</li>
 												</ul>
 											</div>
 										</div>
 								</section>
 								<section class="project-section py-3">
-									<h3 class="text-uppercase resume-section-heading mb-4">Redshift</h3>
+									<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Redshift</h3>
 									<div class="item mb-3">
 										<div class="item mb-3">
 											<div class="item-content">
-												<p>
+												<p data-sound>
 													Datawarehouse is a relation database that is designed for query and
 													analysis rather than for transacional processing.
 												</p>
 											</div>
 											<div class="item-content">
 												<ul class="resume-list">
-													<li>To perform analytics you need a datawarehouse not a regurar DB
+													<li data-sound>To perform analytics you need a datawarehouse not a
+														regurar DB
 													</li>
-													<li><strong>OLAP (Online Analytics Processing)</strong> is
+													<li data-sound><strong>OLAP (Online Analytics Processing)</strong>
+														is
 														characterized
 														by relatively low volume fo transctions. Queries are ofter very
 														complex and involves aggregations.</li>
-													<li><strong>OLTP (RDS, Mysql)</strong> is a database where there is
+													<li data-sound><strong>OLTP (RDS, Mysql)</strong> is a database
+														where there is
 														detailed and current data, and a schema is used to store
 														transactional data.</li>
 												</ul>
 											</div>
 											<div class="item-content">
 												<ul class="resume-list">
-													<li>Redshift is an AWS fully-managed petabyte scale datawarehouse
+													<li data-sound>Redshift is an AWS fully-managed petabyte scale
+														datawarehouse
 														service in the cloud.</li>
-													<li>It gives you fast querying capabilities over structured data
+													<li data-sound>It gives you fast querying capabilities over
+														structured data
 													</li>
-													<li>Queries are distributed and parallelized across multiples
+													<li data-sound>Queries are distributed and parallelized across
+														multiples
 														physical
 														resources</li>
-													<li>It can store huge amount of data, but can't ingest huge amount
+													<li data-sound>It can store huge amount of data, but can't ingest
+														huge amount
 														of
 														data in real time</li>
-													<li>It is 10 times faster than a tradicional SQL RDMS</li>
-													<li>It supports encryption of data at rest (AEC-256 bits)</li>
-													<li>It supports SSL encryption, in transit , between client
+													<li data-sound>It is 10 times faster than a tradicional SQL RDMS
+													</li>
+													<li data-sound>It supports encryption of data at rest (AEC-256 bits)
+													</li>
+													<li data-sound>It supports SSL encryption, in transit , between
+														client
 														applications
 														and redshift cluster</li>
-													<li>You can not have direct access to your redshift instance custer
+													<li data-sound>You can not have direct access to your redshift
+														instance custer
 														nodes, however, you can through the applications themselves</li>
-													<li>It can start small and grow as required.</li>
-													<li>For a muli-node deployment(cluster), you need a leader node and
+													<li data-sound>It can start small and grow as required.</li>
+													<li data-sound>For a muli-node deployment(cluster), you need a
+														leader node and
 														compute nodes</li>
-													<li>Redshift can asynchronously replicate your snapshot to S3 in
+													<li data-sound>Redshift can asynchronously replicate your snapshot
+														to S3 in
 														another
 														region for DR</li>
 												</ul>
 											</div>
 											<div class="item-content">
 												<div class="item-heading row align-items-center mb-2">
-													<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">
+													<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"
+														data-sound>
 														Redshift
 														Performance</h4>
 												</div>
 												<ul class="resume-list">
-													<li>It uses columnar data storage</li>
-													<li>Advanced compression</li>
-													<li>Massive parallel processing(MPP)</li>
+													<li data-sound>It uses columnar data storage</li>
+													<li data-sound>Advanced compression</li>
+													<li data-sound>Massive parallel processing(MPP)</li>
 												</ul>
 											</div>
 											<div class="item-content">
 												<div class="item-heading row align-items-center mb-2">
-													<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">
+													<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"
+														data-sound>
 														Redshift
 														Backup</h4>
 												</div>
 												<ul class="resume-list">
-													<li>It stores backup (incremental snapshot) automatically for a
+													<li data-sound>It stores backup (incremental snapshot) automatically
+														for a
 														user-defined retention period in S3</li>
-													<li>It keeps the backup by default for one day, it can be configured
+													<li data-sound>It keeps the backup by default for one day, it can be
+														configured
 														0
 														-> 35 days</li>
-													<li>Manual backups are not deleted automatically if you delete a
+													<li data-sound>Manual backups are not deleted automatically if you
+														delete a
 														cluster
 													</li>
-													<li>Redshift supports only ONE AZ</li>
-													<li>You can restore from a new redshift cluster in the same or
+													<li data-sound>Redshift supports only ONE AZ</li>
+													<li data-sound>You can restore from a new redshift cluster in the
+														same or
 														different
 														AZ</li>
 												</ul>
 											</div>
 											<div class="item-content">
 												<div class="item-heading row align-items-center mb-2">
-													<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">
+													<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"
+														data-sound>
 														Redshift
 														Monitoring</h4>
 												</div>
 												<ul class="resume-list">
-													<li>Metrics for compute Utilization, storage Utilization, and
+													<li data-sound>Metrics for compute Utilization, storage Utilization,
+														and
 														read/write
 														traffic to your redshift are available for free in the AWS
 														console
-														or CloudWacth</li>
-													<li>You can add additional, user-defined metrics via CloudWacth
+														or CloudWatch</li>
+													<li data-sound>You can add additional, user-defined metrics via
+														CloudWatch
 														custom
 														metric</li>
 												</ul>
 											</div>
 											<div class="item-content">
 												<div class="item-heading row align-items-center mb-2">
-													<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">
+													<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"
+														data-sound>
 														Redshift
 														Spectrum</h4>
 												</div>
 												<ul class="resume-list">
-													<li>It allows you to directly run SQL queries against exabytes of
+													<li data-sound>It allows you to directly run SQL queries against
+														exabytes of
 														data
 														IN S3</li>
-													<li>You are chaged for the number of bytes scanned by redshift
+													<li data-sound>You are chaged for the number of bytes scanned by
+														redshift
 														spectrum
 													</li>
-													<li>User redshift enhanced VPC routing to force all of the copy and
+													<li data-sound>User redshift enhanced VPC routing to force all of
+														the copy and
 														unload traffic to go through the VPC privately through
 														endpoints.
 														You can use VPC flow logs to monitor copy/unload traffic
 													</li>
-													<li>You pay for compute node hours, backup storage and data transfer
+													<li data-sound>You pay for compute node hours, backup storage and
+														data transfer
 													</li>
 												</ul>
 											</div>
 										</div>
 								</section>
 								<section class="project-section py-3">
-									<h3 class="text-uppercase resume-section-heading mb-4">DataSync</h3>
+									<h3 class="text-uppercase resume-section-heading mb-4" data-sound>DataSync</h3>
 									<div class="item mb-3">
 										<div class="item mb-3">
 											<div class="item-content">
-												<p>An online data transfer service that simplifies, automates, and
+												<p data-sound>An online data transfer service that simplifies,
+													automates, and
 													accelerates copying large amounts of data to and from AWS storage
 													service over the internet or AWS Direct Connect</p>
 											</div>
 											<div class="item-content">
 												<ul class="resume-list">
-													<li>You can copy data between NFS or Server Message Block (SMB) file
+													<li data-sound>You can copy data between NFS or Server Message Block
+														(SMB) file
 														servers</li>
-													<li>S3 buckets</li>
-													<li>EFS</li>
-													<li>FSx for Windows</li>
-													<li>You can store data directly into S3 standard, S3
+													<li data-sound>S3 buckets</li>
+													<li data-sound>EFS</li>
+													<li data-sound>FSx for Windows</li>
+													<li data-sound>You can store data directly into S3 standard, S3
 														Intelligent-Tiering, S3 Standard-IA, S3 Glacier, S3 Glacier Deep
 														Archive</li>
 												</ul>
 											</div>
 											<div class="item-content">
 												<div class="item-heading row align-items-center mb-2">
-													<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Use
+													<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"
+														data-sound>Use
 														Cases
 													</h4>
 												</div>
 												<ul class="resume-list">
-													<li>Data migration to S3, EFS or FSx for Windows File Server</li>
-													<li>Data processing for hybrid workloads</li>
-													<li>If you have large amounts of cold data storage in expensive
+													<li data-sound>Data migration to S3, EFS or FSx for Windows File
+														Server</li>
+													<li data-sound>Data processing for hybrid workloads</li>
+													<li data-sound>If you have large amounts of cold data storage in
+														expensive
 														on-premises storge systems, you can move this data directly to
 														durable and secure long-term storage sush as S3</li>
-													<li>DataSync is ideal for online data transfer. Snowball/Snowball
+													<li data-sound>DataSync is ideal for online data transfer.
+														Snowball/Snowball
 														edge
 														is suitable for offline data transfer</li>
-													<li>Use AWS datasync to migrate existing data to S3, and then use
+													<li data-sound>Use AWS datasync to migrate existing data to S3, and
+														then use
 														the
 														File Gateway to retain access to the migrate data and for
 														ongoing
@@ -1613,6 +2595,493 @@
 												</ul>
 											</div>
 										</div>
+								</section>
+								<section class="project-section py-3">
+									<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Amazon FSx for
+										Lustre</h3>
+									<div class="item mb-3">
+										<div class="item-content">
+											<p>For compute-intensive and fast processing workloads, like high
+												performance computing (HPC), machine learning, EDA, and media
+												processing. Amazon FSx for Lustre provides a file system that's
+												optimized for performance, with input and output stored on Amazon S3</p>
+											<p>Lustre is an open source, distributed, parallel file system,
+												designed for massive scalability, high-performance and high
+												availability. It serves a single file system and can, in aggregate,
+												present up to tens of petabytes of storage to thousand of compute
+												clientes simultaneously
+											</p>
+											<ul class="resume-list">
+												<li>Amazon FSX for Lustre, provides fully managed Lustre file system
+													that are optimized for compute-intensive workloads running high
+													performance and low latencies of scale-out, parallel file systems
+												</li>
+												<li>Since this is a high-performance parallel file system, you can use
+													Amazon FSx as 'hot' storage for your highly accessed files, and
+													Amazon S3 as 'cold'storage for rarely accessed files</li>
+												<li>Lustre file system provides a POSIX-compliant file system interface
+												</li>
+												<li>Lustre clients (linux machines only) are required to mount FSx for
+													Lustre file system to use them, this requires the instalation of the
+													lustre client software on the cliente machines</li>
+												<li>It has a rich integration with S3, CloudWatch and cloudtrail</li>
+												<li>FSx for Lustre is designed for short-term compute intensive
+													workloads, where the long-term data is stored in a durable data
+													repository, such as S3 or an on-premisse data store</li>
+												<li>The file system is generaly brought up only for the duration of
+													intended computed job (typically several hours or days)</li>
+												<li>FSx automatically encrypts data before it is written to the file
+													system</li>
+
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Use Cases
+												</h4>
+											</div>
+											<ul class="resume-list">
+												<li>High performance computing (HPC)</li>
+												<li>Machine learning, electronic design automation (EDA)</li>
+												<li>Video processing and financial modeling</li>
+											</ul>
+										</div>
+									</div>
+								</section>
+								<section class="project-section py-3">
+									<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Amazon FSx for
+										Windows File Server</h3>
+									<div class="item mb-3">
+										<div class="item-content">
+											<p>For windows-based applications. Amazon FSx provides fully managed Windows
+												file servers with features and performance optimized for
+												'lift-and-shift' business-critical application workloads including home
+												directories(user shares), media workflows, and ERP applications. It is
+												accessible from Windows and Linux instances via SMB protocol.</p>
+											<ul class="resume-list">
+												<li data-sound>It provides fully managed native windows file system</li>
+												<li>It provides shared file storage with full support of the SMB
+													protocol, windows NFTS and native Active Directory integration</li>
+												<li>Up to thousands of clients using SMB protocol can create and access
+													windows file systems through FSX</li>
+												<li>Integrates with IAM, CloudWatch, cloudtrail, KMS, S3 and AD services
+												</li>
+												<li>It can be configured in Single AZ or Multi AZ file systems</li>
+												<li>FSx replicates data within an AZ</li>
+												<li>It takes highly durable backups (store S3) daily using windows
+													volume shadow copy service</li>
+												<li>It always encrypts the file system data and backups at rest
+													(AES-256)</li>
+												<li>FXs encrypts data-in-transit using SMB Kerberos</li>
+												<li>It takes automatically backup daily, 30 min backup window</li>
+												<li>By default, backups are stored (S3) for 7days (configurable 0-35
+													days)</li>
+												<li>Manual backup can also be automated using a custom schedule with
+													CloudWatch events with cron/scheduled events to trigger a lambda
+													function with the proper IAM role to initiate an FSX for windows
+													file server backup of the file system</li>
+												<li>FSX scale up to 64TB, if you need more, use windows MS distributed
+													file system (DFS) namespaces</li>
+												<li>FSx can be accessed from on-premises through a direct connect or VPN
+													connection</li>
+												<li>Use windows robust file copy (Robocopy) to copy existing data
+													directly to FSx</li>
+												<li>It can be accessed from other VPC/accounts/Regions</li>
+												<li>Using VPC peering on transit gateway others VPCs and accounts in the
+													same or different regions can access the amazon FSx file systems
+												</li>
+												<li>It is accessible from windows and LInux instances via the SMB
+													protocol</li>
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Security Rules</h4>
+											</div>
+											<ul class="resume-list">
+												<li data-sound>inbound/outbound <ul>
+														<li>TCP/UPD 445 (SMB)</li>
+														<li>TCP 135 (RPC)</li>
+														<li>TCP/UPD 1024-65535</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</section>
+								<section class="project-section py-3">
+									<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Amazon EFS</h3>
+									<div class="item mb-3">
+										<div class="item-content">
+											<p>You have Linux-based application. Amazon EFS is a cloud-native fully
+												managed file system that provides simple, scalable, <strong>elastic file
+													storage</strong> accessible from Linux instances via NFS protocol
+											</p>
+											<ul class="resume-list">
+												<li data-sound>EFS provides simple, highly available, highly durable and
+													scalable
+													<strong data-sound>file storage</strong> in the cloud for use with
+													EC2 or on-premise servers
+												</li>
+												<li data-sound>EFS stores data and metadata across multiple AZ's in an
+													AWS region
+												</li>
+												<li data-sound>Allow access to the stored data from a large number of
+													EC2 instances
+													in paralalel</li>
+												<li data-sound>Moving your EFS file data can be managed simply by AWS
+													data sync
+												</li>
+												<li data-sound><strong>Aws EFS Infrequent Access (EFSIA)</strong> is a
+													new storage
+													class for EFS that is cost optimized for files that are accessed
+													less frequently</li>
+												<li data-sound>You can mount your EFS file systems on your on-premisses
+													data center
+													servers when connected to your Amazon VPC with AWS direct connect or
+													VPN</li>
+												<li data-sound>EFS has two storage classes: <strong>standard</strong>
+													and
+													<strong>infrequent access</strong></li>
+												<li data-sound>EFS supports encryption in transit and at rest</li>
+												<li data-sound><strong>Backup: </strong> there are two options
+													<ul>
+														<li data-sound>The EFS-TO-EFS (AWS best practice), includes a
+															CloudWatch
+															event that invokes orchestrator AWS lambad</li>
+														<li data-sound>AWS backup service</li>
+													</ul>
+												</li>
+												<li data-sound>EFS provides close-to-open / open-after-close consistency
+													semantics
+													that applications expect from NFS</li>
+												<li data-sound>Applications that perform synchronous data access and
+													perform
+													non-appending writes have read-after-write (strong) consistency data
+													access</li>
+												<li data-sound>You can mount from another account in the same (shared)
+													VPC</li>
+												<li data-sound>You can mount from another VPC in the same or different
+													account</li>
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													EFS and AWS
+													Data Sync</h4>
+											</div>
+											<p data-sound>AWS data-sync is a data transfer service that simplifies,
+												automates and
+												accelerates moving and replicating data between on-premises storage
+												systems and AWS storage services over the internet or AWS direct connect
+											</p>
+											<ul class="resume-list">
+												<li data-sound>
+													AWS recommeds using data sync to transfer data into EFS
+												</li>
+												<li data-sound>You can use data sync to transfer files between two file
+													systems,
+													this includes file system in different AWS regions and file system
+													owned by different AWS accounts</li>
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Performance
+													Modes</h4>
+											</div>
+											<ul class="resume-list">
+												<li data-sound><strong>General Purpose: </strong> ideal for latency
+													sensitive cases
+												</li>
+												<li data-sound><strong>Max I/O mode: </strong> can be scale to higher
+													levels of
+													aggregate throughput and operations per second (used for highly
+													parallelized applications)</li>
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Throughput
+													Modes</h4>
+											</div>
+											<ul class="resume-list">
+												<li data-sound><strong>Busting Throughput mode (default): </strong>
+													Throughput
+													scales as your file system grows
+												</li>
+												<li data-sound><strong>Provisioned Throughtput: </strong>you specify the
+													throughput
+													of your file system</li>
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													EFS Mount
+													targets</h4>
+											</div>
+											<ul class="resume-list">
+												<li data-sound>To access your Amazon EFS file system in a VPC you need
+													to create
+													one or more mount targets in the VPC</li>
+												<li data-sound>You can create only one mount target in each AZ in an AWS
+													Region
+												</li>
+												<li data-sound>Mount targets are highly available, and need to have
+													associated
+													security groups which acts as a virtual firewall that controls the
+													traffic between them</li>
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Uses Cases
+												</h4>
+											</div>
+											<ul class="resume-list">
+												<li data-sound>Big data and analytics</li>
+												<li data-sound>MEdia Processing</li>
+												<li data-sound>Content Management</li>
+												<li data-sound>Home directories</li>
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Monitoring
+												</h4>
+											</div>
+											<ul class="resume-list">
+												<li data-sound>CloudWatch Alarms</li>
+												<li data-sound>CloudWatch logs</li>
+												<li data-sound>CloudWatch Events</li>
+												<li data-sound>cloudtrail log monitoring</li>
+											</ul>
+										</div>
+								</section>
+								<section class="project-section py-3">
+									<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Amazon WAF</h3>
+									<div class="item mb-3">
+										<div class="item-content">
+											<ul class="resume-list">
+												<li data-sound>It is a web application firewall that helps protect web
+													applications
+													from attacks by allowing you to configure <strong>rules</strong>
+													that allow, block, or monitor (count) web requests based on
+													conditions that you define.
+												</li>
+												<li data-sound>These conditions include:
+													<ul>
+														<li data-sound>IP addresses</li>
+														<li data-sound>HTTP headers</li>
+														<li data-sound>HTTP body</li>
+														<li data-sound>URL strings</li>
+														<li data-sound>SQL injection</li>
+														<li data-sound>cross-site scripting</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Features
+												</h4>
+											</div>
+											<ul class="resume-list">
+												<li data-sound>For applications layer attacks, you can use WAF to
+													respond to
+													incidents. Yiu can set up proactive rules like Rate Based
+													Blockiliting to automatically block bad traffic, or respond
+													immediately to incidents as they happen</li>
+												<li data-sound>WAF provides real-time metrics and captures raw requests
+													that
+													include
+													details about IP addresses, geo locations, URIs, User-agent and
+													Referes</li>
+												<li data-sound><strong>AWS WAF Security Automations</strong> is a
+													solution that
+													automatically deploys a single web access control list ( web ACL)
+													with a set of AWS WAF rules designed to filter common web-based
+													attacks. The solution supports log analysis using Amazon Athena and
+													AWS WAF full logs</li>
+											</ul>
+										</div>
+									</div>
+								</section>
+								<section class="project-section py-3">
+									<h3 class="text-uppercase resume-section-heading mb-4" data-sound>Route 53
+									</h3>
+									<div class="item mb-3">
+										<div class="item-content">
+											<p>A highly available and scalable Domain Name System (DNS) web service used
+												for domain registration, DNS routing and health checking.</p>
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Features
+												</h4>
+											</div>
+											<ul class="resume-list">
+												<li data-sound>Resolver</li>
+												<li data-sound>Traffic flow</li>
+												<li data-sound>Latency based routing</li>
+												<li data-sound>Geo DNS</li>
+												<li>Private DNS for Amazon VPC</li>
+												<li>DNS Failover</li>
+												<li>HealthChecks and Monitoring</li>
+												<li>Domain Registration</li>
+												<li>Cloundfront and S3 Zone Apex Support</li>
+												<li>Amazon ELB integration</li>
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													CNAME</h4>
+											</div>
+											<ul class="resume-list">
+												<li data-sound>The DNS protocol doest not allow you to create a CNAME
+													record for the top node of a DNS namespace, also known as the Zone
+													Apex (or root domain, or naked domain). For example: if you register
+													the DNS name test.com, the zone apex is test.com. You CAN NOT create
+													a CNAME record for test.com</li>
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Concepts</h4>
+											</div>
+											<ul class="resume-list">
+												<li data-sound><strong>Alias records: </strong>a type of record that
+													you can create to route traffic to AWS resource</li>
+												<li><strong>Hosted Zone: </strong>a container of records, which
+													includes information about how to route traffic for a domain and
+													all of its subdomains</li>
+												<li><strong>Record (DNS record):</strong> an object in a hosted zone
+													that you use to define how you want to route traffic for the
+													domain or a subdomain</li>
+												<li><strong>DNS failover: </strong> a method for routing traffic
+													away from unhealthy resources and to healthy resources</li>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Routing Policies</h4>
+											</div>
+											<ul class="resume-list">
+												<li data-sound><strong>Simple routing policy (default): </strong>route
+													internet traffic to a single resource that performs a given function
+													for you domain
+												</li>
+												<li data-sound><strong>Failover routing policy: </strong> use when you
+													want to configure active-passive failover</li>
+												<li><strong>Geolocation routing policy: </strong> use when you want to
+													route internet traffic to your resources based on the location (the
+													location of the DNS queries originate from) of your users</li>
+												<li><strong>Latency routing policy: </strong>when you have resources in
+													multiple locatiosn and you want to route traffic to the resource
+													that provides the best latency. You need to create latency records
+													for your resources in multiple regions</li>
+												<li><strong>Weighted routing policy:</strong></li>
+												<li><strong>Geoproximity routing policy: </strong>use when you want to
+													route traffic based on the location of your resources and,
+													optionally, shift traffic from resources in one location to
+													resources in another</li>
+												<li><strong>Latency routing policy: </strong> use when you have
+													resources in multiple locations and you want to route traffic to the
+													resource that provides the best latency</li>
+												<li><strong>Multivalue answer routing policy:</strong> use when you want
+													Route 53 to responde to DNS queries with up to eight healthy records
+													selected at random</li>
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Health Checks</h4>
+											</div>
+											<ul class="resume-list">
+												<li>It supports Http, Https and TCP</li>
+												<li>The endpoint can be in AWS or off AWS</li>
+												<li>You can notify CloudWatch of unhealthy instances</li>
+												<li>You can configure healthy check to check the health of on or more
+													other health checks</li>
+												<li>You can configure a health check to check the status of a CloudWatch
+													alarm so that you can be notified on the basis of a broad range of
+													criteria</li>
+												<li>If one or more records in a group of records do not have health
+													checks associated with them, Route 53 woll treat these as healthy
+												</li>
+												<li>You need to configure firewall, N.ACL, security group, etc to allow
+													the health check request</li>
+												<li>Two types of failover configurations:
+													<ul>
+														<li><strong>Active-Active Failover: </strong> all the records
+															that have the same name, the same type, and the same routing
+															policy are active unless Route 53 considers them unhealthy.
+															Use this failover configuration when you want all of your
+															resources to be available the majority of the time</li>
+														<li><strong>Active-Passive Failover: </strong> use this
+															configuration when you want a primary resource of a group of
+															resources to be available the majority of the time and you
+															want a secondary resource or group of resources to be on
+															standby in case all the primary resources become unavailable
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+										<div class="item-content">
+											<div class="item-heading row align-items-center mb-2">
+												<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0" data-sound>
+													Records</h4>
+											</div>
+											<ul class="resume-list">
+												<li><strong>Alias Records:</strong>
+													<ul>
+														<li>Create records in a hosted zone. Records define where you
+															want to route traffic for each domain name or subdomain
+															name. The name of each record in a hosted zone must end with
+															the name of the hosted zone</li>
+														<li>Specific for Route 53, not seen outside</li>
+														<li>You use it to create DNS Route53 records and route queries
+															to AWS services, the ip address of which can be change
+															(CLB/ALB/NLB, cloudfront, S3 bucket configured as website,
+															elastic bean stack environment, API gateway, VPC interface
+															endpoint, global accelerator and another route 53 record in
+															the same hosted zone
+														</li>
+														<li>You can create an alias record at the top node of a DNS
+															namespace, also know as the zone apex</li>
+														<li>When you point and alias to one of the these AWS services,
+															Route53 will fetch the ip address of that services resources
+															in real time to respond DNS queries</li>
+														<li>You CAN NOT alias to a record or resource outside AWS route
+															53 or AWS services</li>
+														<li>Route 53 follows the pointer in an alias record only when
+															the record type also matches</li>
+													</ul>
+												</li>
+												<li><strong>CNAME:</strong>
+													<ul>
+														<li>You can not create an alias record at the top node of a DNS
+															namspace using a CNAME record</li>
+														<li>A CNAME records redirects queries for a domain name
+															regardless of record type</li>
+													</ul>
+												</li>
+											</ul>
+
+										</div>
+									</div>
 								</section>
 								<!--//work-section-->
 						</div>

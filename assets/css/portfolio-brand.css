@@ -1,0 +1,98 @@
+/* Brand theme — favicon2.ico palette (cyan → blue → purple) on light layout */
+
+@import url("portfolio.css");
+
+:root {
+  --color-bg: #f3f6fc;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+  --color-text-light: #64748b;
+  --color-accent: #007bff;
+  --color-accent-soft: rgba(0, 123, 255, 0.1);
+  --color-border: rgba(15, 23, 42, 0.08);
+  --color-border-strong: rgba(15, 23, 42, 0.14);
+  --shadow-screen: 0 4px 24px rgba(0, 31, 63, 0.08), 0 1px 3px rgba(0, 31, 63, 0.04);
+  --gradient-brand: linear-gradient(135deg, #00d4ff 0%, #007bff 50%, #8e2de2 100%);
+}
+
+body.theme-brand {
+  background: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 123, 255, 0.1), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(142, 45, 226, 0.07), transparent);
+}
+
+body.theme-brand a:hover {
+  color: #0056b3;
+}
+
+body.theme-brand .resume-name {
+  font-family: "Montserrat", var(--font-sans);
+  color: #007bff;
+  background: none;
+  -webkit-text-fill-color: #007bff;
+}
+
+body.theme-brand .resume-tagline {
+  color: #007bff;
+}
+
+body.theme-brand .contact-list i {
+  color: #007bff;
+}
+
+body.theme-brand .contact-list a:hover {
+  color: #0056b3;
+}
+
+body.theme-brand .section-heading {
+  color: #007bff;
+}
+
+body.theme-brand .section-heading::before {
+  background: var(--gradient-brand);
+  width: 4px;
+}
+
+body.theme-brand .nav-link:hover {
+  color: #007bff;
+  border-color: rgba(0, 123, 255, 0.35);
+}
+
+body.theme-brand .nav-link.is-active {
+  color: #007bff;
+  background: var(--color-accent-soft);
+  border-color: rgba(0, 123, 255, 0.25);
+}
+
+body.theme-brand .print-btn {
+  background: var(--gradient-brand);
+  box-shadow: 0 2px 12px rgba(0, 123, 255, 0.25);
+}
+
+body.theme-brand .print-btn:hover {
+  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.35);
+}
+
+body.theme-brand .project-domain {
+  color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
+  border: 1px solid rgba(0, 123, 255, 0.18);
+}
+
+body.theme-brand .social-list a:hover {
+  color: #007bff;
+}
+
+body.theme-brand .site-footer a {
+  color: #007bff;
+}
+
+@media print {
+  body.theme-brand .resume-name {
+    background: none !important;
+    -webkit-text-fill-color: #007bff !important;
+    color: #007bff !important;
+  }
+}

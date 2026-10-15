@@ -1,0 +1,175 @@
+/* Dark theme — favicon2.ico palette (cyan → blue → purple on black) */
+
+@import url("portfolio.css");
+
+:root {
+  --color-bg: #000000;
+  --color-surface: rgba(8, 12, 24, 0.88);
+  --color-text: #eef2ff;
+  --color-text-muted: #a8b0c8;
+  --color-text-light: #6b7394;
+  --color-accent: #007bff;
+  --color-accent-soft: rgba(0, 123, 255, 0.12);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
+  --shadow-screen: 0 8px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --gradient-brand: linear-gradient(135deg, #00d4ff 0%, #007bff 50%, #8e2de2 100%);
+}
+
+body.theme-dark {
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse 70% 50% at 50% -10%, rgba(0, 212, 255, 0.14), transparent 70%),
+    radial-gradient(ellipse 55% 40% at 100% 100%, rgba(142, 45, 226, 0.12), transparent 70%),
+    radial-gradient(ellipse 40% 30% at 0% 80%, rgba(0, 123, 255, 0.08), transparent 70%);
+}
+
+body.theme-dark a:hover {
+  color: #00d4ff;
+}
+
+body.theme-dark .resume-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: var(--color-surface);
+  border-color: rgba(255, 255, 255, 0.09);
+}
+
+body.theme-dark .resume-header {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+body.theme-dark .profile-photo {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 4px 24px rgba(0, 123, 255, 0.22);
+}
+
+body.theme-dark .resume-name {
+  font-family: "Montserrat", var(--font-sans);
+  color: #007bff;
+  background: none;
+  -webkit-text-fill-color: #007bff;
+}
+
+body.theme-dark .resume-tagline {
+  color: #00d4ff;
+}
+
+body.theme-dark .contact-list i {
+  color: #00d4ff;
+}
+
+body.theme-dark .contact-list a:hover {
+  color: #00d4ff;
+}
+
+body.theme-dark .section-heading {
+  color: #60a5fa;
+}
+
+body.theme-dark .section-heading::before {
+  background: var(--gradient-brand);
+  width: 4px;
+}
+
+body.theme-dark .entry {
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+}
+
+body.theme-dark .entry-title,
+body.theme-dark .achievements-label,
+body.theme-dark .sidebar-label,
+body.theme-dark .degree-title,
+body.theme-dark .cert-title {
+  color: var(--color-text);
+}
+
+body.theme-dark .about-section strong {
+  color: var(--color-text);
+}
+
+body.theme-dark .sidebar {
+  border-left-color: rgba(255, 255, 255, 0.08);
+}
+
+body.theme-dark .project-domain {
+  color: #00d4ff;
+  background: rgba(0, 123, 255, 0.12);
+  border: 1px solid rgba(0, 212, 255, 0.22);
+}
+
+body.theme-dark .skill-tag {
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-dark .nav-link {
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-dark .nav-link:hover {
+  color: #00d4ff;
+  border-color: rgba(0, 212, 255, 0.35);
+}
+
+body.theme-dark .nav-link.is-active {
+  color: #00d4ff;
+  background: rgba(0, 123, 255, 0.12);
+  border-color: rgba(0, 123, 255, 0.28);
+}
+
+body.theme-dark .nav-link.theme-link {
+  border-color: rgba(142, 45, 226, 0.35);
+}
+
+body.theme-dark .print-btn {
+  background: var(--gradient-brand);
+  box-shadow: 0 2px 16px rgba(0, 123, 255, 0.35);
+}
+
+body.theme-dark .print-btn:hover {
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.45);
+}
+
+body.theme-dark .resume-footer {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+body.theme-dark .social-list a:hover {
+  color: #00d4ff;
+}
+
+body.theme-dark .site-footer {
+  color: var(--color-text-light);
+}
+
+body.theme-dark .site-footer a {
+  color: #60a5fa;
+}
+
+@media (max-width: 860px) {
+  body.theme-dark .sidebar {
+    border-top-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+@media print {
+  body.theme-dark {
+    background: #fff !important;
+    background-image: none !important;
+  }
+
+  body.theme-dark .resume-card {
+    backdrop-filter: none !important;
+  }
+
+  body.theme-dark .resume-name {
+    background: none !important;
+    -webkit-text-fill-color: #007bff !important;
+    color: #007bff !important;
+  }
+}

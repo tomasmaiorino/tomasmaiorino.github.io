@@ -1,357 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Tomas Maiorino - Software Developers</title>
-
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta build-version="0.0.2">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="Tomas Maiorino">
-	<link rel="shortcut icon" href="favicon.ico">
-
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-
-	<!-- FontAwesome JS-->
-	<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
-
-	<!-- Theme CSS -->
-	<link id="theme-style" rel="stylesheet" href="assets/css/devresume.css">
-
+  <title>Tomas Maiorino — Senior Software Engineer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Senior Software Engineer with 15+ years of experience designing and delivering scalable backend systems across financial services, e-commerce, education, and MDM.">
+  <meta name="author" content="Tomas Maiorino">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png?v=3">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png?v=3">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favicon-512.png?v=3">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png?v=3">
+  <link rel="shortcut icon" href="favicon.ico?v=3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="assets/css/portfolio-brand.css">
 </head>
+<body class="theme-brand">
+  <div class="page-wrapper">
+    <nav class="top-nav hidden-print" aria-label="Resume versions">
+      <div class="top-nav-links">
+        <a class="nav-link is-active" href="index.html" aria-current="page">Compact resume</a>
+        <a class="nav-link" href="index-full.html">Full resume</a>
+        <a class="nav-link theme-link" href="index2.html">Classic layout</a>
+        <a class="nav-link theme-link" href="index-dark.html">Dark layout</a>
+      </div>
+      <div class="top-nav-actions">
+        <a href="#" class="print-btn" onclick="window.print(); return false;" role="button">
+          <i class="fas fa-print" aria-hidden="true"></i> Print
+        </a>
+      </div>
+    </nav>
 
-<body>
+    <article class="resume-card shadow-border">
+      <header class="resume-header">
+        <img class="profile-photo" src="assets/images/resume-profile.png" alt="Tomas Maiorino">
+        <div class="header-content">
+          <h1 class="resume-name">Tomas Maiorino</h1>
+          <p class="resume-tagline">Senior Software Engineer</p>
+          <ul class="contact-list">
+            <li class="print-only"><i class="fas fa-phone"></i><a href="tel:+351910349840">+351 910 349 840</a></li>
+            <li><i class="fas fa-envelope"></i><a href="mailto:tomasmaiorino@gmail.com">tomasmaiorino@gmail.com</a></li>
+            <li><i class="fas fa-globe"></i><a href="https://tomasmaiorino.github.io">tomasmaiorino.github.io</a></li>
+            <li><i class="fas fa-location-dot"></i>Porto, Portugal</li>
+          </ul>
+        </div>
+      </header>
 
-	<!-- DEMO ONLY -->
-	<div class="main-wrapper">
-		<div class="container px-3 px-lg-5">
-			<article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-border">
+      <section class="about-section">
+        <p>Senior Software Engineer with 15+ years of experience designing and delivering scalable backend systems across industries including financial services, e-commerce, education, and Master Data Management (MDM).</p>
+        <p>I specialize in building robust, high-performance applications and distributed systems, with a strong focus on reliability, scalability, and clean architecture. Over the years, I've contributed to the design and implementation of critical systems, collaborating closely with cross-functional teams to deliver solutions that meet both technical and business needs.</p>
+        <p>My work is driven by problem-solving—whether it's identifying the root cause of complex production issues or designing efficient solutions for evolving challenges. I value writing maintainable code, improving system performance, and continuously learning new technologies.</p>
+        <p><strong>Core expertise:</strong></p>
+        <ul class="entry-list">
+          <li>Backend development: Java (8+), Java EE, Spring Boot, REST APIs</li>
+          <li>Cloud &amp; infrastructure: AWS, Docker</li>
+          <li>Data systems: MySQL, Oracle, DynamoDB, Elasticsearch, Hazelcast, Redis</li>
+          <li>Messaging &amp; streaming: Kafka, RabbitMQ</li>
+          <li>Tools &amp; practices: Git, JMeter, Grafana, Bitbucket, Cursor, AI agents</li>
+        </ul>
+        <p>Earlier in my career, I transitioned from music into software engineering—a decision that shaped my persistence and adaptability. That same mindset continues to drive my growth and curiosity in technology today.</p>
+        <p>I'm particularly interested in solving complex backend and data challenges, and contributing to systems that operate at scale.</p>
+      </section>
 
-				<div class="resume-header">
-					<div class="row align-items-center">
-						<div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
-							<h2 class="resume-name mb-0 text-uppercase">Tomas Maiorino</h2>
-							<div class="resume-tagline mb-3 mb-md-0">Senior Fullstack Software Engineer</div>
-						</div><!--//resume-title-->
-						<div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
-							<ul class="list-unstyled mb-0">
-								<li class="mb-2"><i class="fas fa-phone-square fa-fw fa-lg mr-2 "></i><a class="resume-link" href="tel:#">+351 9103-49840</a></li>
-								<li class="mb-2"><i class="fas fa-envelope-square fa-fw fa-lg mr-2"></i><a class="resume-link" href="mailto:#">tomasmaiorino@gmail.com</a></li>
-								<li class="mb-2"><i class="fas fa-globe fa-fw fa-lg mr-2"></i><a class="resume-link" href="http://tomasmaiorino.github.io">http://tomasmaiorino.github.io</a></li>
-								<li class="mb-0"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>Lisbon</li>
-							</ul>
-						</div><!--//resume-contact-->
-					</div><!--//row-->
+      <div class="resume-body">
+        <main class="main-column">
+          <section class="section">
+            <h2 class="section-heading">Experience</h2>
 
-				</div><!--//resume-header-->
-				<hr>
-				<div class="resume-intro py-3">
-					<div class="media flex-column flex-md-row align-items-center">
-						<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto hidden-print" src="assets/images/resume-profile.png" alt="image">
-						<div class="media-body text-left">
-							<p class="mb-0">Working with music is complicated.<br>
-								In my last year of music college, I decided to take a chance. At that time, a friend of mine, who saw my frustration with my current choice, suggested I switch from music to IT, saying that I would like working with IT.<br>
-								I remember studying for the final tests, practicing bass guitar, and reading a java book without understanding almost all book. It was not easy, nevertheless it was the right call.</p>
-								<p class="mb-0">
-								With more than 15 years of experience, I'm happy with my decision. What I like the most about working with IT is that every day we can learn something new, find some bug's root cause or design a great solution for a problem.
-								Throughout all those years, I've worked for many companies, on different teams and segments, such as financial, e-commerce, education, and MDM platforms. </p>
-								<p class="mb-0">
-								With the help of my team, I try to deliver the best I can, by doing what was aked, on the time, with high quality and good performance.
-								Among some the technologies and tooks I have worked are: Java 8, JavaEE, Spring Boot, RestAPIS, AWS, Docker, ElasticSearch, Mysql, Oracle, Kafka, RabbitMQ, Git, Jmeter, Gitbucket.
-							</p>
-						</div><!--//media-body-->
-					</div>
-				</div><!--//resume-intro-->
-        <hr>
-        <section class="project-section py-3"></section>
-				<div class="resume-body">
-					<div class="row">
-						<div class="resume-main col-12 col-lg-8 col-xl-9 pr-0 pr-lg-5">
-                <section class="project-section py-3">
-                    <h3 class="text-uppercase resume-section-heading mb-4">Projects</h3>
-                    <div class="item">
-                      <div class="item-heading row align-items-center mb-2">
-                        <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Ecommerce Integration</h4>
-                        <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Ecommerce</div>
-                      </div>
-                      <div class="item-content">
-                        <p>The company would change its e-commerce platform and the current catalog integration would not work properly with this new platform. New microservices were created to support catalog, price, and inventory integrations. The microservice would read the messages from the RabbitMQ , perform some validations, and send them to the e-commerce platform through the rest API. Worked directly with the product owner and business team to understand the definition of the project. Helped on the architecture definition and developed, tested the solution and was part of the entire development from the development to production.</p>
-                        <strong>Achievements.</strong>
-                        <p>
-                          <ul class="resume-list">
-                            <li>Delivered a sleek, fast, lightweight, and testable solution which reduced the time spent during the catalog, price and inventory integrations.</li>
-                            <li>Reduced time spent consuming messages on the price integration from 3 hours to 15 minutes after a cache implementation.</li>
-                            <li>Reduced from 4 hours to 10 minutes the time spent for the read messages on the price integration.</li>
-                          </ul>
-                        </p>
-                      </div>
-                    </div><!--//item-->
-                    <div class="item">
-                      <div class="item-heading row align-items-center mb-2">
-                        <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Recover Password </h4>
-                        <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Ecommerce</div>
-                      </div>
-                      <div class="item-content">
-                        <p>The company's client was having trouble to recover their password through the website, which increased the amount of call received by the call center in order to help them to log in on the website. To solve the problem we changed the recovery password workflow to a more common approach by send to the client a link where they could change their password and login automatically on the website.</p>
-                        <strong>Achievements.</strong>
-                        <p>
-                          <ul class="resume-list">
-                            <li>The company reduced by 30% the amount of calls to its call center from clients which was not able to recover their password through the website.</li>
-                          </ul>
-                        </p>
-                      </div>
-					</div><!--//item-->
-                  </section><!--//project-section-->
+            <article class="entry">
+              <div class="entry-header">
+                <h3 class="entry-title">Software Engineer</h3>
+                <span class="entry-meta">Jun 2022 — Present</span>
+              </div>
+              <div class="entry-company">Reltio · Lisbon, Portugal</div>
+              <div class="entry-content">
+                <p>As a member of the search and segmentation team, I work on enhancements to current functionalities and production troubleshooting for an enterprise MDM platform.</p>
+                <span class="achievements-label">Achievements</span>
+                <ul class="entry-list">
+                  <li>Improved task scheduling in a multi-tenant environment, reducing “noisy neighbor” effects and ensuring fair resource distribution across tenants</li>
+                  <li>Troubleshot and resolved complex production issues in distributed, multi-threaded systems, improving system stability and response times</li>
+                  <li>Designed and implemented an AI-based agent to generate diagnostic reports, helping identify potential root causes for SLA breaches related to delayed task execution</li>
+                  <li>Identified and addressed bottlenecks in task distribution, improving overall system efficiency and throughput</li>
+                  <li>Maintain and improve the search module integrating Elasticsearch, Cassandra, and DynamoDB with Reltio components — a platform service used by many teams to search large volumes of stored data.</li>
+                  <li>Co-own the export functionality used to export large amounts of data to AWS, Azure, and GCP cloud providers.</li>
+                </ul>
+                <p>Technologies: DynamoDB, Cassandra, Elasticsearch, Java 8, Docker, Kubernetes, AWS, Azure, GCP, Git, Bitbucket.</p>
+              </div>
+            </article>
 
-							<section class="work-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Work Experiences</h3>
-								<div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Software Engineer</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Reltio | 06-2022 - Present</div>
-									</div>
-									<div class="item-content">
-										<p>Working as a software engineer for the search and segmentation on a MDM product.</p>
-										<ul class="resume-list">
-											<li>Maintain the search module which is used by all company to search data on ElasticSearch and Cassandra.</li>
-											<li>One of the responsibles for the export functionality which is used to export a large amount of data to a variety of cloud providers using java multthreading, ElasticSearch, Cassandra, AWS, Azure and GCP.</li>
-											<li>Working on enhancements to the current functionalities and troubleshooting for production. </li>
-											<li>Used tools: Jenkins, Docker, Kubernetes, Git, Bitbucket and Jira.</li>
-											<li>Databases: DynamoDB and Cassandra.</li>
-										</ul>
-									</div>
-								</div>
-								<div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Senior Software Engineer</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Bose | 11/2019 - 06/2022</div>
-									</div>
-									<div class="item-content">
-										<p>Working as a Fullstack developer for one of the biggest audio company.</p>
-										<ul class="resume-list">
-											<li>Helping the business team to find the faster and higher quality solution for the challenges required by the Bose's support website.</li>
-											<li>Developing and maintaining AEM authorable Components and Servlets api’s. Working with Hybris managing old features and creating new ones. Creating  and managing systems integrations between AEM, Hybris and SAP using spring boot microservices (Java 8) and Kafka Streams.</li>
-											<li>Using tools as AWS to deploy microservices, Jenkins, Docker for the microservices, Git, Jira.</li>
-											<li>As a database we using DynamoDB and Mysql</li>
-										</ul>
-									</div>
-								</div>
-								<div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Senior Software Engineer</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Aubay | 01/2019 - 11/2019</div>
-									</div>
-									<div class="item-content">
-										<p>Working for big companies in Lisbon city. My roles and responsibilities included.</p>
-										<ul class="resume-list">
-											<li>Discuss and understand the clients' need in order to improve their results and achieve its goals by building great systems or new feature using new technologies and development methodologies.</li>
-											<li>Develop and maintain rest api’s using Microservices, Spring Boot, Java 8, Rest Api's, SOAP webservices, JUnit, Mockito, RestAssured(integration tests), Cucumber, Jenkins, Docker, Git, Oracle, Jira.</li>
-											<li>Maintain and work on new features related to the frontend's application.</li>
-										</ul>
-									</div>
-								</div><!--//item-->
-								<div class="item mb-3">
-										<div class="item-heading row align-items-center mb-2">
-											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Senior Software Engineer</h4>
-											<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Compasso | 2017 - 2019</div>
-										</div>
-										<div class="item-content">
-											<p>Worked for a big brazilians ecommerce in Sao Paulo. Responsible for the catalog integration between the Oracle Cloud Commerce and
-												the clients catalog management tool using Spring Boot, Java 8, Webservices Rest,
-												RabbitMQ, Docker, Kubernetes, Jira, JUnit, Mockito, Mongo, Redis, Maven and
-												Jenkins</p>
-										</div>
-									</div><!--//item-->
-								<div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Senior Fullstack Software Engineer</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Labdoor | 2017 - 2017</div>
-									</div>
-									<div class="item-content">
-										<p>Worked on the website maintenance, bug fixes and developed new features. Developed, tested the solutions and was part of the entire development cycle, from the development to production.</p>
-									</div>
-								</div><!--//item-->
-								<div class="item">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Senior Software Developer</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Netshoes | 2015 - 2017</div>
-
-									</div>
-									<div class="item-content">
-										<p>Developed new feature, bug fixes. I worked directly with the product owner and business team to understand the definition of the project. I developed, tested the solution and was part of the entire development cycle, from the development to production.</p>
-									</div>
-								</div><!--//item-->
-								<div class="item">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Senior Software Developer</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Compasso | 2014 - 2015</div>
-
-									</div>
-									<div class="item-content">
-										<p>Developed new features, bug fixes. Worked directly with the product owner and business team to understand the definition of the project. Developed, tested the solution and was part of the entire development cycle from the development to production.</p>
-									</div>
-								</div><!--//item-->
-								<!--
-								<div class="item">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Frontend Developer</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Startup | 2013 - 2014</div>
-
-									</div>
-									<div class="item-content">
-										<p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus. </p>
-									</div>
-								</div>
-								-->
-								<!--//item-->
-
-							</section><!--//work-section-->
-						</div><!--//resume-main-->
-						<aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
-							<section class="skills-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Skills</h3>
-								<div class="item">
-                  <h4 class="item-title">Technical</h4>
-                  <div class="print-only">
-					<span class="ml-1 mt-1">JavaSE 8+</span>
-					<span class="ml-1 mt-1">ElasticSearch</span>
-					<span class="ml-1 mt-1">Cassandra</span>
-					<span class="ml-1 mt-1">Spring boot/Spring data/Transactions<span></span>
-					<span class="ml-1 mt-1">DynamoDB</span>
-					<span class="ml-1 mt-1">PostgreSQL/MySQL/Oracle</span>
-					<span class="ml-1 mt-1">Mongo/Redis</span>
-					<span class="ml-1 mt-1">Docker/Kubernetes</span>
-					<span class="ml-1 mt-1">Kafka</span>
-					<span class="ml-1 mt-1">RabbitMQ/ActiveMQ</span>					
-					<span class="ml-1 mt-1">SOAP Webservices/Rest Webservices</span>
-					<span class="ml-1 mt-1">Maven/JIRA/Bitbucket/JENKINS</span>
-					<span class="ml-1 mt-1">GIT/DBeaver</span>		
-					<span class="ml-1 mt-1">JUnit/Integration Tests</span>
-					<span class="ml-1 mt-1">Javascript/CSS</span>
-					<span class="ml-1 mt-1">React/Node (particular projects)</span>
-					<span class="ml-1 mt-1">AEM</span>
-					<span class="ml-1 mt-1">Hybris</span>
-                    </div>
-					<ul class="list-unstyled resume-skills-list hidden-print">
-						<li class="mb-2">JavaSE 8+</li>
-						<li class="mb-2">ElasticSearch</li>
-						<li class="mb-2">Cassandra</li>
-						<li class="mb-2">Spring boot/Spring data/Transactions<li></li>
-						<li class="mb-2">DynamoDB</li>
-						<li class="mb-2">PostgreSQL/MySQL/Oracle</li>
-						<li class="mb-2">Mongo/Redis</li>
-						<li class="mb-2">Docker/Kubernetes</li>
-						<li class="mb-2">Kafka</li>
-						<li class="mb-2">RabbitMQ/ActiveMQ</li>					
-						<li class="mb-2">SOAP Webservices/Rest Webservices</li>
-						<li class="mb-2">Maven/JIRA/Bitbucket/JENKINS</li>
-						<li class="mb-2">GIT/DBeaver</li>		
-						<li class="mb-2">JUnit/Integration Tests</li>
-						<li class="mb-2">Javascript/CSS</li>						
-						<li class="mb-2">AEM</li>
-						<li class="mb-2">Hybris</li>
-						<li class="mb-2">Design and implement database structures</li>
-						<li class="mb-2">React/Node (particular projects)</li> 
-					</ul>
-					</div><!--//item-->
-					<div class="item">
-                    <h4 class="item-title mt-2">Professional</h4>
-                    <div class="print-only">
-                        <span class="ml-1 mt-1">Team player,</span>
-                        <span class="ml-1 mt-1">Focus,</span>
-                        <span class="ml-1 mt-1">Strong problem solver,</span>
-                        <span class="ml-1 mt-1">Good time management</span>
-                      </div>
-						<ul class="list-unstyled resume-skills-list hidden-print">
-							<li class="mb-2">Team player<li>
-							<li class="mb-2">Focus<li>
-							<li class="mb-2">Strong problem solver</li>
-							<li>Good time management</li>
-						</ul>
-						</div><!--//item-->
-					</section><!--//skills-section-->
-					<section class="education-section py-3">
-						<h3 class="text-uppercase resume-section-heading mb-4">Education</h3>
-						<ul class="list-unstyled resume-education-list">
-							<li class="mb-3">
-								<div class="resume-degree font-weight-bold">(Associate Degree) Analysis and development of Systems</div>
-								<div class="resume-degree-org text-muted">UMESP</div>
-								<div class="resume-degree-time text-muted">2007 - 2009</div>
-							</li>
-						</ul>
-									</section><!--//education-section-->
-									<section class="education-section py-3">
-										<h3 class="text-uppercase resume-section-heading mb-4">Certifications</h3>
-										<ul class="list-unstyled resume-awards-list">
-											<li class="mb-3">
-												<div class="font-weight-bold">AWS Certified Developer – Associate, 2024</div>
-											</li>
-											<li class="mb-3">
-												<div class="font-weight-bold">AWS Certified Solutions Architect – Associate, 2023</div>
-											</li>
-											<li class="mb-3">
-												<div class="font-weight-bold">Sun Certified Programmer for the Java 2 Platform, Standard Edition 5.0, 2009.</div>
-											</li>
-										</ul>
-									</section><!--//education-section-->
-									<section class="skills-section py-3 hidden-print">
-										<h3 class="text-uppercase resume-section-heading mb-4">Languages</h3>
-										<ul class="list-unstyled resume-lang-list">
-											<li class="mb-2">Portuguese <span class="text-muted">(Native)</span></li>
-											<li>English <span class="text-muted">(Professional)</span></li>
-										</ul>
-                  </section><!--//certificates-section-->
-                  <!--
-									<section class="skills-section py-3">
-										<h3 class="text-uppercase resume-section-heading mb-4">Interests</h3>
-										<ul class="list-unstyled resume-interests-list mb-0">
-											<li class="mb-2">Music</li>
-                    </ul>
-                  </section>
-                  -->
-                  <!--//certificates-section-->
-				  					<!--
-									<section class="skills-section py-3 hidden-print">
-											<h3 class="text-uppercase resume-section-heading mb-4">More</h3>
-											<ul class="list-unstyled resume-interests-list mb-0">
-												<li class="mb-2">Click <a href="index-full.html">here</a> to see the full resume with all projects and work experience.</li>
-											</ul>
-										</section>
-										-->
-										<!--//certificates-section-->
-
-								</aside><!--//resume-aside-->
-							</div><!--//row-->
-						</div><!--//resume-body-->
-						<hr>
-            <div class="resume-footer text-center">
-                <ul class="resume-social-list list-inline mx-auto mb-0 d-inline-block text-muted">
-                  <li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" href="https://github.com/tomasmaiorino"
-                      target="_blank"><i class="fab fa-github-square fa-2x mr-2" data-fa-transform="down-4"></i><span
-                        class="d-none d-lg-inline-block text-muted">https://github.com/tomasmaiorino</span></a></li>
-                  <li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link"
-                      href="https://www.linkedin.com/in/tomasmaiorino" target="_blank"><i class="fab fa-linkedin fa-2x mr-2"
-                        data-fa-transform="down-4"></i><span
-                        class="d-none d-lg-inline-block text-muted">https://www.linkedin.com/in/tomasmaiorino/</span></a></li>
-                <!-- <li class="list-inline-item mb-lg-0 mr-lg-3"><a class="resume-link" href="#"><i
-                        class="fab fa-twitter-square fa-2x mr-2" data-fa-transform="down-4"></i><span
-                        class="d-none d-lg-inline-block text-muted">@twittername</span></a></li>
-                        -->
+            <article class="entry">
+              <div class="entry-header">
+                <h3 class="entry-title">Senior Software Engineer</h3>
+                <span class="entry-meta">Nov 2019 — Jun 2022</span>
+              </div>
+              <div class="entry-company">Bose · Lisbon, Portugal</div>
+              <div class="entry-content">
+                <p>Full-stack developer for one of the world's leading audio companies.</p>
+                <ul class="entry-list">
+                  <li>Partnered with business teams to deliver fast, high-quality solutions for Bose's support website.</li>
+                  <li>Built and maintained AEM components and servlet APIs; managed Hybris features and integrations between AEM, Hybris, and SAP via Spring Boot microservices and Kafka Streams.</li>
+                  <li>Deployed services on AWS with Jenkins and Docker · Databases: DynamoDB, MySQL.</li>
                 </ul>
               </div>
-					</article>
+            </article>
 
-				</div><!--//container-->
+            <article class="entry">
+              <div class="entry-header">
+                <h3 class="entry-title">Senior Software Engineer</h3>
+                <span class="entry-meta">Jan 2019 — Nov 2019</span>
+              </div>
+              <div class="entry-company">Aubay · Lisbon, Portugal</div>
+              <div class="entry-content">
+                <ul class="entry-list">
+                  <li>Collaborated with clients to understand needs and deliver systems using modern development practices.</li>
+                  <li>Developed REST APIs with Spring Boot microservices, SOAP web services, JUnit, Mockito, RestAssured, and Cucumber.</li>
+                  <li>Maintained and extended frontend applications.</li>
+                </ul>
+              </div>
+            </article>
 
-				<footer class="footer text-center py-4 hidden-print">
-					<!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
-					<small class="copyright text-muted">Designed with <i class="fas fa-heart"></i> by <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-				</footer>
+            <article class="entry">
+              <div class="entry-header">
+                <h3 class="entry-title">Senior Software Engineer</h3>
+                <span class="entry-meta">2017 — 2019</span>
+              </div>
+              <div class="entry-company">Compasso · São Paulo, Brazil</div>
+              <div class="entry-content">
+                <p>Led catalog integration between Oracle Cloud Commerce and the client's catalog management tool using Spring Boot, RabbitMQ, Docker, Kubernetes, MongoDB, Redis, and Jenkins.</p>
+              </div>
+            </article>
+          </section>
 
-			</div><!--//main-wrapper-->
+          <section class="section">
+            <h2 class="section-heading">Selected Projects</h2>
+
+            <article class="entry">
+              <span class="project-domain">E-commerce</span>
+              <div class="entry-header">
+                <h3 class="entry-title">E-commerce Integration</h3>
+              </div>
+              <div class="entry-content">
+                <p>Built microservices for catalog, price, and inventory integration when the company migrated to a new e-commerce platform. Services consumed RabbitMQ messages, validated data, and forwarded updates via REST APIs — from architecture through production.</p>
+                <span class="achievements-label">Achievements</span>
+                <ul class="entry-list">
+                  <li>Delivered a fast, lightweight, testable solution that reduced integration time across catalog, price, and inventory flows.</li>
+                  <li>Cut price-integration message consumption from 3 hours to 15 minutes after implementing caching.</li>
+                  <li>Reduced message read time from 4 hours to 10 minutes on the price integration.</li>
+                </ul>
+              </div>
+            </article>
+          </section>
+        </main>
+
+        <aside class="sidebar">
+          <div class="sidebar-block">
+            <h2 class="section-heading">Skills</h2>
+            <h3 class="sidebar-label">Technical</h3>
+            <div class="print-only skill-tags">
+              <span class="skill-tag">Java SE 8+</span>
+              <span class="skill-tag">Cursor</span>
+              <span class="skill-tag">Claude</span>
+              <span class="skill-tag">Hazelcast</span>
+              <span class="skill-tag">Spring Boot</span>
+              <span class="skill-tag">Elasticsearch</span>
+              <span class="skill-tag">Cassandra</span>
+              <span class="skill-tag">DynamoDB</span>
+              <span class="skill-tag">PostgreSQL / MySQL / Oracle</span>
+              <span class="skill-tag">MongoDB / Redis</span>
+              <span class="skill-tag">Docker / Kubernetes</span>
+              <span class="skill-tag">Kafka</span>
+              <span class="skill-tag">RabbitMQ</span>
+              <span class="skill-tag">REST / SOAP</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Azure / GCP</span>
+              <span class="skill-tag">JUnit / Integration Tests</span>
+              <span class="skill-tag">Git / Jenkins / Bitbucket</span>
+              <span class="skill-tag">AEM / Hybris</span>
+            </div>
+            <div class="skill-tags hidden-print">
+              <span class="skill-tag">Java SE 8+</span>
+              <span class="skill-tag">Cursor</span>
+              <span class="skill-tag">Claude</span>
+              <span class="skill-tag">Hazelcast</span>
+              <span class="skill-tag">Spring Boot</span>
+              <span class="skill-tag">Elasticsearch</span>
+              <span class="skill-tag">Cassandra</span>
+              <span class="skill-tag">DynamoDB</span>
+              <span class="skill-tag">PostgreSQL / MySQL / Oracle</span>
+              <span class="skill-tag">MongoDB / Redis</span>
+              <span class="skill-tag">Docker / Kubernetes</span>
+              <span class="skill-tag">Kafka</span>
+              <span class="skill-tag">RabbitMQ</span>
+              <span class="skill-tag">REST / SOAP</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Azure / GCP</span>
+              <span class="skill-tag">JUnit / Integration Tests</span>
+              <span class="skill-tag">Git / Jenkins / Bitbucket</span>
+              <span class="skill-tag">AEM / Hybris</span>
+              <span class="skill-tag">JavaScript / CSS</span>
+            </div>
+
+            <h3 class="sidebar-label">Professional</h3>
+            <div class="print-only skill-tags">
+              <span class="skill-tag">Team player</span>
+              <span class="skill-tag">Problem solver</span>
+              <span class="skill-tag">Focus</span>
+            </div>
+            <div class="skill-tags hidden-print">
+              <span class="skill-tag">Team player</span>
+              <span class="skill-tag">Problem solver</span>
+              <span class="skill-tag">Focus</span>
+            </div>
+          </div>
+
+          <div class="sidebar-block">
+            <h2 class="section-heading">Education</h2>
+            <ul class="sidebar-list">
+              <li>
+                <div class="degree-title">Analysis and Development of Systems</div>
+                <div class="degree-org">UMESP — Associate Degree</div>
+                <div class="degree-time">2007 — 2009</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar-block">
+            <h2 class="section-heading">Certifications</h2>
+            <ul class="sidebar-list">
+              <li><div class="cert-title">AWS Certified Developer – Associate</div><div class="degree-time">2024</div></li>
+              <li><div class="cert-title">AWS Certified Solutions Architect – Associate</div><div class="degree-time">2023</div></li>
+              <li><div class="cert-title">Sun Certified Programmer for Java SE 5.0</div><div class="degree-time">2009</div></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-block hidden-print">
+            <h2 class="section-heading">Languages</h2>
+            <ul class="sidebar-list">
+              <li>Portuguese <span class="lang-level">(Native)</span></li>
+              <li>English <span class="lang-level">(Professional)</span></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <footer class="resume-footer">
+        <ul class="social-list">
+          <li>
+            <a href="https://github.com/tomasmaiorino" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>
+              <span>github.com/tomasmaiorino</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/tomasmaiorino/" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin"></i>
+              <span>linkedin.com/in/tomasmaiorino</span>
+            </a>
+          </li>
+        </ul>
+      </footer>
+    </article>
+
+    <footer class="site-footer hidden-print">
+      <p>Brand layout · <a href="index-full.html">View full version</a> · <a href="index2.html">Classic layout</a> · <a href="index-dark.html">Dark layout</a></p>
+    </footer>
+  </div>
 </body>
 </html>
-
